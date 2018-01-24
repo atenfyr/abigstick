@@ -205,6 +205,33 @@ namespace ABigStick.Items {
 		}
     }
 
+    public class StickK2 : ModProjectile {
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Spooky Stick");
+        }
+
+        public override void AutoStaticDefaults() {
+            Main.projectileTexture[projectile.type] = ModLoader.GetTexture("ABigStick/Items/SpookyStick");
+        }
+
+        public override void SetDefaults() {
+            projectile.width = 4;
+            projectile.height = 20;
+            projectile.aiStyle = 1;
+            projectile.friendly = true;
+			projectile.tileCollide = true;
+			projectile.ignoreWater = false;
+            projectile.ranged = true;
+            projectile.penetrate = 3;
+        }
+
+    	public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
+            if (Main.rand.NextFloat() >= .20f) {
+                target.AddBuff(BuffID.Confused, 2 * 60);
+            }
+		}
+    }
+
     public class StickItem : ModItem {
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Stick");
@@ -453,8 +480,39 @@ namespace ABigStick.Items {
 			item.value = 200;
             item.shoot = mod.ProjectileType("StickM2");
             item.ammo = mod.ItemType("StickItem");
-            item.crit = 50;
+            item.crit = 20;
             item.maxStack = 999;
+        }
+    }
+
+    public class StickK : ModItem {
+		public override void SetStaticDefaults() {
+			DisplayName.SetDefault("Spooky Stick");
+            Tooltip.SetDefault("20% chance to inflict Confused");
+		}
+
+        public override void AutoStaticDefaults() {
+            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/SpookyStick");
+        }
+
+        public override void SetDefaults() {
+			item.damage = 4;
+			item.ranged = true;
+			item.width = 4;
+			item.height = 20;
+			item.consumable = true;
+			item.knockBack = 0f;
+			item.value = 200;
+            item.shoot = mod.ProjectileType("StickK2");
+            item.ammo = mod.ItemType("StickItem");
+            item.maxStack = 999;
+        }
+
+        public override void AddRecipes() {
+            ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.SpookyWood, 50);
+            recipe.SetResult(this, 100);
+            recipe.AddRecipe();
         }
     }
 
