@@ -234,11 +234,11 @@ namespace ABigStick.Items {
 
     public class StickAten2 : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Emotional Stick");
+            DisplayName.SetDefault("Stick of Tears");
         }
 
         public override void AutoStaticDefaults() {
-            Main.projectileTexture[projectile.type] = ModLoader.GetTexture("ABigStick/Items/EmotionalStick");
+            Main.projectileTexture[projectile.type] = ModLoader.GetTexture("ABigStick/Items/StickofTears");
         }
 
         public override void SetDefaults() {
@@ -253,7 +253,9 @@ namespace ABigStick.Items {
         }
 
     	public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
-            target.AddBuff(BuffID.Wet, 10 * 60);
+            for (int i = 0; i <= 5; i++) {
+                Dust.NewDust(target.position, target.width, target.height, 29);
+            }
 		}
     }
 
@@ -543,16 +545,16 @@ namespace ABigStick.Items {
 
     public class StickAten : ModItem {
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Emotional Stick");
-            Tooltip.SetDefault("'Has no social skills'"); // too real?
+			DisplayName.SetDefault("Stick of Tears");
+            Tooltip.SetDefault("Forged with the tears of a dying god");
 		}
 
         public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/EmotionalStick");
+            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/StickofTears");
         }
 
         public override void SetDefaults() {
-			item.damage = 25;
+			item.damage = 35;
 			item.ranged = true;
 			item.width = 4;
 			item.height = 20;
@@ -587,19 +589,15 @@ namespace ABigStick.Items {
                     Item.NewItem(npc.getRect(), mod.ItemType("StickM"), count*2);
                 }
             }
-
-            /*
-            if () {
-            
-            }*/
 		}
     }
 
     public class Drops2 : GlobalItem {
         public override void OpenVanillaBag(string context, Player player, int arg) {
             if (context == "bossBag" && arg >= 3325 && arg != 3860 && (Main.rand.NextFloat(1,10000) == 1)) {
-                player.QuickSpawnItem(mod.ItemType("StickAten"), 100);
                 player.QuickSpawnItem(mod.ItemType("EmotionalStickgun"), 1);
+            } else if (context == "bossBag" && player.HasItem(mod.ItemType("EmotionalStickgun"))) {
+                player.QuickSpawnItem(mod.ItemType("StickAten"), Main.rand.Next(50,120));
             }
         }
     }

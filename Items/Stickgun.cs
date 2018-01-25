@@ -57,7 +57,7 @@ namespace ABigStick.Items {
 	public class EmotionalStickgun : ModItem {
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Emotional Stickgun");
-			Tooltip.SetDefault("Refuses to associate with anybody who is too different\nNever consumes ammo");
+			Tooltip.SetDefault("Fueled by the tears of dying gods\n95% chance to not consume ammo");
 		}
 
 		public override void SetDefaults() {
@@ -71,7 +71,7 @@ namespace ABigStick.Items {
 			item.useStyle = 5;
 			item.knockBack = 2;
 			item.value = 10000;
-			item.rare = 10;
+			item.rare = 11;
 			item.crit = 50;
 			item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/doot");
 			item.noMelee = true;
@@ -82,7 +82,7 @@ namespace ABigStick.Items {
 		}
 
 		public override bool ConsumeAmmo(Player player) {
-			return false;
+			return Main.rand.NextFloat() >= .95f;
 		}
 	}
 }
