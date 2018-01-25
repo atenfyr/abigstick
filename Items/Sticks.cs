@@ -226,7 +226,7 @@ namespace ABigStick.Items {
         }
 
     	public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
-            if (Main.rand.NextFloat() >= .20f) {
+            if (Main.rand.Next(1,3) == 1) {
                 target.AddBuff(BuffID.Confused, 2 * 60);
             }
 		}
@@ -488,7 +488,7 @@ namespace ABigStick.Items {
     public class StickK : ModItem {
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Spooky Stick");
-            Tooltip.SetDefault("20% chance to inflict Confused");
+            Tooltip.SetDefault("33% chance to inflict Confused");
 		}
 
         public override void AutoStaticDefaults() {
