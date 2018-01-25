@@ -15,7 +15,7 @@ namespace ABigStick.Items {
 			item.damage = 80;
 			item.ranged = true;
 			item.width = 40;
-			item.height = 40;
+			item.height = 7;
 			item.maxStack = 1;
 			item.useTime = 3;
 			item.useAnimation = 20;
@@ -51,6 +51,38 @@ namespace ABigStick.Items {
 
 		public override bool ConsumeAmmo(Player player) {
 			return Main.rand.NextFloat() >= .70f;
+		}
+	}
+
+	public class EmotionalStickgun : ModItem {
+		public override void SetStaticDefaults() {
+			DisplayName.SetDefault("Emotional Stickgun");
+			Tooltip.SetDefault("Refuses to associate with anybody who is too different\nNever consumes ammo");
+		}
+
+		public override void SetDefaults() {
+			item.damage = 150;
+			item.ranged = true;
+			item.width = 40;
+			item.height = 7;
+			item.maxStack = 1;
+			item.useTime = 1;
+			item.useAnimation = 20;
+			item.useStyle = 5;
+			item.knockBack = 2;
+			item.value = 10000;
+			item.rare = 10;
+			item.crit = 50;
+			item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/doot");
+			item.noMelee = true;
+			item.shoot = mod.ProjectileType("StickAten2");
+			item.useAmmo = mod.ItemType("StickAten");
+			item.shootSpeed = 200f;
+			item.autoReuse = true;
+		}
+
+		public override bool ConsumeAmmo(Player player) {
+			return false;
 		}
 	}
 }

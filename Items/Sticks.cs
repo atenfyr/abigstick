@@ -232,6 +232,31 @@ namespace ABigStick.Items {
 		}
     }
 
+    public class StickAten2 : ModProjectile {
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Emotional Stick");
+        }
+
+        public override void AutoStaticDefaults() {
+            Main.projectileTexture[projectile.type] = ModLoader.GetTexture("ABigStick/Items/EmotionalStick");
+        }
+
+        public override void SetDefaults() {
+            projectile.width = 4;
+            projectile.height = 20;
+            projectile.aiStyle = 1;
+            projectile.friendly = true;
+			projectile.tileCollide = true;
+			projectile.ignoreWater = false;
+            projectile.ranged = true;
+            projectile.penetrate = 999;
+        }
+
+    	public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
+            target.AddBuff(BuffID.Wet, 10 * 60);
+		}
+    }
+
     public class StickItem : ModItem {
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Stick");
@@ -516,13 +541,44 @@ namespace ABigStick.Items {
         }
     }
 
-	public class PirateStickDrop : GlobalNPC {
+    public class StickAten : ModItem {
+		public override void SetStaticDefaults() {
+			DisplayName.SetDefault("Emotional Stick");
+            Tooltip.SetDefault("'Has no social skills'"); // too real?
+		}
+
+        public override void AutoStaticDefaults() {
+            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/EmotionalStick");
+        }
+
+        public override void SetDefaults() {
+			item.damage = 25;
+			item.ranged = true;
+			item.width = 4;
+			item.height = 20;
+			item.consumable = true;
+			item.knockBack = 2f;
+			item.value = 50000;
+            item.shoot = mod.ProjectileType("StickAten2");
+            item.ammo = mod.ItemType("StickAten");
+            item.maxStack = 999;
+        }
+
+        public override void AddRecipes() {
+            ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.SpookyWood, 50);
+            recipe.SetResult(this, 100);
+            recipe.AddRecipe();
+        }
+    }
+
+	public class Drops : GlobalNPC {
 		public override void NPCLoot(NPC npc) {
-            int count = Main.rand.Next(5, 10);
-            if(Main.rand.NextBool(Main.expertMode ? 2 : 1, 5)) {
-                count = count * 2;
-            }
             if (NPC.downedTowerVortex) {
+                int count = Main.rand.Next(5, 10);
+                if (Main.rand.NextBool(Main.expertMode ? 2 : 1, 5)) {
+                    count = count * 2;
+                }
                 if (((npc.type >= 212 && npc.type <= 216) || npc.type == 229 || npc.type == 252)) { // all pirates and parrots
                     if (Main.rand.NextFloat() >= .25f) {
                         Item.NewItem(npc.getRect(), mod.ItemType("StickM"), count);
@@ -531,6 +587,20 @@ namespace ABigStick.Items {
                     Item.NewItem(npc.getRect(), mod.ItemType("StickM"), count*2);
                 }
             }
+
+            /*
+            if () {
+            
+            }*/
 		}
-    }   
+    }
+
+    public class Drops2 : GlobalItem {
+        public override void OpenVanillaBag(string context, Player player, int arg) {
+            if (context == "bossBag" && arg >= 3325 && arg != 3860 && (Main.rand.NextFloat(1,10000) == 1)) {
+                player.QuickSpawnItem(mod.ItemType("StickAten"), 100);
+                player.QuickSpawnItem(mod.ItemType("EmotionalStickgun"), 1);
+            }
+        }
+    }
 }
