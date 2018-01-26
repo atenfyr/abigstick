@@ -19,7 +19,7 @@ namespace ABigStick.Buffs.Abomination {
 		public override void SetDefaults() {
 			item.width = 20;
 			item.height = 20;
-			item.maxStack = 20;
+			item.maxStack = 999;
 			item.rare = 9;
 			item.useAnimation = 45;
 			item.useTime = 45;
