@@ -21,6 +21,19 @@ namespace ABigStick.Items {
 			item.value = 2000;
             item.maxStack = 999;
             item.rare = 9;
+			item.useAnimation = 45;
+			item.useTime = 45;
+			item.useStyle = 5;
+            item.consumable = true;
         }
+
+		public override bool CanUseItem(Player player) {
+			return !(player.HasBuff(mod.BuffType("Mourning")));
+		}
+
+		public override bool UseItem(Player player) {
+			player.AddBuff(mod.BuffType("Mourning"), 20 * 60);
+			return true;
+		}
     }
 }
