@@ -10,7 +10,7 @@ namespace ABigStick.Items {
     public class LastTears : ModItem {
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Last Tears");
-            Tooltip.SetDefault("'Collected from a dying god'");
+            Tooltip.SetDefault("Needs to be forged into something new\n'Collected from a dying god'");
 		}
 
         public override void AutoStaticDefaults() {

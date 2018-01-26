@@ -54,9 +54,9 @@ namespace ABigStick.Items {
 		}
 	}
 
-	public class EmotionalStickgun : ModItem {
+	public class BleachedStickgun : ModItem {
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Emotional Stickgun");
+			DisplayName.SetDefault("Bleached Stickgun");
 			Tooltip.SetDefault("Fueled by the tears of dying gods\n95% chance to not consume ammo");
 		}
 
