@@ -61,7 +61,7 @@ namespace ABigStick.Items {
 		}
 
 		public override void SetDefaults() {
-			item.damage = 175;
+			item.damage = 150;
 			item.ranged = true;
 			item.width = 40;
 			item.height = 7;
