@@ -554,7 +554,7 @@ namespace ABigStick.Items {
     public class StickAten : ModItem {
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Stick of Tears");
-            Tooltip.SetDefault("Forged with the tears of a dying god");
+            Tooltip.SetDefault("'Forged from the tears of a dying god'");
 		}
 
         public override void AutoStaticDefaults() {
@@ -568,10 +568,19 @@ namespace ABigStick.Items {
 			item.height = 20;
 			item.consumable = true;
 			item.knockBack = 2f;
-			item.value = 50000;
+			item.value = 1000;
             item.shoot = mod.ProjectileType("StickAten2");
             item.ammo = mod.ItemType("StickAten");
             item.maxStack = 999;
+            item.rare = 9;
+        }
+
+        public override void AddRecipes() {
+            ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(mod.ItemType("LastTears"), 50);
+            recipe.AddTile(TileID.AdamantiteForge);
+            recipe.SetResult(this, 100);
+            recipe.AddRecipe();
         }
     }
 
@@ -595,14 +604,14 @@ namespace ABigStick.Items {
 
     public class Drops2 : GlobalItem {
         public override void OpenVanillaBag(string context, Player player, int arg) {
-            if (context == "bossBag" && arg == 3332 && (Main.rand.Next(1,20) == 10)) {
+            if (context == "bossBag" && arg == 3332 && (Main.rand.Next(1,20) == 10)) { // moon lord
                 player.QuickSpawnItem(mod.ItemType("EmotionalStickgun"), 1);
-            } else if (context == "bossBag" && arg == 3860 && (Main.rand.Next(1,40) == 20)) {
+            } else if (context == "bossBag" && arg == 3860 && (Main.rand.Next(1,40) == 20)) { // betsy
                 player.QuickSpawnItem(mod.ItemType("EmotionalStickgun"), 1);
-            } else if (context == "bossBag" && arg >= 3325 && (Main.rand.Next(1,100) == 50)) {
+            } else if (context == "bossBag" && arg >= 3325 && (Main.rand.Next(1,100) == 50)) { // any hardmode boss
                 player.QuickSpawnItem(mod.ItemType("EmotionalStickgun"), 1);
-            } else if (context == "bossBag" && player.HasItem(mod.ItemType("EmotionalStickgun"))) {
-                player.QuickSpawnItem(mod.ItemType("StickAten"), Main.rand.Next(50,120));
+            } else if (context == "bossBag" && player.HasItem(mod.ItemType("EmotionalStickgun"))) { // any boss if has emotional stickgun
+                player.QuickSpawnItem(mod.ItemType("LastTears"), Main.rand.Next(30,70));
             }
         }
     }
