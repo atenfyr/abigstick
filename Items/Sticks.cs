@@ -605,12 +605,12 @@ namespace ABigStick.Items {
     public class Drops2 : GlobalItem {
         public override void OpenVanillaBag(string context, Player player, int arg) {
             if (context == "bossBag" && arg == 3332 && (Main.rand.Next(1,20) == 10)) { // moon lord
-                player.QuickSpawnItem(mod.ItemType("BleachedStickgun"), 1);
+                player.QuickSpawnItem(mod.ItemType("EmotionalStickgun"), 1);
             } else if (context == "bossBag" && arg == 3860 && (Main.rand.Next(1,40) == 20)) { // betsy
-                player.QuickSpawnItem(mod.ItemType("BleachedStickgun"), 1);
+                player.QuickSpawnItem(mod.ItemType("EmotionalStickgun"), 1);
             } else if (context == "bossBag" && arg >= 3325 && (Main.rand.Next(1,100) == 50)) { // any hardmode boss
-                player.QuickSpawnItem(mod.ItemType("BleachedStickgun"), 1);
-            } else if (context == "bossBag" && player.HasItem(mod.ItemType("BleachedStickgun"))) { // any boss if has bleached stickgun
+                player.QuickSpawnItem(mod.ItemType("EmotionalStickgun"), 1);
+            } else if (context == "bossBag" && player.HasItem(mod.ItemType("EmotionalStickgun"))) { // any boss if has bleached stickgun
                 player.QuickSpawnItem(mod.ItemType("LastTears"), Main.rand.Next(30,70));
             }
         }
