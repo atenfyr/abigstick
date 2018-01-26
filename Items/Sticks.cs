@@ -595,9 +595,9 @@ namespace ABigStick.Items {
 
     public class Drops2 : GlobalItem {
         public override void OpenVanillaBag(string context, Player player, int arg) {
-            if (context == "bossBag" && arg == 3332 && (Main.rand.Next(1,10) == 5)) {
+            if (context == "bossBag" && arg == 3332 && (Main.rand.Next(1,20) == 10)) {
                 player.QuickSpawnItem(mod.ItemType("EmotionalStickgun"), 1);
-            } else if (context == "bossBag" && arg == 3860 && (Main.rand.Next(1,20) == 10)) {
+            } else if (context == "bossBag" && arg == 3860 && (Main.rand.Next(1,40) == 20)) {
                 player.QuickSpawnItem(mod.ItemType("EmotionalStickgun"), 1);
             } else if (context == "bossBag" && arg >= 3325 && (Main.rand.Next(1,100) == 50)) {
                 player.QuickSpawnItem(mod.ItemType("EmotionalStickgun"), 1);
