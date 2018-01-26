@@ -17,8 +17,8 @@ namespace ABigStick.Items {
         }
 
         public override void SetDefaults() {
-            projectile.width = 4;
-            projectile.height = 20;
+            projectile.width = 20;
+            projectile.height = 4;
             projectile.aiStyle = 1;
             projectile.friendly = true;
 			projectile.tileCollide = true;
@@ -37,8 +37,8 @@ namespace ABigStick.Items {
         }
 
         public override void SetDefaults() {
-            projectile.width = 4;
-            projectile.height = 20;
+            projectile.width = 20;
+            projectile.height = 4;
             projectile.aiStyle = 1;
             projectile.friendly = true;
 			projectile.tileCollide = true;
@@ -61,8 +61,8 @@ namespace ABigStick.Items {
         }
 
         public override void SetDefaults() {
-            projectile.width = 4;
-            projectile.height = 20;
+            projectile.width = 20;
+            projectile.height = 4;
             projectile.aiStyle = 1;
             projectile.friendly = true;
 			projectile.tileCollide = true;
@@ -85,8 +85,8 @@ namespace ABigStick.Items {
         }
 
         public override void SetDefaults() {
-            projectile.width = 4;
-            projectile.height = 20;
+            projectile.width = 20;
+            projectile.height = 4;
             projectile.aiStyle = 1;
             projectile.friendly = true;
 			projectile.tileCollide = true;
@@ -109,8 +109,8 @@ namespace ABigStick.Items {
         }
 
         public override void SetDefaults() {
-            projectile.width = 4;
-            projectile.height = 20;
+            projectile.width = 20;
+            projectile.height = 4;
             projectile.aiStyle = 1;
             projectile.friendly = true;
 			projectile.tileCollide = true;
@@ -133,8 +133,8 @@ namespace ABigStick.Items {
         }
 
         public override void SetDefaults() {
-            projectile.width = 4;
-            projectile.height = 20;
+            projectile.width = 20;
+            projectile.height = 4;
             projectile.aiStyle = 1;
             projectile.friendly = true;
 			projectile.tileCollide = true;
@@ -158,8 +158,8 @@ namespace ABigStick.Items {
         }
 
         public override void SetDefaults() {
-            projectile.width = 4;
-            projectile.height = 20;
+            projectile.width = 20;
+            projectile.height = 4;
             projectile.aiStyle = 1;
             projectile.friendly = true;
 			projectile.tileCollide = false;
@@ -179,8 +179,8 @@ namespace ABigStick.Items {
         }
 
         public override void SetDefaults() {
-            projectile.width = 4;
-            projectile.height = 20;
+            projectile.width = 20;
+            projectile.height = 4;
             projectile.aiStyle = 1;
             projectile.friendly = true;
 			projectile.tileCollide = true;
@@ -215,8 +215,8 @@ namespace ABigStick.Items {
         }
 
         public override void SetDefaults() {
-            projectile.width = 4;
-            projectile.height = 20;
+            projectile.width = 20;
+            projectile.height = 4;
             projectile.aiStyle = 1;
             projectile.friendly = true;
 			projectile.tileCollide = true;
@@ -242,8 +242,8 @@ namespace ABigStick.Items {
         }
 
         public override void SetDefaults() {
-            projectile.width = 4;
-            projectile.height = 20;
+            projectile.width = 20;
+            projectile.height = 4;
             projectile.aiStyle = 1;
             projectile.friendly = true;
 			projectile.tileCollide = true;
@@ -253,10 +253,18 @@ namespace ABigStick.Items {
         }
 
     	public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
-            for (int i = 0; i <= 5; i++) {
-                Dust.NewDust(target.position, target.width, target.height, 29);
-            }
+            target.AddBuff(mod.BuffType("Mourning"), 10 * 60);
 		}
+
+    	public override void OnHitPvp(Player target, int damage, bool cri) {
+            target.AddBuff(mod.BuffType("Mourning"), 10 * 60);
+		}
+
+		public override void Kill(int timeLeft) {
+            for (int i = 0; i <= 2; i++) {
+                Dust.NewDust(projectile.position, 0, 0, 253, 0f, 0f, 0, new Color(78,94,176), 0.55f);
+            }
+        }
     }
 
     public class StickItem : ModItem {
@@ -564,13 +572,6 @@ namespace ABigStick.Items {
             item.shoot = mod.ProjectileType("StickAten2");
             item.ammo = mod.ItemType("StickAten");
             item.maxStack = 999;
-        }
-
-        public override void AddRecipes() {
-            ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.SpookyWood, 50);
-            recipe.SetResult(this, 100);
-            recipe.AddRecipe();
         }
     }
 
