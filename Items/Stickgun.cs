@@ -60,6 +60,11 @@ namespace ABigStick.Items {
 			Tooltip.SetDefault("Fueled by the tears of dying gods\n95% chance to not consume ammo");
 		}
 
+        public override void AutoStaticDefaults() {
+            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/BleachedStickgun");
+        }
+
+
 		public override void SetDefaults() {
 			item.damage = 150;
 			item.ranged = true;
