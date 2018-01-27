@@ -26,7 +26,7 @@ namespace ABigStick.Items {
 
     public class MoonTears : ModItem {
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Moon Tears");
+			DisplayName.SetDefault("Lunar Tears");
             Tooltip.SetDefault("'Released during the Moon Lord's final cries of anguish'");
 		}
 

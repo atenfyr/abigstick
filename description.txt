@@ -18,5 +18,5 @@ Sticks:
 Greedy Stick - Dropped by Pirates (Has a chance to steal money upon hitting anything but a Target Dummy)
 
 Miscellaneous:
-Net of Tears - Bug Net, 10 Spectre Bars, 10 Moon Tears (Mobs drop Last Tears upon death if equipped, made at an Ancient Manipulator)
-Moon Tears - Dropped by the Moon Lord
+Net of Tears - Bug Net, 10 Spectre Bars, 10 Lunar Tears (Mobs drop Last Tears upon death if equipped, made at an Ancient Manipulator)
+Lunar Tears - Dropped by the Moon Lord
