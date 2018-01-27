@@ -10,7 +10,7 @@ namespace ABigStick.Items {
     public class LastTears : ModItem {
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Last Tears");
-            Tooltip.SetDefault("Surprisingly durable");
+            Tooltip.SetDefault("'Shed during someone's final moments'");
 		}
 
         public override void AutoStaticDefaults() {

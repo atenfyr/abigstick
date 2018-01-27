@@ -554,7 +554,7 @@ namespace ABigStick.Items {
     public class StickAten : ModItem {
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Stick of Tears");
-            Tooltip.SetDefault("'Forged from the tears of a dying god'");
+            Tooltip.SetDefault("'Forged from their final tears'");
 		}
 
         public override void AutoStaticDefaults() {
@@ -579,7 +579,7 @@ namespace ABigStick.Items {
             ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod.ItemType("LastTears"), 25);
             recipe.AddTile(TileID.MythrilAnvil);
-            recipe.SetResult(this, 150);
+            recipe.SetResult(this, 200);
             recipe.AddRecipe();
         }
     }
