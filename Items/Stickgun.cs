@@ -66,7 +66,7 @@ namespace ABigStick.Items {
 
 
 		public override void SetDefaults() {
-			item.damage = 125;
+			item.damage = 135;
 			item.ranged = true;
 			item.width = 40;
 			item.height = 7;
@@ -92,10 +92,10 @@ namespace ABigStick.Items {
 
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("Stickgun"), 1);
-			recipe.AddIngredient(ItemID.SDMG, 10);
-			recipe.AddIngredient(ItemID.SilverDye, 100);
-			recipe.AddTile(TileID.LunarCraftingStation);
+			recipe.AddIngredient(mod.ItemType("Stickgun"));
+			recipe.AddIngredient(ItemID.SDMG);
+			recipe.AddIngredient(ItemID.SilverDye);
+			recipe.AddTile(TileID.TinkerersWorkbench);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
