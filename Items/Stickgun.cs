@@ -57,7 +57,7 @@ namespace ABigStick.Items {
 	public class EmotionalStickgun : ModItem {
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Bleached Stickgun");
-			Tooltip.SetDefault("Fueled by the tears of those about to die\n95% chance to not consume ammo");
+			Tooltip.SetDefault("Fueled by the tears of those about to die\n85% chance to not consume ammo");
 		}
 
         public override void AutoStaticDefaults() {
@@ -87,7 +87,7 @@ namespace ABigStick.Items {
 		}
 
 		public override bool ConsumeAmmo(Player player) {
-			return Main.rand.NextFloat() >= .95f;
+			return Main.rand.NextFloat() >= .85f;
 		}
 
 		public override void AddRecipes() {
