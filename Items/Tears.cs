@@ -68,7 +68,6 @@ namespace ABigStick.Items {
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.BugNet);
-			recipe.AddIngredient(ItemID.BottledWater);
 			recipe.AddIngredient(ItemID.SpectreBar, 10);
 			recipe.AddIngredient(mod.ItemType("MoonTears"), 10);
             recipe.AddTile(TileID.LunarCraftingStation);
