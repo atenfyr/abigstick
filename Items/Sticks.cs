@@ -601,9 +601,10 @@ namespace ABigStick.Items {
             }
 
             if (Main.player[Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<ABigPlayer>(mod).hasTearNet) {
-                if (Main.rand.NextFloat() <= .75f) {
-                    count = Main.rand.Next(1, 3);
-                    Item.NewItem(npc.getRect(), mod.ItemType("LastTears"), count);
+                if (npc.type == 398) { // moon lord's core
+                    Item.NewItem(npc.getRect(), mod.ItemType("LastTear"), Main.rand.Next(100, 200));
+                } else if (Main.rand.NextFloat() <= .75f && npc.type != 401) { // moon lord's leech can't drop tears
+                    Item.NewItem(npc.getRect(), mod.ItemType("LastTears"), Main.rand.Next(1, 3));
                 }
             }
 		}
