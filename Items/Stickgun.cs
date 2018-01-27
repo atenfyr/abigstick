@@ -89,5 +89,15 @@ namespace ABigStick.Items {
 		public override bool ConsumeAmmo(Player player) {
 			return Main.rand.NextFloat() >= .95f;
 		}
+
+		public override bool AddRecipes() {
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(mod.ItemType("Stickgun"), 1);
+			recipe.AddIngredient(ItemID.SDMG, 10);
+			recipe.AddIngredient(ItemID.SilverDye, 100);
+			recipe.AddTile(TileID.LunarCraftingStation);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
 	}
 }
