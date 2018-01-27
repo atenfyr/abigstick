@@ -9,8 +9,8 @@ using Microsoft.Xna.Framework;
 namespace ABigStick.Items {
     public class LastTears : ModItem {
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Last Tears");
-            Tooltip.SetDefault("Needs to be forged into something new\n'Collected from a dying god'");
+			DisplayName.SetDefault("Final Tears");
+            Tooltip.SetDefault("Must be forged into something new");
 		}
 
         public override void AutoStaticDefaults() {
@@ -34,6 +34,28 @@ namespace ABigStick.Items {
 		public override bool UseItem(Player player) {
 			player.AddBuff(mod.BuffType("Mourning"), 20 * 60);
 			return true;
+		}
+    }
+
+    public class TearNet : ModItem {
+		public override void SetStaticDefaults() {
+			DisplayName.SetDefault("Net of Tears");
+            Tooltip.SetDefault("Allows you to harvest their final tears");
+		}
+
+        public override void AutoStaticDefaults() {
+            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/NetofTears");
+        }
+
+        public override void SetDefaults() {
+			item.value = 20000;
+            item.maxStack = 999;
+            item.rare = 9;
+			item.accessory = true;
+        }
+
+		public override void UpdateAccessory(Player player, bool hideVisual) {
+			player.GetModPlayer<ABigPlayer>(mod).hasTearNet = true;
 		}
     }
 }

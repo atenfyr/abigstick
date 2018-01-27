@@ -579,24 +579,31 @@ namespace ABigStick.Items {
             ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod.ItemType("LastTears"), 50);
             recipe.AddTile(TileID.AdamantiteForge);
-            recipe.SetResult(this, 100);
+            recipe.SetResult(this, 333);
             recipe.AddRecipe();
         }
     }
 
 	public class Drops : GlobalNPC {
 		public override void NPCLoot(NPC npc) {
+            int count = Main.rand.Next(5, 10);
+            if (Main.rand.NextBool(Main.expertMode ? 2 : 1, 5)) {
+                count = count * 2;
+            }
             if (NPC.downedTowerVortex) {
-                int count = Main.rand.Next(5, 10);
-                if (Main.rand.NextBool(Main.expertMode ? 2 : 1, 5)) {
-                    count = count * 2;
-                }
                 if (((npc.type >= 212 && npc.type <= 216) || npc.type == 229 || npc.type == 252)) { // all pirates and parrots
                     if (Main.rand.NextFloat() >= .25f) {
                         Item.NewItem(npc.getRect(), mod.ItemType("StickM"), count);
                     }
                 } else if (npc.type == 491) { // pirate ship
                     Item.NewItem(npc.getRect(), mod.ItemType("StickM"), count*2);
+                }
+            }
+
+            if (Main.player[Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<ABigPlayer>(mod).hasTearNet) {
+                if (Main.rand.NextFloat() >= .75f) {
+                    count = Main.rand.Next(1, 3);
+                    Item.NewItem(npc.getRect(), mod.ItemType("LastTears"), count);
                 }
             }
 		}
@@ -610,8 +617,6 @@ namespace ABigStick.Items {
                 player.QuickSpawnItem(mod.ItemType("EmotionalStickgun"), 1);
             } else if (context == "bossBag" && arg >= 3325 && (Main.rand.Next(1,100) == 50)) { // any hardmode boss
                 player.QuickSpawnItem(mod.ItemType("EmotionalStickgun"), 1);
-            } else if (context == "bossBag" && player.HasItem(mod.ItemType("EmotionalStickgun"))) { // any boss if has bleached stickgun
-                player.QuickSpawnItem(mod.ItemType("LastTears"), Main.rand.Next(30,70));
             }
         }
     }

@@ -57,7 +57,7 @@ namespace ABigStick.Items {
 	public class EmotionalStickgun : ModItem {
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Bleached Stickgun");
-			Tooltip.SetDefault("Fueled by the tears of dying gods\n95% chance to not consume ammo");
+			Tooltip.SetDefault("Fueled by the tears of those about to die\n95% chance to not consume ammo");
 		}
 
         public override void AutoStaticDefaults() {
@@ -66,7 +66,7 @@ namespace ABigStick.Items {
 
 
 		public override void SetDefaults() {
-			item.damage = 150;
+			item.damage = 125;
 			item.ranged = true;
 			item.width = 40;
 			item.height = 7;
