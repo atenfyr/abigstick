@@ -601,7 +601,7 @@ namespace ABigStick.Items {
             }
 
             if (Main.player[Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<ABigPlayer>(mod).hasTearNet) {
-                if (Main.rand.NextFloat() >= .75f) {
+                if (Main.rand.NextFloat() >= .85f) {
                     count = Main.rand.Next(1, 3);
                     Item.NewItem(npc.getRect(), mod.ItemType("LastTears"), count);
                 }
