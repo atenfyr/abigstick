@@ -3,7 +3,7 @@ The Stickgun fires Sticks, and the Big Stick has insanely high knockback.
 
 Weapons:
 Stickgun - Phantasm/Vortex Beater, 10 Vortex Fragments, 100 Wood (Made at an Ancient Manipulator)
-Bleached Stickgun - Stickgun, S.D.M.G, 25 Last Tears, Silver Dye (Made at a Tinkerer's Workshop)
+Clockwork Stickgun - Stickgun, S.D.M.G, 25 Last Tears, 25 Cogs (Made at a Tinkerer's Workshop)
 Big Stick - 13 Solar Fragments, 100 Wood (Made at an Ancient Manipulator)
 
 Sticks: 

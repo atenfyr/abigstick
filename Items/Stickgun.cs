@@ -29,6 +29,7 @@ namespace ABigStick.Items {
 			item.shoot = mod.ProjectileType("Stick");
 			item.useAmmo = mod.ItemType("StickItem");
 			item.shootSpeed = 200f;
+			item.shoot = 10;
 			item.autoReuse = true;
 		}
 
@@ -56,12 +57,12 @@ namespace ABigStick.Items {
 
 	public class EmotionalStickgun : ModItem {
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Bleached Stickgun");
-			Tooltip.SetDefault("Fueled by the tears of those about to die\n85% chance to not consume ammo");
+			DisplayName.SetDefault("Clockwork Stickgun");
+			Tooltip.SetDefault("90% chance to not consume ammo");
 		}
 
         public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/BleachedStickgun");
+            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/ClockworkStickgun");
         }
 
 
@@ -71,31 +72,40 @@ namespace ABigStick.Items {
 			item.width = 40;
 			item.height = 7;
 			item.maxStack = 1;
-			item.useTime = 1;
-			item.useAnimation = 20;
+			item.useTime = 0;
+			item.useAnimation = 5;
 			item.useStyle = 5;
 			item.knockBack = 2;
 			item.value = 10000;
 			item.rare = 11;
 			item.crit = 50;
-			item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/doot");
+			item.UseSound = SoundID.Item40;
 			item.noMelee = true;
 			item.shoot = mod.ProjectileType("Stick");
 			item.useAmmo = mod.ItemType("StickItem");
-			item.shootSpeed = 200f;
+			item.shootSpeed = 12;
+			item.shoot = 10;
 			item.autoReuse = true;
 		}
 
 		public override bool ConsumeAmmo(Player player) {
-			return Main.rand.NextFloat() >= .85f;
+			return Main.rand.NextFloat() >= .9f;
 		}
+
+		/*
+		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
+			int a = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI);
+			Main.projectile[a].aiStyle = ProjectileID.Bullet;
+			return false;
+		}
+		*/
 
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod.ItemType("Stickgun"));
 			recipe.AddIngredient(ItemID.SDMG);
 			recipe.AddIngredient(mod.ItemType("LastTears"), 25);
-			recipe.AddIngredient(ItemID.SilverDye);
+			recipe.AddIngredient(ItemID.Cog, 25);
 			recipe.AddTile(TileID.TinkerersWorkbench);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

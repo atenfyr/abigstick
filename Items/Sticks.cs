@@ -140,7 +140,6 @@ namespace ABigStick.Items {
 			projectile.tileCollide = true;
 			projectile.ignoreWater = false;
             projectile.ranged = true;
-            projectile.penetrate = 999;
         }
 
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
@@ -165,7 +164,7 @@ namespace ABigStick.Items {
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;
             projectile.ranged = true;
-            projectile.penetrate = 999;
+            projectile.penetrate = -1;
         }
     }
 
@@ -249,7 +248,8 @@ namespace ABigStick.Items {
 			projectile.tileCollide = true;
 			projectile.ignoreWater = false;
             projectile.ranged = true;
-            projectile.penetrate = 999;
+            projectile.penetrate = -1;
+            aiType = ProjectileID.Bullet;
         }
 
     	public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
@@ -264,6 +264,28 @@ namespace ABigStick.Items {
             for (int i = 0; i <= 2; i++) {
                 Dust.NewDust(projectile.position, 0, 0, 253, 0f, 0f, 0, new Color(78,94,176), 0.55f);
             }
+        }
+    }
+
+    public class StickMoon2 : ModProjectile {
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Lunar Stick");
+        }
+
+        public override void AutoStaticDefaults() {
+            Main.projectileTexture[projectile.type] = ModLoader.GetTexture("ABigStick/Items/LunarStick");
+        }
+
+        public override void SetDefaults() {
+            projectile.width = 20;
+            projectile.height = 4;
+            projectile.aiStyle = 1;
+            projectile.friendly = true;
+			projectile.tileCollide = true;
+			projectile.ignoreWater = false;
+            projectile.ranged = true;
+            projectile.penetrate = -1;
+            aiType = ProjectileID.Bullet;
         }
     }
 
@@ -580,6 +602,40 @@ namespace ABigStick.Items {
 			recipe.AddIngredient(mod.ItemType("LastTears"), 25);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this, 200);
+            recipe.AddRecipe();
+        }
+    }
+
+    public class StickMoon : ModItem {
+		public override void SetStaticDefaults() {
+			DisplayName.SetDefault("Lunar Stick");
+            Tooltip.SetDefault("'Raw power resonates throughout the stick'");
+		}
+
+        public override void AutoStaticDefaults() {
+            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/LunarStick");
+        }
+
+        public override void SetDefaults() {
+			item.damage = 55;
+			item.ranged = true;
+			item.width = 4;
+			item.height = 20;
+			item.consumable = true;
+			item.knockBack = 2f;
+			item.value = 12500;
+            item.shoot = mod.ProjectileType("StickMoon2");
+            item.ammo = mod.ItemType("StickItem");
+            item.maxStack = 999;
+            item.rare = 11;
+        }
+
+        public override void AddRecipes() {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(mod.ItemType("StickItem"), 20);
+			recipe.AddIngredient(mod.ItemType("MoonTears"), 5);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.SetResult(this, 20);
             recipe.AddRecipe();
         }
     }
