@@ -577,9 +577,9 @@ namespace ABigStick.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("LastTears"), 50);
+			recipe.AddIngredient(mod.ItemType("LastTears"), 25);
             recipe.AddTile(TileID.MythrilAnvil);
-            recipe.SetResult(this, 333);
+            recipe.SetResult(this, 150);
             recipe.AddRecipe();
         }
     }
