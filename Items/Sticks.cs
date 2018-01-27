@@ -570,7 +570,7 @@ namespace ABigStick.Items {
 			item.knockBack = 2f;
 			item.value = 1000;
             item.shoot = mod.ProjectileType("StickAten2");
-            item.ammo = mod.ItemType("StickAten");
+            item.ammo = mod.ItemType("StickItem");
             item.maxStack = 999;
             item.rare = 9;
         }
@@ -602,7 +602,7 @@ namespace ABigStick.Items {
 
             if (Main.player[Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<ABigPlayer>(mod).hasTearNet) {
                 if (npc.type == 398) { // moon lord's core
-                    Item.NewItem(npc.getRect(), mod.ItemType("LastTear"), Main.rand.Next(100, 200));
+                    Item.NewItem(npc.getRect(), mod.ItemType("MoonTears"), Main.rand.Next(5, 8));
                 } else if (Main.rand.NextFloat() <= .75f && npc.type != 401) { // moon lord's leech can't drop tears
                     Item.NewItem(npc.getRect(), mod.ItemType("LastTears"), Main.rand.Next(1, 3));
                 }

@@ -80,8 +80,8 @@ namespace ABigStick.Items {
 			item.crit = 50;
 			item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/doot");
 			item.noMelee = true;
-			item.shoot = mod.ProjectileType("StickAten2");
-			item.useAmmo = mod.ItemType("StickAten");
+			item.shoot = mod.ProjectileType("Stick");
+			item.useAmmo = mod.ItemType("StickItem");
 			item.shootSpeed = 200f;
 			item.autoReuse = true;
 		}

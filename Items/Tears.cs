@@ -24,6 +24,23 @@ namespace ABigStick.Items {
         }
     }
 
+    public class MoonTears : ModItem {
+		public override void SetStaticDefaults() {
+			DisplayName.SetDefault("Moon Tears");
+            Tooltip.SetDefault("'Released during the Moon Lord's final cries of anguish'");
+		}
+
+        public override void AutoStaticDefaults() {
+            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/MoonTears");
+        }
+
+        public override void SetDefaults() {
+			item.value = 2000;
+            item.maxStack = 999;
+            item.rare = 9;
+        }
+    }
+
     public class TearNet : ModItem {
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Net of Tears");
@@ -53,8 +70,8 @@ namespace ABigStick.Items {
 			recipe.AddIngredient(ItemID.BugNet);
 			recipe.AddIngredient(ItemID.BottledWater);
 			recipe.AddIngredient(ItemID.SpectreBar, 10);
-			
-            recipe.AddTile(TileID.WorkBenches);
+			recipe.AddIngredient(mod.ItemType("MoonTears"), 10);
+            recipe.AddTile(TileID.LunarCraftingStation);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

@@ -1,11 +1,12 @@
 Adds a Stickgun, a Big Stick, and several varieties of Sticks to shoot.
 The Stickgun fires Sticks, and the Big Stick has insanely high knockback.
 
+Weapons:
 Stickgun - Phantasm/Vortex Beater, 10 Vortex Fragments, 100 Wood (Made at an Ancient Manipulator)
-Bleached Stickgun - Stickgun, S.D.M.G, 25 Last Tears, Silver Dye (Only fires Sticks of Tears, made at a Tinkerer's Workshop)
-Big Stick - 13 Solar Fragments, 100 Wood (At an Ancient Manipulator)
-Net of Tears - Bug Net, Bottled Water, 10 Spectre Bars (Mobs drop Last Tears upon death, made at a Workbench)
+Bleached Stickgun - Stickgun, S.D.M.G, 25 Last Tears, Silver Dye (Made at a Tinkerer's Workshop)
+Big Stick - 13 Solar Fragments, 100 Wood (Made at an Ancient Manipulator)
 
+Sticks: 
 150 Sticks - 50 Wood/Palm Wood/Rich Mahogany
 150 Boreal Sticks - 50 Boreal Wood (Inflicts Chilled)
 150 Pearlsticks - 50 Pearlwood (Inflicts Slow)
@@ -13,5 +14,9 @@ Net of Tears - Bug Net, Bottled Water, 10 Spectre Bars (Mobs drop Last Tears upo
 150 Shadesticks - 50 Shadewood (Inflicts Ichor)
 100 Spooky Sticks - 50 Spooky Wood (33% chance to inflict Confusion)
 333 Luminite Sticks - 1 Luminite Ingot (Increases in damage the more targets it pierces through, made at an Ancient Manipulator)
-200 Sticks of Tears - 25 Last Tears (Only fired by Bleached Stickgun, made at a Mythril Anvil)
+200 Sticks of Tears - 25 Last Tears (Made at a Mythril Anvil)
 Greedy Stick - Dropped by Pirates (Has a chance to steal money upon hitting anything but a Target Dummy)
+
+Miscellaneous:
+Net of Tears - Bug Net, Bottled Water, 10 Spectre Bars, 10 Moon Tears (Mobs drop Last Tears upon death if equipped, made at an Ancient Manipulator)
+Moon Tears - Dropped by the Moon Lord
