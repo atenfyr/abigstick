@@ -94,6 +94,7 @@ namespace ABigStick.Items {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod.ItemType("Stickgun"));
 			recipe.AddIngredient(ItemID.SDMG);
+			recipe.AddIngredient(mod.ItemType("LastTears"), 25);
 			recipe.AddIngredient(ItemID.SilverDye);
 			recipe.AddTile(TileID.TinkerersWorkbench);
 			recipe.SetResult(this);
