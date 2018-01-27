@@ -90,7 +90,7 @@ namespace ABigStick.Items {
 			return Main.rand.NextFloat() >= .95f;
 		}
 
-		public override bool AddRecipes() {
+		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod.ItemType("Stickgun"), 1);
 			recipe.AddIngredient(ItemID.SDMG, 10);
