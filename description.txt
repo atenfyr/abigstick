@@ -1,12 +1,12 @@
 Adds a Stickgun, a Big Stick, and several varieties of Sticks to shoot.
 The Stickgun fires Sticks, and the Big Stick has insanely high knockback.
 
-Stickgun- Phantasm/Vortex Beater, 10 Vortex Fragments, 100 Wood
-Bleached Stickgun- Stickgun, S.D.M.G, Silver Dye (Only fires Sticks of Tears)
-Big Stick- 13 Solar Fragments, 100 Wood
+Stickgun - Phantasm/Vortex Beater, 10 Vortex Fragments, 100 Wood
+Bleached Stickgun - Stickgun, S.D.M.G, Silver Dye (Only fires Sticks of Tears)
+Big Stick - 13 Solar Fragments, 100 Wood
 
-150 Sticks- 50 Wood/Palm Wood/Rich Mahogany
-150 Boreal Sticks- 50 Boreal Wood (Inflicts Chilled)
+150 Sticks - 50 Wood/Palm Wood/Rich Mahogany
+150 Boreal Sticks - 50 Boreal Wood (Inflicts Chilled)
 150 Pearlsticks - 50 Pearlwood (Inflicts Slow)
 150 Ebonsticks - 50 Ebonwood (Inflicts Cursed Flames)
 150 Shadesticks - 50 Shadewood (Inflicts Ichor)
@@ -14,5 +14,5 @@ Big Stick- 13 Solar Fragments, 100 Wood
 333 Luminite Sticks - 1 Luminite Ingot (Increases in damage the more targets it pierces through)
 Greedy Stick - Dropped by Pirates (Has a chance to steal money upon hitting anything but a Target Dummy)
 
-Net of Tears- Bug Net, Bottled Water, 10 Spectre Bars (Mobs drop Last Tears upon death)
-200 Sticks of Tears- 25 Last Tears (Only fired by Bleached Stickgun)
+Net of Tears - Bug Net, Bottled Water, 10 Spectre Bars (Mobs drop Last Tears upon death)
+200 Sticks of Tears - 25 Last Tears (Only fired by Bleached Stickgun)
