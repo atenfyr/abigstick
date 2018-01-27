@@ -9,8 +9,8 @@ using Microsoft.Xna.Framework;
 namespace ABigStick.Items {
     public class LastTears : ModItem {
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Final Tears");
-            Tooltip.SetDefault("Must be forged into something new");
+			DisplayName.SetDefault("Last Tears");
+            Tooltip.SetDefault("Surprisingly durable");
 		}
 
         public override void AutoStaticDefaults() {
@@ -56,6 +56,20 @@ namespace ABigStick.Items {
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
 			player.GetModPlayer<ABigPlayer>(mod).hasTearNet = true;
+			if (!hideVisual) {
+				player.AddBuff(mod.BuffType("Mourning"), 3 * 60);
+			}
 		}
+
+        public override void AddRecipes() {
+            ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.BugNet);
+			recipe.AddIngredient(ItemID.BottledWater);
+			recipe.AddIngredient(ItemID.SpectreBar, 10);
+			
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+        }
     }
 }
