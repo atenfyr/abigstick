@@ -285,6 +285,10 @@ namespace ABigStick.Items {
             projectile.ranged = true;
             projectile.penetrate = -1;
         }
+
+		public override void Kill(int timeLeft) {
+            Dust.NewDust(projectile.position, 0, 0, 1, 0f, 0f, 0, new Color(155, 155, 155), 0.75f);
+        }
     }
 
     public class StickItem : ModItem {
