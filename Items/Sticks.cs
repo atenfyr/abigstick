@@ -164,7 +164,7 @@ namespace ABigStick.Items {
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;
             projectile.ranged = true;
-            projectile.penetrate = -1;
+            projectile.penetrate = 999;
         }
     }
 
@@ -248,7 +248,7 @@ namespace ABigStick.Items {
 			projectile.tileCollide = true;
 			projectile.ignoreWater = false;
             projectile.ranged = true;
-            projectile.penetrate = -1;
+            projectile.penetrate = 999;
         }
 
     	public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
@@ -283,7 +283,7 @@ namespace ABigStick.Items {
 			projectile.tileCollide = true;
 			projectile.ignoreWater = false;
             projectile.ranged = true;
-            projectile.penetrate = -1;
+            projectile.penetrate = 999;
         }
 
 		public override void Kill(int timeLeft) {
