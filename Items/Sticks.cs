@@ -140,6 +140,7 @@ namespace ABigStick.Items {
 			projectile.tileCollide = true;
 			projectile.ignoreWater = false;
             projectile.ranged = true;
+            projectile.penetrate = 999;
         }
 
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
