@@ -249,7 +249,6 @@ namespace ABigStick.Items {
 			projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = -1;
-            aiType = ProjectileID.Bullet;
         }
 
     	public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
@@ -285,7 +284,6 @@ namespace ABigStick.Items {
 			projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = -1;
-            aiType = ProjectileID.Bullet;
         }
     }
 

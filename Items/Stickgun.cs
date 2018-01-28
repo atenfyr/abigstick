@@ -21,7 +21,7 @@ namespace ABigStick.Items {
 			item.useAnimation = 20;
 			item.useStyle = 5;
 			item.knockBack = 2;
-			item.value = 10000;
+			item.value = 100000;
 			item.rare = 10;
 			item.crit = 50;
 			item.UseSound = SoundID.Item36;
@@ -76,14 +76,14 @@ namespace ABigStick.Items {
 			item.useAnimation = 5;
 			item.useStyle = 5;
 			item.knockBack = 2;
-			item.value = 10000;
+			item.value = 1000000;
 			item.rare = 11;
 			item.crit = 50;
 			item.UseSound = SoundID.Item40;
 			item.noMelee = true;
 			item.shoot = mod.ProjectileType("Stick");
 			item.useAmmo = mod.ItemType("StickItem");
-			item.shootSpeed = 12;
+			item.shootSpeed = 1200000;
 			item.shoot = 10;
 			item.autoReuse = true;
 		}
@@ -91,14 +91,6 @@ namespace ABigStick.Items {
 		public override bool ConsumeAmmo(Player player) {
 			return Main.rand.NextFloat() >= .9f;
 		}
-
-		/*
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
-			int a = Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage, knockBack, player.whoAmI);
-			Main.projectile[a].aiStyle = ProjectileID.Bullet;
-			return false;
-		}
-		*/
 
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
