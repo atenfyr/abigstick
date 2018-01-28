@@ -287,7 +287,9 @@ namespace ABigStick.Items {
         }
 
 		public override void Kill(int timeLeft) {
-            Dust.NewDust(projectile.position, 0, 0, 1, 0f, 0f, 0, new Color(155, 155, 155), 0.75f);
+            for (int i = 0; i <= 2; i++) {
+                Dust.NewDust(projectile.position, 0, 0, 1, 0f, 0f, 0, new Color(155, 155, 155), 0.75f);
+            }
         }
     }
 
