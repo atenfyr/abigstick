@@ -284,13 +284,34 @@ namespace ABigStick.Items {
 			projectile.tileCollide = true;
 			projectile.ignoreWater = false;
             projectile.ranged = true;
-            projectile.penetrate = 999;
+            projectile.penetrate = 1;
         }
 
 		public override void Kill(int timeLeft) {
             for (int i = 0; i <= 2; i++) {
                 Dust.NewDust(projectile.position, 0, 0, 1, 0f, 0f, 0, new Color(155, 155, 155), 0.75f);
             }
+        }
+    }
+
+    public class StickCosmilite2 : ModProjectile {
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Cosmilite Stick");
+        }
+
+        public override void AutoStaticDefaults() {
+            Main.projectileTexture[projectile.type] = ModLoader.GetTexture("ABigStick/Items/CosmiliteStick");
+        }
+
+        public override void SetDefaults() {
+            projectile.width = 20;
+            projectile.height = 4;
+            projectile.aiStyle = 1;
+            projectile.friendly = true;
+			projectile.tileCollide = true;
+			projectile.ignoreWater = false;
+            projectile.ranged = true;
+            projectile.penetrate = 1;
         }
     }
 
@@ -637,11 +658,46 @@ namespace ABigStick.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(mod.ItemType("StickItem"), 20);
-			recipe.AddIngredient(mod.ItemType("MoonTears"), 5);
+			recipe.AddIngredient(mod.ItemType("MoonTears"), 10);
             recipe.AddTile(TileID.MythrilAnvil);
-            recipe.SetResult(this, 20);
+            recipe.SetResult(this, 200);
             recipe.AddRecipe();
+        }
+    }
+
+    public class StickCosmilite : ModItem {
+		public override void SetStaticDefaults() {
+			DisplayName.SetDefault("Cosmilite Stick");
+            Tooltip.SetDefault("Ignores invincibility frames\n'Not a fan of game mechanics'");
+		}
+
+        public override void AutoStaticDefaults() {
+            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/CosmiliteStick");
+        }
+
+        public override void SetDefaults() {
+			item.damage = 85;
+			item.ranged = true;
+			item.width = 4;
+			item.height = 20;
+			item.consumable = true;
+			item.knockBack = 2f;
+			item.value = 12500;
+            item.shoot = mod.ProjectileType("StickCosmilite2");
+            item.ammo = mod.ItemType("StickItem");
+            item.maxStack = 999;
+            item.rare = 11;
+        }
+
+        public override void AddRecipes() {
+            Mod calamityMod = ModLoader.GetMod("CalamityMod");
+            if (calamityMod != null) {
+                ModRecipe recipe = new ModRecipe(mod);
+                recipe.AddIngredient(calamityMod.ItemType("CosmiliteBar"), 10);
+                recipe.AddTile(TileID.LunarCraftingStation);
+                recipe.SetResult(this, 200);
+                recipe.AddRecipe();
+            }
         }
     }
 
@@ -673,11 +729,11 @@ namespace ABigStick.Items {
 
     public class Drops2 : GlobalItem {
         public override void OpenVanillaBag(string context, Player player, int arg) {
-            if (context == "bossBag" && arg == 3332 && (Main.rand.Next(1,20) == 10)) { // moon lord
+            if (context == "bossBag" && arg == 3332 && (Main.rand.Next(1,3) == 1)) { // moon lord
                 player.QuickSpawnItem(mod.ItemType("EmotionalStickgun"), 1);
-            } else if (context == "bossBag" && arg == 3860 && (Main.rand.Next(1,40) == 20)) { // betsy
+            } else if (context == "bossBag" && arg == 3860 && (Main.rand.Next(1,4) == 1)) { // betsy
                 player.QuickSpawnItem(mod.ItemType("EmotionalStickgun"), 1);
-            } else if (context == "bossBag" && arg >= 3325 && (Main.rand.Next(1,100) == 50)) { // any hardmode boss
+            } else if (context == "bossBag" && arg >= 3325 && (Main.rand.Next(1,10) == 1)) { // any hardmode boss
                 player.QuickSpawnItem(mod.ItemType("EmotionalStickgun"), 1);
             }
         }

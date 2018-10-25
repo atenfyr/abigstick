@@ -13,8 +13,10 @@ Sticks:
 150 Ebonsticks - 50 Ebonwood (Inflicts Cursed Flames)
 150 Shadesticks - 50 Shadewood (Inflicts Ichor)
 100 Spooky Sticks - 50 Spooky Wood (33% chance to inflict Confusion)
-333 Luminite Sticks - 1 Luminite Ingot (Increases in damage the more targets it pierces through, made at an Ancient Manipulator)
+333 Luminite Sticks - 1 Luminite Bar (Increases in damage the more targets it pierces through, made at an Ancient Manipulator)
 200 Sticks of Tears - 25 Last Tears (Made at a Mythril Anvil)
+200 Lunar Sticks - 10 Lunar Tears (Made at a Mythril Anvil)
+200 Cosmilite Stick - 10 Cosmilite Bars (Only available if you have the Calamity Mod, ignores invincibility frames, made at an Ancient Manipulator)
 Greedy Stick - Dropped by Pirates (Has a chance to steal money upon hitting anything but a Target Dummy)
 
 Miscellaneous:

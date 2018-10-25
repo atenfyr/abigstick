@@ -58,7 +58,7 @@ namespace ABigStick.Items {
 	public class EmotionalStickgun : ModItem {
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Clockwork Stickgun");
-			Tooltip.SetDefault("90% chance to not consume ammo");
+			Tooltip.SetDefault("Uses sticks as ammo\n90% chance to not consume ammo");
 		}
 
         public override void AutoStaticDefaults() {
