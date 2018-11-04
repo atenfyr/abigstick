@@ -165,7 +165,7 @@ namespace ABigStick.Items {
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;
             projectile.ranged = true;
-            projectile.penetrate = 999;
+            projectile.penetrate = 1;
         }
     }
 
@@ -284,7 +284,6 @@ namespace ABigStick.Items {
 			projectile.tileCollide = true;
 			projectile.ignoreWater = false;
             projectile.ranged = true;
-            projectile.penetrate = 1;
         }
 
 		public override void Kill(int timeLeft) {
@@ -729,11 +728,9 @@ namespace ABigStick.Items {
 
     public class Drops2 : GlobalItem {
         public override void OpenVanillaBag(string context, Player player, int arg) {
-            if (context == "bossBag" && arg == 3332 && (Main.rand.Next(1,3) == 1)) { // moon lord
+            if (context == "bossBag" && arg == 3332 && (Main.rand.Next(1,8) == 1)) { // moon lord
                 player.QuickSpawnItem(mod.ItemType("EmotionalStickgun"), 1);
-            } else if (context == "bossBag" && arg == 3860 && (Main.rand.Next(1,4) == 1)) { // betsy
-                player.QuickSpawnItem(mod.ItemType("EmotionalStickgun"), 1);
-            } else if (context == "bossBag" && arg >= 3325 && (Main.rand.Next(1,10) == 1)) { // any hardmode boss
+            } else if (context == "bossBag" && arg == 3860 && (Main.rand.Next(1,12) == 1)) { // betsy
                 player.QuickSpawnItem(mod.ItemType("EmotionalStickgun"), 1);
             }
         }

@@ -28,8 +28,7 @@ namespace ABigStick.Items {
 			item.noMelee = true;
 			item.shoot = mod.ProjectileType("Stick");
 			item.useAmmo = mod.ItemType("StickItem");
-			item.shootSpeed = 200f;
-			item.shoot = 10;
+			item.shootSpeed = 20f;
 			item.autoReuse = true;
 		}
 
@@ -75,7 +74,7 @@ namespace ABigStick.Items {
 			item.useTime = 0;
 			item.useAnimation = 5;
 			item.useStyle = 5;
-			item.knockBack = 2;
+			item.knockBack = 4;
 			item.value = 1000000;
 			item.rare = 11;
 			item.crit = 50;
@@ -83,13 +82,19 @@ namespace ABigStick.Items {
 			item.noMelee = true;
 			item.shoot = mod.ProjectileType("Stick");
 			item.useAmmo = mod.ItemType("StickItem");
-			item.shootSpeed = 1200000;
-			item.shoot = 10;
+			item.shootSpeed = 40f;
 			item.autoReuse = true;
 		}
 
 		public override bool ConsumeAmmo(Player player) {
 			return Main.rand.NextFloat() >= .9f;
+		}
+
+        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
+			Vector2 newSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(10));
+			speedX = newSpeed.X;
+			speedY = newSpeed.Y;
+			return true;
 		}
 
 		public override void AddRecipes() {
@@ -99,6 +104,43 @@ namespace ABigStick.Items {
 			recipe.AddIngredient(mod.ItemType("LastTears"), 25);
 			recipe.AddIngredient(ItemID.Cog, 25);
 			recipe.AddTile(TileID.TinkerersWorkbench);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
+	}
+
+    public class StickgunBossSpawner : ModItem {
+		public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Twitching Stickgun");
+			Tooltip.SetDefault("'Imbued with the spark of life'");
+		}
+
+		public override void SetDefaults() {
+			item.width = 80;
+			item.height = 14;
+			item.maxStack = 1;
+			item.useAnimation = 45;
+			item.useTime = 45;
+			item.useStyle = 4;
+			item.consumable = true;
+            item.rare = 11;
+		}
+
+		public override bool CanUseItem(Player player) {
+			return !NPC.AnyNPCs(mod.NPCType("Stickgun")) && !Main.dayTime;
+		}
+
+		public override bool UseItem(Player player) {
+			NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("Stickgun"));
+			Main.PlaySound(SoundID.Roar, player.position, 0);
+			return true;
+		}
+
+		public override void AddRecipes() {
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(mod.ItemType("EmotionalStickgun"));
+            recipe.AddIngredient(ItemID.Nanites, 99);
+			recipe.AddTile(TileID.DemonAltar);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
