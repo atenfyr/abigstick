@@ -24,6 +24,7 @@ namespace ABigStick.Items {
 			projectile.tileCollide = true;
 			projectile.ignoreWater = false;
             projectile.ranged = true;
+            projectile.penetrate = 1;
         }
     }
 
@@ -44,6 +45,7 @@ namespace ABigStick.Items {
 			projectile.tileCollide = true;
 			projectile.ignoreWater = false;
             projectile.ranged = true;
+            projectile.penetrate = 1;
         }
 
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
@@ -68,6 +70,7 @@ namespace ABigStick.Items {
 			projectile.tileCollide = true;
 			projectile.ignoreWater = false;
             projectile.ranged = true;
+            projectile.penetrate = 1;
         }
 
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
@@ -92,6 +95,7 @@ namespace ABigStick.Items {
 			projectile.tileCollide = true;
 			projectile.ignoreWater = false;
             projectile.ranged = true;
+            projectile.penetrate = 1;
         }
 
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
@@ -116,6 +120,7 @@ namespace ABigStick.Items {
 			projectile.tileCollide = true;
 			projectile.ignoreWater = false;
             projectile.ranged = true;
+            projectile.penetrate = 1;
         }
 
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
@@ -186,11 +191,11 @@ namespace ABigStick.Items {
 			projectile.tileCollide = true;
 			projectile.ignoreWater = false;
             projectile.ranged = true;
-            projectile.penetrate = 3;
+            projectile.penetrate = 1;
         }
 
     	public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
-            int value = Main.rand.Next(20, 200);
+            int value = Main.rand.Next(20, 2000);
             
             if ((Main.rand.NextFloat() >= .45f) && target.type != NPCID.TargetDummy) {
                 if (value >= 100) {
@@ -222,7 +227,7 @@ namespace ABigStick.Items {
 			projectile.tileCollide = true;
 			projectile.ignoreWater = false;
             projectile.ranged = true;
-            projectile.penetrate = 3;
+            projectile.penetrate = 1;
         }
 
     	public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
@@ -338,16 +343,16 @@ namespace ABigStick.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Wood, 50);
-            recipe.SetResult(this, 150);
+			recipe.AddIngredient(ItemID.Wood, 1);
+            recipe.SetResult(this, 30);
             recipe.AddRecipe();
             ModRecipe recipe3 = new ModRecipe(mod);
-			recipe3.AddIngredient(ItemID.PalmWood, 50);
-            recipe3.SetResult(this, 150);
+			recipe3.AddIngredient(ItemID.PalmWood, 1);
+            recipe3.SetResult(this, 30);
             recipe3.AddRecipe();
             ModRecipe recipe4 = new ModRecipe(mod);
-			recipe4.AddIngredient(ItemID.RichMahogany, 50);
-            recipe4.SetResult(this, 150);
+			recipe4.AddIngredient(ItemID.RichMahogany, 1);
+            recipe4.SetResult(this, 30);
             recipe4.AddRecipe();
         }
     }
@@ -378,8 +383,8 @@ namespace ABigStick.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Pearlwood, 50);
-            recipe.SetResult(this, 150);
+			recipe.AddIngredient(ItemID.Pearlwood, 1);
+            recipe.SetResult(this, 30);
             recipe.AddRecipe();
         }
     }
@@ -410,8 +415,8 @@ namespace ABigStick.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Ebonwood, 50);
-            recipe.SetResult(this, 150);
+			recipe.AddIngredient(ItemID.Ebonwood, 1);
+            recipe.SetResult(this, 30);
             recipe.AddRecipe();
         }
     }
@@ -442,8 +447,8 @@ namespace ABigStick.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Shadewood, 50);
-            recipe.SetResult(this, 150);
+			recipe.AddIngredient(ItemID.Shadewood, 1);
+            recipe.SetResult(this, 30);
             recipe.AddRecipe();
         }
     }
@@ -473,8 +478,8 @@ namespace ABigStick.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.BorealWood, 50);
-            recipe.SetResult(this, 150);
+			recipe.AddIngredient(ItemID.BorealWood, 1);
+            recipe.SetResult(this, 30);
             recipe.AddRecipe();
         }
     }
@@ -592,8 +597,8 @@ namespace ABigStick.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.SpookyWood, 50);
-            recipe.SetResult(this, 100);
+			recipe.AddIngredient(ItemID.SpookyWood, 1);
+            recipe.SetResult(this, 30);
             recipe.AddRecipe();
         }
     }
@@ -609,7 +614,7 @@ namespace ABigStick.Items {
         }
 
         public override void SetDefaults() {
-			item.damage = 35;
+			item.damage = 25;
 			item.ranged = true;
 			item.width = 4;
 			item.height = 20;
@@ -642,7 +647,7 @@ namespace ABigStick.Items {
         }
 
         public override void SetDefaults() {
-			item.damage = 55;
+			item.damage = 35;
 			item.ranged = true;
 			item.width = 4;
 			item.height = 20;
@@ -667,7 +672,7 @@ namespace ABigStick.Items {
     public class StickCosmilite : ModItem {
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Cosmilite Stick");
-            Tooltip.SetDefault("Ignores invincibility frames\n'Not a fan of game mechanics'");
+            Tooltip.SetDefault("'Not a fan of game mechanics'");
 		}
 
         public override void AutoStaticDefaults() {
@@ -692,7 +697,7 @@ namespace ABigStick.Items {
             Mod calamityMod = ModLoader.GetMod("CalamityMod");
             if (calamityMod != null) {
                 ModRecipe recipe = new ModRecipe(mod);
-                recipe.AddIngredient(calamityMod.ItemType("CosmiliteBar"), 10);
+                recipe.AddIngredient(calamityMod.ItemType("CosmiliteBar"), 5);
                 recipe.AddTile(TileID.LunarCraftingStation);
                 recipe.SetResult(this, 200);
                 recipe.AddRecipe();
@@ -706,14 +711,12 @@ namespace ABigStick.Items {
             if (Main.rand.NextBool(Main.expertMode ? 2 : 1, 5)) {
                 count = count * 2;
             }
-            if (NPC.downedTowerVortex) {
-                if (((npc.type >= 212 && npc.type <= 216) || npc.type == 229 || npc.type == 252)) { // all pirates and parrots
-                    if (Main.rand.NextFloat() >= .25f) {
-                        Item.NewItem(npc.getRect(), mod.ItemType("StickM"), count);
-                    }
-                } else if (npc.type == 491) { // pirate ship
-                    Item.NewItem(npc.getRect(), mod.ItemType("StickM"), count*2);
+            if (((npc.type >= 212 && npc.type <= 216) || npc.type == 229 || npc.type == 252)) { // all pirates and parrots
+                if (Main.rand.NextFloat() >= .25f) {
+                    Item.NewItem(npc.getRect(), mod.ItemType("StickM"), count);
                 }
+            } else if (npc.type == 491) { // pirate ship
+                Item.NewItem(npc.getRect(), mod.ItemType("StickM"), count*2);
             }
 
             if (npc.type == 398) { // moon lord's core
@@ -724,15 +727,5 @@ namespace ABigStick.Items {
                 }
             }
 		}
-    }
-
-    public class Drops2 : GlobalItem {
-        public override void OpenVanillaBag(string context, Player player, int arg) {
-            if (context == "bossBag" && arg == 3332 && (Main.rand.Next(1,8) == 1)) { // moon lord
-                player.QuickSpawnItem(mod.ItemType("EmotionalStickgun"), 1);
-            } else if (context == "bossBag" && arg == 3860 && (Main.rand.Next(1,12) == 1)) { // betsy
-                player.QuickSpawnItem(mod.ItemType("EmotionalStickgun"), 1);
-            }
-        }
     }
 }

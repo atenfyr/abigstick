@@ -1,8 +1,8 @@
 author = Atenfyr
-version = 1.6.0
+version = 2.0.0
 displayName = A Big Stick
-hideCode = false
-hideResources = false
-includeSource = true
+hideCode = true
+hideResources = true
+includeSource = false
 buildIgnore = *.csproj, *.user, obj\*, bin\*, .vscode\*
 includePDB = true

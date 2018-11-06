@@ -1,24 +1,126 @@
-Adds a Stickgun, a Big Stick, and several varieties of Sticks to shoot.
-The Stickgun fires Sticks, and the Big Stick has insanely high knockback.
+Adds Stickguns, Stickrifles, and several varieties of Sticks to shoot from them.
+Most sticks ignore invincibility frames, but don't deal much damage.
+
+The source code for this mod is available on Github - https://github.com/atenfyr/abigstick
+You're welcome to join our discord server if you have a suggestion or just want to say hi - https://discord.gg/mDdKJRZ
 
 Weapons:
-Stickgun - Phantasm/Vortex Beater, 10 Vortex Fragments, 100 Wood (Made at an Ancient Manipulator)
-Clockwork Stickgun - Stickgun, S.D.M.G, 25 Last Tears, 25 Cogs (Made at a Tinkerer's Workshop)
-Big Stick - 13 Solar Fragments, 100 Wood (Made at an Ancient Manipulator)
+    Handguns:
+        Wooden Stickgun - 50 Wood (Made at a Work Bench)
+        Demonite Stickgun - 15 Demonite Bars, 50 Wood (Made at an Anvil)
+        Hellstone Stickgun - 15 Hellstone Bars, 50 Wood (Made at an Anvil)
+        Adamantite Stickgun - 12 Adamantite Bars, 50 Wood (Made at a Mythril or Orichalcum Anvil)
+        Titanium Stickgun - 12 Titanium Bars, 50 Wood (Made at a Mythril or Orichalcum Anvil)
+        Autotrophic Stickgun - 12 Chlorophyte Bars, 50 Wood (Made at a Mythril or Orichalcum Anvil)
+        Spectre Stickgun - 12 Spectre Bars, 50 Wood (Made at a Mythril or Orichalcum Anvil)
+        Lunar Stickgun - 28 Vortex Fragments, 50 Wood (Made at an Ancient Manipulator)
+        Clockwork Stickgun - 1 Phantasm/Vortex Beater, 5 Luminite Bars, 50 Wood (Made at an Ancient Manipulator)
+    Rifles:
+        Wooden Stickrifle - 50 Wood (Made at a Work Bench)
+        Demonite Stickrifle - 15 Demonite Bars, 50 Wood (Made at an Anvil)
+        Hellstone Stickrifle - 15 Hellstone Bars, 50 Wood (Made at an Anvil)
+        Adamantite Stickrifle - 12 Adamantite Bars, 50 Wood (Made at a Mythril or Orichalcum Anvil)
+        Titanium Stickrifle - 12 Titanium Bars, 50 Wood (Made at a Mythril or Orichalcum Anvil)
+        Autotrophic Stickrifle - 12 Chlorophyte Bars, 50 Wood (Made at a Mythril or Orichalcum Anvil)
+        Spectre Stickrifle - 12 Spectre Bars, 50 Wood (Made at a Mythril or Orichalcum Anvil)
+        Lunar Stickrifle - 28 Vortex Fragments, 50 Wood (Made at an Ancient Manipulator)
+        Clockwork Stickrifle - 1 Phantasm/Vortex Beater, 5 Luminite Bars, 50 Wood (Made at an Ancient Manipulator)
 
 Sticks: 
-150 Sticks - 50 Wood/Palm Wood/Rich Mahogany
-150 Boreal Sticks - 50 Boreal Wood (Inflicts Chilled)
-150 Pearlsticks - 50 Pearlwood (Inflicts Slow)
-150 Ebonsticks - 50 Ebonwood (Inflicts Cursed Flames)
-150 Shadesticks - 50 Shadewood (Inflicts Ichor)
-100 Spooky Sticks - 50 Spooky Wood (33% chance to inflict Confusion)
-333 Luminite Sticks - 1 Luminite Bar (Increases in damage the more targets it pierces through, made at an Ancient Manipulator)
-200 Sticks of Tears - 25 Last Tears (Made at a Mythril Anvil)
-200 Lunar Sticks - 10 Lunar Tears (Made at a Mythril Anvil)
-200 Cosmilite Stick - 10 Cosmilite Bars (Only available if you have the Calamity Mod, ignores invincibility frames, made at an Ancient Manipulator)
-Greedy Stick - Dropped by Pirates (Has a chance to steal money upon hitting anything but a Target Dummy)
+    30 Sticks - 1 Wood/Palm Wood/Rich Mahogany
+    30 Boreal Sticks - 1 Boreal Wood (Inflicts Chilled)
+    30 Pearlsticks - 1 Pearlwood (Inflicts Slow)
+    30 Ebonsticks - 1 Ebonwood (Inflicts Cursed Flames)
+    30 Shadesticks - 1 Shadewood (Inflicts Ichor)
+    30 Spooky Sticks - 1 Spooky Wood (33% chance to inflict Confusion)
+    333 Luminite Sticks - 1 Luminite Bar (Increases in damage the more targets it pierces through, doesn't ignore invincibility frames, made at an Ancient Manipulator)
+    200 Sticks of Tears - 25 Last Tears (Made at a Mythril Anvil)
+    200 Lunar Sticks - 10 Lunar Tears (Made at a Mythril Anvil)
+    200 Cosmilite Stick - 5 Cosmilite Bars (Only available if you have the Calamity Mod, made at an Ancient Manipulator)
+    Greedy Stick - Dropped by Pirates (Has a chance to steal money upon hitting anything but a Target Dummy)
+    Sentient Stick - Dropped by Sentient Stickgun (Homes in on targets, ignores invincibility frames)
 
-Miscellaneous:
-Net of Tears - Bug Net, 10 Spectre Bars, 10 Lunar Tears (Mobs drop Last Tears upon death if equipped, made at an Ancient Manipulator)
-Lunar Tears - Dropped by the Moon Lord
+NPCs:
+    A Sentient Stickgun - Boss summoned by Twitching Stickgun. Drops Sentient Sticks
+
+Other Items:
+    Twitching Stickgun - 1 Clockwork Stickgun, 99 Nanites (Summons a Sentient Stickgun, made at a Demon Altar)
+    A Big Stick - Dropped from a Sentient Stickgun; summons Sticks from the sky
+    Net of Tears - Bug Net, 10 Spectre Bars, 10 Lunar Tears (Mobs drop Last Tears upon death if equipped, made at an Ancient Manipulator)
+    Lunar Tears - Dropped by the Moon Lord
+
+Credits:
+    Atenfyr - Programming and Sprites
+    Geocide - Sprites
+-----------------------------------------
+Changelog:
+    2.0.0
+        - Added nine Stickguns.
+        - Added nine Stickrifles.
+        - Redesigned the sprites of all Stickguns, the Big Stick, and the Sentient Stickgun.
+        - Revamped the AI of the Sentient Stickgun.
+        - Changed the Sentient Stickgun to drop the Big Stick.
+        - Changed most Sticks to ignore invincibility frames.
+        - Changed Greedy Sticks to always drop, regardless of whether or not the Vortex Tower has been downed.
+        - Changed Greedy Sticks to drop up to 20 silver rather than 2 silver.
+        - Reduced the cost of all Sticks.
+        - Gave the Clockwork Stickgun a new crafting recipe.
+        - Nerfed the Clockwork Stickgun.
+        - Removed the crafting recipe for the Big Stick and gave it a special ability.
+        - Removed the ability for the Clockwork Stickgun to drop from any boss bag.
+        - Removed the original Stickgun (without a prefix).
+    1.6.0
+        - Added the Sentient Stickgun.
+        - Added the Twitching Stickgun.
+        - Increased the knockback of the Clockwork Stickgun.
+        - Changed the Clockwork Stickgun to shoot sticks in a spread.
+        - Removed the ability for the Clockwork Stickgun to drop from the boss bags of all hardmode bosses.
+    1.5.0
+        - Added Cosmilite Sticks.
+        - Changed Lunar Sticks so that they ignore invincibility frames.
+        - Increased the output of the recipe for Lunar Sticks.
+        - Increased the droprate of the Clockwork Stickgun from boss bags.
+    1.4.2
+        - Fixed a bug where Luminite Sticks would not pierce through enemies.
+    1.4.1
+        - Fixed a bug where Lunar Sticks and Sticks of Tears would not pierce through enemies.
+    1.4.0
+        - Added Lunar Tears and Lunar Sticks.
+        - Renamed the Bleached Stickgun to the Clockwork Stickgun.
+        - Changed the fire sound of the Clockwork Stickgun.
+        - Adjusted the Clockwork Stickgun to use more ammo.
+        - Adjusted the Clockwork Stickgun to require Last Tears and Cogs in its crafting recipe.
+        - Adjusted the Clockwork Stickgun to fire all sticks, not just Sticks of Tears.
+        - Adjusted the crafting recipe for the Net of Tears to no longer require bottled water.
+        - Changed the AI of Lunar Sticks and Sticks of Tears to obey gravity.
+        - Fixed a bug where critters dropped Last Tears.
+        - Fixed a bug where the Moon Lord's Leech dropped Last Tears.
+    1.3.3
+        - Fixed a bug where the Bleached Stickgun was given the wrong crafting recipe.
+    1.3.2
+        - Fixed a bug where the Bleached Stickgun was uncraftable.
+    1.3.0
+        - Renamed the Emotional Stickgun to the Bleached Stickgun.
+        - Changed the texture of the Bleached Stickgun.
+        - Added the Net of Tears.
+        - Increased the chance for Last Tears to drop.
+        - Adjusted the recipe for Sticks of Tears.
+        - Last Tears can now be used to grant the Mourning debuff.
+    1.2.0
+        - Added the Mourning debuff.
+        - Added Last Tears.
+        - Tweaked the Emotional Stickgun drop chance from boss bags.
+    1.1.0
+        - Renamed the Emotional Stick to the Stick of Tears.
+        - Changed the description of the Emotional Stickgun.
+    1.0.0
+        - Restructured the code.
+        - Added Spooky Sticks.
+        - Added the Emotional Stickgun and Emotional Sticks.
+    0.3.0
+        - Added a description as well as an icon for the mod browser.
+    0.2.0
+        - Added Stickguns, Sticks, Boreal Sticks, Pearlsticks, Ebonsticks, Shadesticks, Luminite Sticks, and Greedy Sticks.
+    0.1.0
+        - Initial release.
+        - Added the Big Stick.
