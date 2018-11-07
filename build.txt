@@ -1,5 +1,5 @@
 author = Atenfyr
-version = 2.0.0
+version = 2.0.1
 displayName = A Big Stick
 hideCode = true
 hideResources = true
