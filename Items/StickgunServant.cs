@@ -49,7 +49,7 @@ namespace ABigStick.Items {
             if (target != null) {
                 // rotate towards target
                 Vector2 properDirection = new Vector2((float)(target.Center.X-projectile.Center.X), (float)(target.Center.Y-projectile.Center.Y));
-                projectile.rotation = (float)(Math.Atan2(properDirection.Y, properDirection.X));
+                projectile.rotation = (float)((Math.Atan2(properDirection.Y, properDirection.X)-(Math.PI/2))%(Math.PI*2));
 
                 // fire where it's facing
                 if (Main.netMode != 1) {
@@ -59,7 +59,7 @@ namespace ABigStick.Items {
                         Main.PlaySound(SoundID.Item40, (int)projectile.Center.X, (int)projectile.Center.Y);
                         for (int i = 0; i < 3; i++) {
                             Vector2 projectileVelocity = properDirection.RotatedByRandom(MathHelper.ToRadians(10));
-                            Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, projectileVelocity.X, projectileVelocity.Y, mod.ProjectileType("ServantStick"), 35, 3f, Main.myPlayer);
+                            Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, projectileVelocity.X, projectileVelocity.Y, mod.ProjectileType("ServantStick"), 75, 3f, Main.myPlayer);
                         }
                     }
                 }

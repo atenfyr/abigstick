@@ -7,7 +7,7 @@ namespace ABigStick.Items {
 	public class BigStick : ModItem {
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("A Big Stick");
-            Tooltip.SetDefault("'Imbued with a trace of a Sentient Stickgun'");
+            Tooltip.SetDefault("'Larger than it should be'");
 		}
 
         public override void AutoStaticDefaults() {
@@ -15,7 +15,7 @@ namespace ABigStick.Items {
         }
 
 		public override void SetDefaults() {
-			item.damage = 90;
+			item.damage = 140;
 			item.melee = true;
 			item.width = 120;
 			item.height = 120;

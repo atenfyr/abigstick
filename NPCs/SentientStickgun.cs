@@ -307,7 +307,7 @@ namespace ABigStick.NPCs {
                         projectileDamage = 9999;
                     }
 
-                    float lifePercentage = npc.life/npc.lifeMax;
+                    float lifePercentage = (float)npc.life/(float)npc.lifeMax;
                     if (lifePercentage <= 0.25f && revengeOn) { // 25% health
                         npc.ai[1] = 4f;
                     } else if (lifePercentage <= 0.45f) { // 35% health

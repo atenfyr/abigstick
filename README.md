@@ -5,6 +5,7 @@ A Terraria mod that contains numerous stick-themed items.
 ## Handguns
 - Wooden Stickgun - 50 Wood (Made at a Work Bench)
 - Demonite Stickgun - 15 Demonite Bars, 50 Wood (Made at an Anvil)
+- Crimtane Stickgun - 15 Crimtane Bars, 50 Wood (Made at an Anvil)
 - Hellstone Stickgun - 15 Hellstone Bars, 50 Wood (Made at an Anvil)
 - Adamantite Stickgun - 12 Adamantite Bars, 50 Wood (Made at a Mythril or Orichalcum Anvil)
 - Titanium Stickgun - 12 Titanium Bars, 50 Wood (Made at a Mythril or Orichalcum Anvil)
@@ -15,6 +16,7 @@ A Terraria mod that contains numerous stick-themed items.
 ## Rifles
 - Wooden Stickrifle - 50 Wood (Made at a Work Bench)
 - Demonite Stickrifle - 15 Demonite Bars, 50 Wood (Made at an Anvil)
+- Crimtane Stickrifle - 15 Crimtane Bars, 50 Wood (Made at an Anvil)
 - Hellstone Stickrifle - 15 Hellstone Bars, 50 Wood (Made at an Anvil)
 - Adamantite Stickrifle - 12 Adamantite Bars, 50 Wood (Made at a Mythril or Orichalcum Anvil)
 - Titanium Stickrifle - 12 Titanium Bars, 50 Wood (Made at a Mythril or Orichalcum Anvil)
@@ -26,7 +28,7 @@ A Terraria mod that contains numerous stick-themed items.
 - 30 Sticks - 1 Wood/Palm Wood/Rich Mahogany
 - 30 Boreal Sticks - 1 Boreal Wood (Inflicts Chilled)
 - 30 Pearlsticks - 1 Pearlwood (Inflicts Slow)
-- 30 Ebonsticks - 1 Ebonwood (Inflicts Cursed Flames)
+- 30 Ebonsticks - 1 Ebonwood (Inflicts Cursed Inferno)
 - 30 Shadesticks - 1 Shadewood (Inflicts Ichor)
 - 30 Spooky Sticks - 1 Spooky Wood (33% chance to inflict Confusion)
 - 333 Luminite Sticks - 1 Luminite Bar (Increases in damage the more targets it pierces through, doesn't ignore invincibility frames, made at an Ancient Manipulator)

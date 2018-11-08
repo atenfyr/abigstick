@@ -4,53 +4,6 @@ using Terraria.ModLoader;
 using System;
 using Microsoft.Xna.Framework;
 
-/*
-    Levels:
-        -1 = Starting
-        0 = After Eye of Cthulhu/Eater of Worlds
-        1 = After Skeletron
-        2 = After Wall of Flesh
-        3 = After Mechanical Bosses
-        4 = Post-Plantera Dungeon
-        5 = Before Moon Lord (during pillars)
-        6 = After Moon Lord
-    Chances to not use ammo
-        -1 = 0%
-        0 = 0%
-        1 = 0%
-        2 = 25%
-        3 = 60%
-        4 = 70%
-        5 = 80%
-        6 = 90%
-    Prefixes
-        -1 = Wooden
-        0 = Demonite
-        1 = Hellstone
-        2 = Adamantite/Titanium
-        3 = Autotrophic
-        4 = Spectre
-        5 = Lunar
-        6 = Clockwork
-    Materials
-        -1 = Wood
-        0 = Demonite
-        1 = Hellstone
-        2 = Adamantite/Titanium
-        3 = Chlorophyte
-        4 = Spectre bars
-        5 = Lunar fragments
-        6 = Luminite, lunar fragments
-    Similar DPS
-        -1 = Wooden Bow (Better than)
-        0 = Demon Bow (Better than)
-        1 = Space Gun
-        2 = Clockwork Assault Rifle
-        3 = Megashark
-        4 = Chain Gun
-        5 = Vortex Beater
-        6 = N/A
-*/
 namespace ABigStick.Items {
     // Backwards compatibility stickgun
     public class Stickgun : ModItem {
@@ -222,7 +175,7 @@ namespace ABigStick.Items {
         }
 
 		public override void SetDefaults() {
-			item.damage = 45;
+			item.damage = 47;
 			item.ranged = true;
 			item.width = 35;
 			item.height = 8;
@@ -230,7 +183,7 @@ namespace ABigStick.Items {
 			item.useTime = 39;
 			item.useAnimation = 39;
 			item.useStyle = 5;
-			item.knockBack = 2;
+			item.knockBack = 3;
 			item.value = 100;
 			item.rare = 1;
 			item.crit = 35;
@@ -254,6 +207,106 @@ namespace ABigStick.Items {
             ModRecipe upgrade = new ModRecipe(mod);
             upgrade.AddIngredient(mod.ItemType("WoodenStickSniper"));
             upgrade.AddIngredient(ItemID.DemoniteBar, 14);
+			upgrade.AddTile(TileID.Anvils);
+			upgrade.SetResult(this);
+			upgrade.AddRecipe();
+		}
+	}
+
+    // Level 0 Stickgun (DPS-based)
+	public class Lvl0StickgunC : ModItem {
+		public override void SetStaticDefaults() {
+			DisplayName.SetDefault("Crimtane Stickgun");
+			Tooltip.SetDefault("Uses sticks as ammo");
+		}
+
+        public override void AutoStaticDefaults() {
+            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/0/DPS_C");
+        }
+
+		public override void SetDefaults() {
+			item.damage = 27;
+			item.ranged = true;
+			item.width = 26;
+			item.height = 13;
+			item.maxStack = 1;
+			item.useTime = 18;
+			item.useAnimation = 18;
+			item.useStyle = 5;
+			item.knockBack = 2;
+			item.value = 100;
+			item.rare = 1;
+			item.crit = 5;
+			item.UseSound = SoundID.Item40;
+			item.noMelee = true;
+			item.shoot = mod.ProjectileType("Stick");
+			item.useAmmo = mod.ItemType("StickItem");
+			item.shootSpeed = 20f;
+			item.autoReuse = true;
+		}
+
+		public override void AddRecipes() {
+			ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.CrimtaneBar, 15);
+			recipe.AddIngredient(ItemID.Wood, 50);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+
+            // Upgrading from previous tier
+            ModRecipe upgrade = new ModRecipe(mod);
+            upgrade.AddIngredient(mod.ItemType("WoodenStickgun"));
+            upgrade.AddIngredient(ItemID.CrimtaneBar, 14);
+			upgrade.AddTile(TileID.Anvils);
+			upgrade.SetResult(this);
+			upgrade.AddRecipe();
+		}
+	}
+
+    // Level 0 Stickgun (Crit-based)
+	public class Lvl0StickSniperC : ModItem {
+		public override void SetStaticDefaults() {
+			DisplayName.SetDefault("Crimtane Stickrifle");
+			Tooltip.SetDefault("Uses sticks as ammo");
+		}
+
+        public override void AutoStaticDefaults() {
+            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/0/Crit_C");
+        }
+
+		public override void SetDefaults() {
+			item.damage = 47;
+			item.ranged = true;
+			item.width = 35;
+			item.height = 8;
+			item.maxStack = 1;
+			item.useTime = 39;
+			item.useAnimation = 39;
+			item.useStyle = 5;
+			item.knockBack = 3;
+			item.value = 100;
+			item.rare = 1;
+			item.crit = 35;
+			item.UseSound = SoundID.Item36;
+			item.noMelee = true;
+			item.shoot = mod.ProjectileType("Stick");
+			item.useAmmo = mod.ItemType("StickItem");
+			item.shootSpeed = 20f;
+			item.autoReuse = true;
+		}
+
+		public override void AddRecipes() {
+			ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.CrimtaneBar, 15);
+			recipe.AddIngredient(ItemID.Wood, 50);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+
+            // Upgrading from previous tier
+            ModRecipe upgrade = new ModRecipe(mod);
+            upgrade.AddIngredient(mod.ItemType("WoodenStickSniper"));
+            upgrade.AddIngredient(ItemID.CrimtaneBar, 14);
 			upgrade.AddTile(TileID.Anvils);
 			upgrade.SetResult(this);
 			upgrade.AddRecipe();
@@ -307,6 +360,14 @@ namespace ABigStick.Items {
 			upgrade.AddTile(TileID.Anvils);
 			upgrade.SetResult(this);
 			upgrade.AddRecipe();
+
+            // Upgrading from previous tier
+            ModRecipe upgrade2 = new ModRecipe(mod);
+            upgrade2.AddIngredient(mod.ItemType("Lvl0StickgunC"));
+            upgrade2.AddIngredient(ItemID.HellstoneBar, 14);
+			upgrade2.AddTile(TileID.Anvils);
+			upgrade2.SetResult(this);
+			upgrade2.AddRecipe();
 		}
 	}
 
@@ -330,7 +391,7 @@ namespace ABigStick.Items {
 			item.useTime = 36;
 			item.useAnimation = 36;
 			item.useStyle = 5;
-			item.knockBack = 2;
+			item.knockBack = 4;
 			item.value = 3000;
 			item.rare = 3;
 			item.crit = 30;
@@ -358,6 +419,14 @@ namespace ABigStick.Items {
 			upgrade.AddTile(TileID.Anvils);
 			upgrade.SetResult(this);
 			upgrade.AddRecipe();
+
+            // Upgrading from previous tier
+            ModRecipe upgrade2 = new ModRecipe(mod);
+            upgrade2.AddIngredient(mod.ItemType("Lvl0StickSniperC"));
+            upgrade2.AddIngredient(ItemID.HellstoneBar, 14);
+			upgrade2.AddTile(TileID.Anvils);
+			upgrade2.SetResult(this);
+			upgrade2.AddRecipe();
 		}
 	}
 
@@ -491,7 +560,7 @@ namespace ABigStick.Items {
 			item.useTime = 34;
 			item.useAnimation = 34;
 			item.useStyle = 5;
-			item.knockBack = 2;
+			item.knockBack = 5;
 			item.value = 7000;
 			item.rare = 3;
 			item.crit = 35;
@@ -542,7 +611,7 @@ namespace ABigStick.Items {
 			item.useTime = 34;
 			item.useAnimation = 34;
 			item.useStyle = 5;
-			item.knockBack = 2;
+			item.knockBack = 5;
 			item.value = 7000;
 			item.rare = 3;
 			item.crit = 35;
@@ -655,7 +724,7 @@ namespace ABigStick.Items {
 			item.useTime = 31;
 			item.useAnimation = 31;
 			item.useStyle = 5;
-			item.knockBack = 2;
+			item.knockBack = 6;
 			item.value = 13000;
 			item.rare = 7;
 			item.crit = 50;
@@ -775,7 +844,7 @@ namespace ABigStick.Items {
 			item.useTime = 28;
 			item.useAnimation = 28;
 			item.useStyle = 5;
-			item.knockBack = 2;
+			item.knockBack = 7;
 			item.value = 17000;
 			item.rare = 8;
 			item.crit = 50;
@@ -888,7 +957,7 @@ namespace ABigStick.Items {
 			item.useTime = 23;
 			item.useAnimation = 23;
 			item.useStyle = 5;
-			item.knockBack = 2;
+			item.knockBack = 8;
 			item.value = 17000;
 			item.rare = 10;
 			item.crit = 50;
@@ -1007,7 +1076,7 @@ namespace ABigStick.Items {
 			item.useTime = 20;
 			item.useAnimation = 20;
 			item.useStyle = 5;
-			item.knockBack = 4;
+			item.knockBack = 9;
 			item.value = 500000;
 			item.rare = 11;
 			item.crit = 50;

@@ -49,7 +49,7 @@ namespace ABigStick.Items {
         }
 
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
-		    target.AddBuff(BuffID.Ichor, 5 * 60);
+		    target.AddBuff(BuffID.Ichor, 3 * 60);
 		}
     }
 
@@ -74,7 +74,7 @@ namespace ABigStick.Items {
         }
 
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
-		    target.AddBuff(BuffID.CursedInferno, 5 * 60);
+		    target.AddBuff(BuffID.CursedInferno, 3 * 60);
 		}
     }
 
@@ -614,24 +614,24 @@ namespace ABigStick.Items {
         }
 
         public override void SetDefaults() {
-			item.damage = 25;
+			item.damage = 6;
 			item.ranged = true;
 			item.width = 4;
 			item.height = 20;
 			item.consumable = true;
 			item.knockBack = 2f;
-			item.value = 1000;
+			item.value = 10;
             item.shoot = mod.ProjectileType("StickAten2");
             item.ammo = mod.ItemType("StickItem");
             item.maxStack = 999;
-            item.rare = 9;
+            item.rare = 3;
         }
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod.ItemType("LastTears"), 25);
-            recipe.AddTile(TileID.MythrilAnvil);
-            recipe.SetResult(this, 200);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(this, 100);
             recipe.AddRecipe();
         }
     }

@@ -52,9 +52,9 @@ namespace ABigStick.Items {
         }
 
         public override void SetDefaults() {
-			item.value = 20000;
-            item.maxStack = 999;
-            item.rare = 9;
+			item.value = 1000;
+            item.maxStack = 1;
+            item.rare = 3;
 			item.accessory = true;
         }
 
@@ -68,9 +68,8 @@ namespace ABigStick.Items {
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.BugNet);
-			recipe.AddIngredient(ItemID.SpectreBar, 10);
-			recipe.AddIngredient(mod.ItemType("MoonTears"), 10);
-            recipe.AddTile(TileID.LunarCraftingStation);
+			recipe.AddIngredient(ItemID.HellstoneBar, 10);
+            recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }
