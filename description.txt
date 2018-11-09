@@ -1,7 +1,7 @@
 Adds Stickguns, Stickrifles, and several varieties of Sticks to shoot from them.
 Most sticks ignore invincibility frames, but don't deal much damage.
 This mod currently includes:
-    - 37 items
+    - 39 items
     - 1 boss
     - 1 "debuff"
 
