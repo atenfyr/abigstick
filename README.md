@@ -32,7 +32,7 @@ A Terraria mod that contains numerous stick-themed items.
 - 30 Shadesticks - 1 Shadewood (Inflicts Ichor)
 - 30 Spooky Sticks - 1 Spooky Wood (33% chance to inflict Confusion)
 - 333 Luminite Sticks - 1 Luminite Bar (Increases in damage the more targets it pierces through, doesn't ignore invincibility frames, made at an Ancient Manipulator)
-- 200 Sticks of Tears - 25 Last Tears (Made at a Mythril Anvil)
+- 200 Sticks of Tears - 25 Last Tears (Made at an Anvil)
 - 200 Lunar Sticks - 10 Lunar Tears (Made at a Mythril Anvil)
 - 200 Cosmilite Stick - 5 Cosmilite Bars (Only available if you have the Calamity Mod, made at an Ancient Manipulator)
 - Greedy Stick - Dropped by Pirates (Has a chance to steal money upon hitting anything but a Target Dummy)
@@ -42,7 +42,7 @@ A Terraria mod that contains numerous stick-themed items.
 # Other Items
 - Twitching Stickgun - 1 Clockwork Stickgun, 99 Nanites (Summons a Sentient Stickgun, made at a Demon Altar)
 - A Big Stick - Dropped from a Sentient Stickgun; summons Sticks from the sky
-- Net of Tears - Bug Net, 10 Spectre Bars, 10 Lunar Tears (Mobs drop Last Tears upon death if equipped, made at an Ancient Manipulator)
+- Net of Tears - Bug Net, 10 Hellstone Bars (Mobs drop Last Tears upon death if equipped, made at an Anvil)
 - Lunar Tears - Dropped by the Moon Lord
 # Credits
 - Atenfyr - Programming and Sprites
