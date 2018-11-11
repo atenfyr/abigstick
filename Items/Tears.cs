@@ -20,7 +20,7 @@ namespace ABigStick.Items {
         public override void SetDefaults() {
 			item.value = 2000;
             item.maxStack = 999;
-            item.rare = 9;
+            item.rare = 3;
         }
     }
 

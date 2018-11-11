@@ -631,7 +631,7 @@ namespace ABigStick.Items {
             ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod.ItemType("LastTears"), 25);
             recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(this, 100);
+            recipe.SetResult(this, 500);
             recipe.AddRecipe();
         }
     }
