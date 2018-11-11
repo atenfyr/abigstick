@@ -1,9 +1,11 @@
 Adds Stickguns, Stickrifles, and several varieties of Sticks to shoot from them.
 Most sticks ignore invincibility frames, but don't deal much damage.
 This mod currently includes:
-    - 39 items
-    - 1 boss
-    - 1 "debuff"
+    - 10 different kinds of Stickguns, which can fire sticks quickly but with not much damage.
+    - 10 different kinds of Stickrifles, which can fire sticks slowly but with a lot of damage.
+    - 12 different kinds of Sticks, some of which inflict debuffs upon impact.
+    - 1 boss.
+    - A very large stick.
 
 The source code for this mod is available on Github - https://github.com/atenfyr/abigstick
 Here's a summary of everything that is available in this mod - https://bit.ly/2JJ8A2E
