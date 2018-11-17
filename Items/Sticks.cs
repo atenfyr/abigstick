@@ -459,7 +459,7 @@ namespace ABigStick.Items {
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.MeteoriteBar, 1);
-            recipe.AddTile(TileID.WorkBenches);
+            recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this, 150);
             recipe.AddRecipe();
         }
