@@ -1024,13 +1024,6 @@ namespace ABigStick.Items {
 			return Main.rand.NextFloat() >= .70f;
 		}
 
-        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
-			Vector2 newSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(10));
-			speedX = newSpeed.X;
-			speedY = newSpeed.Y;
-			return true;
-		}
-
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Phantasm, 1);

@@ -28,6 +28,49 @@ namespace ABigStick.Items {
         }
     }
 
+    public class HighVelocityStick : ModProjectile {
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("High Velocity Stick");
+        }
+
+        public override void AutoStaticDefaults() {
+            Main.projectileTexture[projectile.type] = ModLoader.GetTexture("ABigStick/Items/HighVelocityStick");
+        }
+
+        public override void SetDefaults() {
+            projectile.width = 20;
+            projectile.height = 4;
+            projectile.aiStyle = 1;
+            projectile.friendly = true;
+			projectile.tileCollide = true;
+			projectile.ignoreWater = false;
+            projectile.ranged = true;
+            projectile.penetrate = 1;
+            projectile.extraUpdates = 4;
+        }
+    }
+
+    public class PenetratingStick : ModProjectile {
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Meteorite Stick");
+        }
+
+        public override void AutoStaticDefaults() {
+            Main.projectileTexture[projectile.type] = ModLoader.GetTexture("ABigStick/Items/MeteoriteStick");
+        }
+
+        public override void SetDefaults() {
+            projectile.width = 20;
+            projectile.height = 4;
+            projectile.aiStyle = 1;
+            projectile.friendly = true;
+			projectile.tileCollide = true;
+			projectile.ignoreWater = false;
+            projectile.ranged = true;
+            projectile.penetrate = 5;
+        }
+    }
+
     public class StickCr2 : ModProjectile {
         public override void SetStaticDefaults() {
             DisplayName.SetDefault("Shadestick");
@@ -335,7 +378,7 @@ namespace ABigStick.Items {
 			item.height = 20;
 			item.consumable = true;
 			item.knockBack = 1f;
-			item.value = 10;
+			item.value = 2;
             item.shoot = mod.ProjectileType("Stick");
             item.ammo = item.type;
             item.maxStack = 999;
@@ -354,6 +397,71 @@ namespace ABigStick.Items {
 			recipe4.AddIngredient(ItemID.RichMahogany, 1);
             recipe4.SetResult(this, 30);
             recipe4.AddRecipe();
+        }
+    }
+
+    public class HighVelocityStickItem : ModItem {
+		public override void SetStaticDefaults() {
+			DisplayName.SetDefault("High Velocity Stick");
+		}
+
+        public override void AutoStaticDefaults() {
+            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/HighVelocityStick");
+        }
+
+        public override void SetDefaults() {
+			item.damage = 7;
+			item.ranged = true;
+			item.width = 4;
+			item.height = 20;
+			item.consumable = true;
+			item.knockBack = 1f;
+			item.value = 7;
+            item.rare = 3;
+            item.shoot = mod.ProjectileType("HighVelocityStick");
+            item.ammo = mod.ItemType("StickItem");
+            item.maxStack = 999;
+        }
+
+        public override void AddRecipes() {
+            ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(mod.ItemType("StickItem"), 30);
+            recipe.AddIngredient(ItemID.Cog, 1);
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.SetResult(this, 30);
+            recipe.AddRecipe();
+        }
+    }
+
+    public class PenetratingStickItem : ModItem {
+		public override void SetStaticDefaults() {
+			DisplayName.SetDefault("Meteorite Stick");
+		}
+
+        public override void AutoStaticDefaults() {
+            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/MeteoriteStick");
+        }
+
+        public override void SetDefaults() {
+			item.damage = 5;
+			item.ranged = true;
+			item.width = 4;
+			item.height = 20;
+			item.consumable = true;
+			item.knockBack = 1f;
+			item.value = 6;
+            item.rare = 1;
+            item.shoot = mod.ProjectileType("PenetratingStick");
+            item.ammo = mod.ItemType("StickItem");
+            item.maxStack = 999;
+        }
+
+        public override void AddRecipes() {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.MeteoriteBar, 1);
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.SetResult(this, 150);
+            recipe.AddRecipe();
         }
     }
 
