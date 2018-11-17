@@ -31,7 +31,7 @@ A Terraria mod that contains numerous stick-themed items.
 - 30 Ebonsticks - 1 Ebonwood (Inflicts Cursed Inferno)
 - 30 Shadesticks - 1 Shadewood (Inflicts Ichor)
 - 30 Spooky Sticks - 1 Spooky Wood (33% chance to inflict Confusion)
-- 30 High Velocity Sticks - 30 Sticks, 1 Cog (Goes much quicker than all other sticks, made at a Workbench)
+- 100 High Velocity Sticks - 100 Sticks, 1 Cog (Goes much quicker than all other sticks, made at a Workbench)
 - 150 Meteorite Sticks - 1 Meteorite Bar (Pierces through 5 entities at max, but doesn't ignore invincibility frames, made at an Anvil)
 - 333 Luminite Sticks - 1 Luminite Bar (Increases in damage the more targets it pierces through, doesn't ignore invincibility frames, made at an Ancient Manipulator)
 - 500 Sticks of Tears - 25 Last Tears (Made at an Anvil)

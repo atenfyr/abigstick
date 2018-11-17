@@ -34,7 +34,7 @@ namespace ABigStick.Items {
         }
 
         public override void AutoStaticDefaults() {
-            Main.projectileTexture[projectile.type] = ModLoader.GetTexture("ABigStick/Items/HighVelocityStick");
+            Main.projectileTexture[projectile.type] = ModLoader.GetTexture("ABigStick/Items/HighVelocityStick_Projectile");
         }
 
         public override void SetDefaults() {
@@ -425,10 +425,10 @@ namespace ABigStick.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("StickItem"), 30);
+			recipe.AddIngredient(mod.ItemType("StickItem"), 100);
             recipe.AddIngredient(ItemID.Cog, 1);
             recipe.AddTile(TileID.WorkBenches);
-            recipe.SetResult(this, 30);
+            recipe.SetResult(this, 100);
             recipe.AddRecipe();
         }
     }
