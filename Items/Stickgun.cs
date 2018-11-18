@@ -815,13 +815,6 @@ namespace ABigStick.Items {
 		public override bool ConsumeAmmo(Player player) {
 			return Main.rand.NextFloat() >= .45f;
 		}
-
-        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
-			Vector2 newSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(5));
-			speedX = newSpeed.X;
-			speedY = newSpeed.Y;
-			return true;
-		}
 	}
 
     // Level 4 Stickgun (Crit-based)
@@ -927,13 +920,6 @@ namespace ABigStick.Items {
 
 		public override bool ConsumeAmmo(Player player) {
 			return Main.rand.NextFloat() >= .55f;
-		}
-
-        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
-			Vector2 newSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(7));
-			speedX = newSpeed.X;
-			speedY = newSpeed.Y;
-			return true;
 		}
 	}
 

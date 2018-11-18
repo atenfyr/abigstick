@@ -40,13 +40,17 @@ namespace ABigStick.Items {
         public override void SetDefaults() {
             projectile.width = 20;
             projectile.height = 4;
-            projectile.aiStyle = 1;
+            projectile.aiStyle = -1;
             projectile.friendly = true;
 			projectile.tileCollide = true;
 			projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = 1;
-            projectile.extraUpdates = 4;
+            projectile.extraUpdates = 3;
+        }
+
+        public override void AI() {
+            projectile.rotation = (float)((Math.Atan2(projectile.velocity.Y, projectile.velocity.X)+(Math.PI/2))%(Math.PI*2));
         }
     }
 
@@ -127,18 +131,24 @@ namespace ABigStick.Items {
         }
 
         public override void AutoStaticDefaults() {
-            Main.projectileTexture[projectile.type] = ModLoader.GetTexture("ABigStick/Items/HallowedStick");
+            Main.projectileTexture[projectile.type] = ModLoader.GetTexture("ABigStick/Items/HallowedStick_Projectile");
         }
 
         public override void SetDefaults() {
             projectile.width = 20;
             projectile.height = 4;
-            projectile.aiStyle = 1;
+            projectile.aiStyle = -1;
             projectile.friendly = true;
 			projectile.tileCollide = true;
 			projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = 1;
+            projectile.extraUpdates = 1;
+        }
+
+        public override void AI() {
+            Lighting.AddLight(projectile.position, 1f, 1f, 1f);
+            projectile.rotation = (float)((Math.Atan2(projectile.velocity.Y, projectile.velocity.X)+(Math.PI/2))%(Math.PI*2));
         }
 
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
@@ -234,13 +244,13 @@ namespace ABigStick.Items {
 			projectile.tileCollide = true;
 			projectile.ignoreWater = false;
             projectile.ranged = true;
-            projectile.penetrate = 1;
+            projectile.penetrate = 5;
         }
 
     	public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
-            int value = Main.rand.Next(20, 2000);
+            int value = Main.rand.Next(200, 2000);
             
-            if ((Main.rand.NextFloat() >= .45f) && target.type != NPCID.TargetDummy) {
+            if (target.type != NPCID.TargetDummy) {
                 if (value >= 100) {
                     double partialValue = (double)value/(double)100;
                     int roundedValue = (int)Math.Floor(partialValue);
@@ -658,7 +668,7 @@ namespace ABigStick.Items {
     public class StickM : ModItem {
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Greedy Stick");
-            Tooltip.SetDefault("45% chance to steal money on impact");
+            Tooltip.SetDefault("Steals money on impact");
 		}
 
         public override void AutoStaticDefaults() {
@@ -676,6 +686,7 @@ namespace ABigStick.Items {
             item.shoot = mod.ProjectileType("StickM2");
             item.ammo = mod.ItemType("StickItem");
             item.crit = 20;
+            item.rare = 4;
             item.maxStack = 999;
         }
     }

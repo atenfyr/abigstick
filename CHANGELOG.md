@@ -1,3 +1,9 @@
+##2.2.3
+- Increased the money dropped by hitting monsters with Greedy Sticks.
+- Increased the speed of Pearlsticks.
+- Made Pearlsticks glow.
+- Removed the bullet spread on Spectre Stickguns and Lunar Stickguns.
+- Removed gravity on High Velocity Sticks and Pearlsticks.
 ##2.2.2
 - Made High Velocity Sticks less expensive.
 - Made High Velocity Sticks somewhat visible.
