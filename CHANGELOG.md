@@ -1,3 +1,5 @@
+##2.3.1
+- Fixed the recipe of Ether Sticks.
 ##2.3.0
 - Added Ether Sticks.
 ##2.2.4

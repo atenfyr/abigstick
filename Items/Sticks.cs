@@ -841,25 +841,25 @@ namespace ABigStick.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("FragmentVortex"), 1);
+			recipe.AddIngredient(ItemID.FragmentVortex, 1);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.SetResult(this, 333);
             recipe.AddRecipe();
 
             ModRecipe recipe2 = new ModRecipe(mod);
-			recipe2.AddIngredient(mod.ItemType("FragmentNebula"), 1);
+			recipe2.AddIngredient(ItemID.FragmentNebula, 1);
             recipe2.AddTile(TileID.LunarCraftingStation);
             recipe2.SetResult(this, 333);
             recipe2.AddRecipe();
 
             ModRecipe recipe3 = new ModRecipe(mod);
-			recipe3.AddIngredient(mod.ItemType("FragmentSolar"), 1);
+			recipe3.AddIngredient(ItemID.FragmentSolar, 1);
             recipe3.AddTile(TileID.LunarCraftingStation);
             recipe3.SetResult(this, 333);
             recipe3.AddRecipe();
 
             ModRecipe recipe4 = new ModRecipe(mod);
-			recipe4.AddIngredient(mod.ItemType("FragmentStardust"), 1);
+			recipe4.AddIngredient(ItemID.FragmentStardust, 1);
             recipe4.AddTile(TileID.LunarCraftingStation);
             recipe4.SetResult(this, 333);
             recipe4.AddRecipe();
