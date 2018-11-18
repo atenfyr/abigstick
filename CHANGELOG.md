@@ -1,3 +1,5 @@
+##2.3.0
+- Added Ether Sticks.
 ##2.2.4
 - Increased the drop rate of Greedy Sticks.
 ##2.2.3

@@ -50,7 +50,7 @@ namespace ABigStick.Items {
         }
 
         public override void AI() {
-            projectile.rotation = (float)((Math.Atan2(projectile.velocity.Y, projectile.velocity.X)+(Math.PI/2))%(Math.PI*2));
+            projectile.rotation = (float)(Math.Atan2(projectile.velocity.Y, projectile.velocity.X));
         }
     }
 
@@ -148,7 +148,7 @@ namespace ABigStick.Items {
 
         public override void AI() {
             Lighting.AddLight(projectile.position, 1f, 1f, 1f);
-            projectile.rotation = (float)((Math.Atan2(projectile.velocity.Y, projectile.velocity.X)+(Math.PI/2))%(Math.PI*2));
+            projectile.rotation = (float)(Math.Atan2(projectile.velocity.Y, projectile.velocity.X));
         }
 
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
@@ -369,6 +369,33 @@ namespace ABigStick.Items {
 			projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = 1;
+        }
+    }
+
+    public class AetherStick : ModProjectile {
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Ether Stick");
+        }
+
+        public override void AutoStaticDefaults() {
+            Main.projectileTexture[projectile.type] = ModLoader.GetTexture("ABigStick/Items/EtherStick_Projectile");
+        }
+
+        public override void SetDefaults() {
+            projectile.width = 56;
+            projectile.height = 6;
+            projectile.aiStyle = -1;
+            projectile.friendly = true;
+			projectile.tileCollide = true;
+			projectile.ignoreWater = false;
+            projectile.ranged = true;
+            projectile.penetrate = 1;
+            projectile.extraUpdates = 1;
+        }
+
+        public override void AI() {
+            projectile.rotation = (float)(Math.Atan2(projectile.velocity.Y, projectile.velocity.X));
+            projectile.damage += 2;
         }
     }
 
@@ -785,6 +812,57 @@ namespace ABigStick.Items {
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this, 200);
             recipe.AddRecipe();
+        }
+    }
+
+    public class AetherStickItem : ModItem {
+		public override void SetStaticDefaults() {
+			DisplayName.SetDefault("Ether Stick");
+            Tooltip.SetDefault("Takes time to build up strength");
+		}
+
+        public override void AutoStaticDefaults() {
+            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/EtherStick");
+        }
+
+        public override void SetDefaults() {
+			item.damage = 10;
+			item.ranged = true;
+			item.width = 4;
+			item.height = 12;
+			item.consumable = true;
+			item.knockBack = 2f;
+			item.value = 20;
+            item.shoot = mod.ProjectileType("AetherStick");
+            item.ammo = mod.ItemType("StickItem");
+            item.maxStack = 999;
+            item.rare = 10;
+        }
+
+        public override void AddRecipes() {
+            ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(mod.ItemType("FragmentVortex"), 1);
+            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.SetResult(this, 333);
+            recipe.AddRecipe();
+
+            ModRecipe recipe2 = new ModRecipe(mod);
+			recipe2.AddIngredient(mod.ItemType("FragmentNebula"), 1);
+            recipe2.AddTile(TileID.LunarCraftingStation);
+            recipe2.SetResult(this, 333);
+            recipe2.AddRecipe();
+
+            ModRecipe recipe3 = new ModRecipe(mod);
+			recipe3.AddIngredient(mod.ItemType("FragmentSolar"), 1);
+            recipe3.AddTile(TileID.LunarCraftingStation);
+            recipe3.SetResult(this, 333);
+            recipe3.AddRecipe();
+
+            ModRecipe recipe4 = new ModRecipe(mod);
+			recipe4.AddIngredient(mod.ItemType("FragmentStardust"), 1);
+            recipe4.AddTile(TileID.LunarCraftingStation);
+            recipe4.SetResult(this, 333);
+            recipe4.AddRecipe();
         }
     }
 
