@@ -1,3 +1,5 @@
+##2.2.4
+- Increased the drop rate of Greedy Sticks.
 ##2.2.3
 - Increased the money dropped by hitting monsters with Greedy Sticks.
 - Increased the speed of Pearlsticks.

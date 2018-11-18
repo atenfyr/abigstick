@@ -831,11 +831,11 @@ namespace ABigStick.Items {
                 count = count * 2;
             }
             if (((npc.type >= 212 && npc.type <= 216) || npc.type == 229 || npc.type == 252)) { // all pirates and parrots
-                if (Main.rand.NextFloat() >= .25f) {
+                if (Main.rand.NextFloat() >= .75f) {
                     Item.NewItem(npc.getRect(), mod.ItemType("StickM"), count);
                 }
             } else if (npc.type == 491) { // pirate ship
-                Item.NewItem(npc.getRect(), mod.ItemType("StickM"), count*2);
+                Item.NewItem(npc.getRect(), mod.ItemType("StickM"), count*20);
             }
 
             if (npc.type == 398) { // moon lord's core
