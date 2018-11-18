@@ -1,3 +1,13 @@
+##2.4.0
+- Updated the hitbox of Ether Sticks to be the same as that of all other sticks.
+- Updated the Sentient Stickgun so that it can be spawned during daytime.
+- Updated Sentient Sticks to adjust their velocity to home towards a target rather than completely ignoring the old velocity.
+- Increased the number of Sentient Sticks that drop from the Sentient Stickgun.
+- Increased the health of the Sentient Stickgun.
+- Increased the size of the Sentient Stickgun.
+- Changed the texture of the Sentient Stickgun to that of the Sentient Stickrifle.
+- Fixed a bug where the turret spawned by the Big Stick would not despawn in multiplayer.
+- Fixed a bug where Sentient Sticks would home in on invincible entities.
 ##2.3.1
 - Fixed the recipe of Ether Sticks.
 ##2.3.0

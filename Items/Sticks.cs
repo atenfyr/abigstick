@@ -382,8 +382,8 @@ namespace ABigStick.Items {
         }
 
         public override void SetDefaults() {
-            projectile.width = 56;
-            projectile.height = 6;
+            projectile.width = 4;
+            projectile.height = 20;
             projectile.aiStyle = -1;
             projectile.friendly = true;
 			projectile.tileCollide = true;

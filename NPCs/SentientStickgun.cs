@@ -12,7 +12,7 @@ namespace ABigStick.NPCs {
             float oldDist = 1001;
             float newDist = 1000;
             for (int i = 0; i < Main.npc.Length - 1; i++) {
-                if (Main.npc[i].friendly == true || Main.npc[i].active == false) continue;                
+                if (Main.npc[i].friendly == true || Main.npc[i].active == false || Main.npc[i].dontTakeDamage) continue;                
                 if (nearest == null) {
                     newDist = Vector2.Distance(pos, Main.npc[i].position);
                     if (newDist < maxDistance) nearest = Main.npc[i];
@@ -77,7 +77,8 @@ namespace ABigStick.NPCs {
             if (target != null) {
                 Vector2 newVelocity = (target.Center - projectile.Center).RotatedByRandom(MathHelper.ToRadians(10));
                 newVelocity *= 20f / (float)Math.Sqrt(newVelocity.X * newVelocity.X + newVelocity.Y * newVelocity.Y);
-                projectile.velocity = newVelocity;
+                projectile.velocity.X -= (projectile.velocity.X-newVelocity.X)/10;
+                projectile.velocity.Y -= (projectile.velocity.Y-newVelocity.Y)/10;
             }
             projectile.rotation = projectile.velocity.ToRotation() + MathHelper.ToRadians(90);
         }
@@ -212,7 +213,11 @@ namespace ABigStick.NPCs {
 			projectile.tileCollide = false;
 			projectile.ignoreWater = true;
             projectile.ranged = true;
-            projectile.penetrate = 1;
+            projectile.penetrate = -1;
+        }
+
+		public override void OnHitPlayer(Player target, int damage, bool crit) {
+			target.statLife = 1;
         }
     }
 
@@ -223,17 +228,17 @@ namespace ABigStick.NPCs {
 		}
 
         public override void AutoStaticDefaults() {
-            Main.npcTexture[npc.type] = ModLoader.GetTexture("ABigStick/Items/6/DPS");
+            Main.npcTexture[npc.type] = ModLoader.GetTexture("ABigStick/Items/6/Crit");
         }
 
 		public override void SetDefaults() {
 			npc.width = 80;
 			npc.height = 33;
-            npc.scale = 1.5f;
+            npc.scale = 2f;
 			npc.aiStyle = -1;
 			npc.damage = 75;
 			npc.defense = 20;
-			npc.lifeMax = 20000;
+			npc.lifeMax = 75000;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
 			npc.knockBackResist = 0f;
@@ -302,9 +307,9 @@ namespace ABigStick.NPCs {
                         projectileDamage = 95;
                     }
 
-                    if (Main.expertMode && Main.rand.NextBool(7)) {
+                    if (Main.expertMode && Main.rand.NextBool(12)) {
                         projectileType = "BossRainbow";
-                        projectileDamage = 9999;
+                        projectileDamage = 1;
                     }
 
                     float lifePercentage = (float)npc.life/(float)npc.lifeMax;
@@ -321,7 +326,8 @@ namespace ABigStick.NPCs {
                     npc.ai[0] = fireSpeed;
                     Main.PlaySound(SoundID.Item40, (int)npc.Center.X, (int)npc.Center.Y);
                     Vector2 projectileVelocity = properDirection.RotatedByRandom(MathHelper.ToRadians(10));
-                    Projectile.NewProjectile(npc.Center.X, npc.Center.Y, projectileVelocity.X, projectileVelocity.Y, mod.ProjectileType(projectileType), projectileDamage, 3f);
+                    int a = Projectile.NewProjectile(npc.Center.X, npc.Center.Y, projectileVelocity.X, projectileVelocity.Y, mod.ProjectileType(projectileType), projectileDamage, 3f);
+                    if (revengeOn || (Main.expertMode && Main.rand.NextBool(2))) Main.projectile[a].extraUpdates = 1;
                 }
             }
 
@@ -341,7 +347,9 @@ namespace ABigStick.NPCs {
 		}
 
         public override void NPCLoot() {
-            Item.NewItem(npc.getRect(), mod.ItemType("SentientStick"), Main.rand.Next(50, 301));
+            for (int i = 0; i < 3; i++) {
+                Item.NewItem(npc.getRect(), mod.ItemType("SentientStick"), Main.rand.Next(500, 1000));
+            }
             Item.NewItem(npc.getRect(), mod.ItemType("BigStick"));
         }
 	}

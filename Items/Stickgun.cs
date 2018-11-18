@@ -1114,7 +1114,7 @@ namespace ABigStick.Items {
 		}
 
 		public override bool CanUseItem(Player player) {
-			return !NPC.AnyNPCs(mod.NPCType("SentientStickgun")) && !Main.dayTime;
+			return !NPC.AnyNPCs(mod.NPCType("SentientStickgun"));
 		}
 
 		public override bool UseItem(Player player) {

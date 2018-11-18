@@ -24,6 +24,7 @@ namespace ABigStick.Items {
 			projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = 999;
+            projectile.extraUpdates = 1;
         }
     }
 
@@ -52,11 +53,11 @@ namespace ABigStick.Items {
                 projectile.rotation = (float)((Math.Atan2(properDirection.Y, properDirection.X)-(Math.PI/2))%(Math.PI*2));
 
                 // fire where it's facing
-                if (Main.netMode != 1) {
-                    projectile.ai[0]--;
-                    if (projectile.ai[0] <= 0f) {
-                        projectile.ai[0] = 20f;
-                        Main.PlaySound(SoundID.Item40, (int)projectile.Center.X, (int)projectile.Center.Y);
+                projectile.ai[0]--;
+                if (projectile.ai[0] <= 0f) {
+                    projectile.ai[0] = 20f;
+                    Main.PlaySound(SoundID.Item36, (int)projectile.Center.X, (int)projectile.Center.Y);
+                    if (Main.netMode != 1) {
                         for (int i = 0; i < 3; i++) {
                             Vector2 projectileVelocity = properDirection.RotatedByRandom(MathHelper.ToRadians(10));
                             Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, projectileVelocity.X, projectileVelocity.Y, mod.ProjectileType("ServantStick"), 75, 3f, Main.myPlayer);
