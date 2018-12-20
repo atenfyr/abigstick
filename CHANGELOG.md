@@ -1,3 +1,6 @@
+##2.5.0
+- Added Sticks and Meteorite Sticks to the Arms Dealer's shop.
+- Changed the High Velocity Stick recipe to allow any kind of stick.
 ##2.4.0
 - Updated the hitbox of Ether Sticks to be the same as that of all other sticks.
 - Updated the Sentient Stickgun so that it can be spawned during daytime.

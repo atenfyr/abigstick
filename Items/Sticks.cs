@@ -462,7 +462,7 @@ namespace ABigStick.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("StickItem"), 100);
+			recipe.AddRecipeGroup("ABigStick:Sticks", 100);
             recipe.AddIngredient(ItemID.Cog, 1);
             recipe.AddTile(TileID.WorkBenches);
             recipe.SetResult(this, 100);
