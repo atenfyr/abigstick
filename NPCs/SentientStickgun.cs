@@ -27,23 +27,23 @@ namespace ABigStick.NPCs {
     }
 
     public class SentientStick : ModItem {
-		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Sentient Stick");
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Sentient Stick");
             Tooltip.SetDefault("'Seems to have ideas of its own'");
-		}
+        }
 
         public override void AutoStaticDefaults() {
             Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/SentientStick");
         }
 
         public override void SetDefaults() {
-			item.damage = 35;
-			item.ranged = true;
-			item.width = 4;
-			item.height = 20;
-			item.consumable = true;
-			item.knockBack = 2f;
-			item.value = 7500;
+            item.damage = 35;
+            item.ranged = true;
+            item.width = 4;
+            item.height = 20;
+            item.consumable = true;
+            item.knockBack = 2f;
+            item.value = 7500;
             item.shoot = mod.ProjectileType("SentientStick2");
             item.ammo = mod.ItemType("StickItem");
             item.maxStack = 999;
@@ -66,8 +66,8 @@ namespace ABigStick.NPCs {
             projectile.height = 4;
             projectile.aiStyle = -1;
             projectile.friendly = true;
-			projectile.tileCollide = true;
-			projectile.ignoreWater = false;
+            projectile.tileCollide = true;
+            projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = 1;
         }
@@ -99,12 +99,12 @@ namespace ABigStick.NPCs {
             projectile.aiStyle = 1;
             projectile.friendly = false;
             projectile.hostile = true;
-			projectile.tileCollide = true;
-			projectile.ignoreWater = false;
+            projectile.tileCollide = true;
+            projectile.ignoreWater = false;
             projectile.ranged = true;
         }
 
-		public override void Kill(int timeLeft) {
+        public override void Kill(int timeLeft) {
             for (int i = 0; i <= 2; i++) {
                 Dust.NewDust(projectile.position, 0, 0, 1, 0f, 0f, 0, new Color(155, 155, 155), 0.75f);
             }
@@ -126,21 +126,21 @@ namespace ABigStick.NPCs {
             projectile.aiStyle = 1;
             projectile.friendly = false;
             projectile.hostile = true;
-			projectile.tileCollide = true;
-			projectile.ignoreWater = false;
+            projectile.tileCollide = true;
+            projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = 999;
         }
 
-    	public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
+        public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
             target.AddBuff(mod.BuffType("Mourning"), 10 * 60);
-		}
+        }
 
-    	public override void OnHitPvp(Player target, int damage, bool cri) {
+        public override void OnHitPvp(Player target, int damage, bool cri) {
             target.AddBuff(mod.BuffType("Mourning"), 10 * 60);
-		}
+        }
 
-		public override void Kill(int timeLeft) {
+        public override void Kill(int timeLeft) {
             for (int i = 0; i <= 2; i++) {
                 Dust.NewDust(projectile.position, 0, 0, 253, 0f, 0f, 0, new Color(78,94,176), 0.55f);
             }
@@ -162,15 +162,15 @@ namespace ABigStick.NPCs {
             projectile.aiStyle = 1;
             projectile.friendly = false;
             projectile.hostile = true;
-			projectile.tileCollide = true;
-			projectile.ignoreWater = false;
+            projectile.tileCollide = true;
+            projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = 999;
         }
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
-		    projectile.damage = projectile.damage + 5;
-		}
+        public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
+            projectile.damage = projectile.damage + 5;
+        }
     }
 
     public class BossCosmilite : ModProjectile {
@@ -188,8 +188,8 @@ namespace ABigStick.NPCs {
             projectile.aiStyle = 1;
             projectile.friendly = false;
             projectile.hostile = true;
-			projectile.tileCollide = true;
-			projectile.ignoreWater = false;
+            projectile.tileCollide = true;
+            projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = 1;
         }
@@ -210,66 +210,66 @@ namespace ABigStick.NPCs {
             projectile.aiStyle = 1;
             projectile.friendly = false;
             projectile.hostile = true;
-			projectile.tileCollide = false;
-			projectile.ignoreWater = true;
+            projectile.tileCollide = false;
+            projectile.ignoreWater = true;
             projectile.ranged = true;
             projectile.penetrate = -1;
         }
 
-		public override void OnHitPlayer(Player target, int damage, bool crit) {
-			target.statLife = 1;
+        public override void OnHitPlayer(Player target, int damage, bool crit) {
+            target.statLife = 1;
         }
     }
 
     [AutoloadBossHead]
-	public class SentientStickgun : ModNPC {
-		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("A Sentient Stickgun");
-		}
+    public class SentientStickgun : ModNPC {
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("A Sentient Stickgun");
+        }
 
         public override void AutoStaticDefaults() {
             Main.npcTexture[npc.type] = ModLoader.GetTexture("ABigStick/Items/6/Crit");
         }
 
-		public override void SetDefaults() {
-			npc.width = 80;
-			npc.height = 33;
+        public override void SetDefaults() {
+            npc.width = 80;
+            npc.height = 33;
             npc.scale = 2f;
-			npc.aiStyle = -1;
-			npc.damage = 75;
-			npc.defense = 20;
-			npc.lifeMax = 75000;
-			npc.HitSound = SoundID.NPCHit1;
-			npc.DeathSound = SoundID.NPCDeath1;
-			npc.knockBackResist = 0f;
-			npc.noGravity = true;
-			npc.noTileCollide = true;
+            npc.aiStyle = -1;
+            npc.damage = 75;
+            npc.defense = 20;
+            npc.lifeMax = 75000;
+            npc.HitSound = SoundID.NPCHit1;
+            npc.DeathSound = SoundID.NPCDeath1;
+            npc.knockBackResist = 0f;
+            npc.noGravity = true;
+            npc.noTileCollide = true;
             npc.lavaImmune = true;
-			npc.timeLeft = NPC.activeTime * 30;
-			npc.boss = true;
-			npc.value = 30000f;
+            npc.timeLeft = NPC.activeTime * 30;
+            npc.boss = true;
+            npc.value = 30000f;
             npc.buffImmune[31] = true;
-		}
-
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
-			npc.lifeMax = (int)(npc.lifeMax * 0.75f * bossLifeScale);
-			npc.damage = (int)(npc.damage * 0.6f);
         }
 
-		public override void AI() {
+        public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
+            npc.lifeMax = (int)(npc.lifeMax * 0.75f * bossLifeScale);
+            npc.damage = (int)(npc.damage * 0.6f);
+        }
+
+        public override void AI() {
             // calculate target
             npc.TargetClosest(true);
             Player target = Main.player[npc.target];
 
             // fly away if everyone's dead
             if (!target.active || target.dead) {
-				npc.TargetClosest(true);
-				target = Main.player[npc.target];
-				if (!target.active || target.dead) {
-					npc.velocity = new Vector2(0f, -10f);
-					if (npc.timeLeft > 10) npc.timeLeft = 10;
-					return;
-				}
+                npc.TargetClosest(true);
+                target = Main.player[npc.target];
+                if (!target.active || target.dead) {
+                    npc.velocity = new Vector2(0f, -10f);
+                    if (npc.timeLeft > 10) npc.timeLeft = 10;
+                    return;
+                }
             }
 
             // rotate towards target
@@ -339,12 +339,12 @@ namespace ABigStick.NPCs {
             } else {
                 npc.velocity = new Vector2(0f, 10f).RotatedByRandom(MathHelper.ToRadians(360));
             }
-		}
+        }
 
-		public override void BossLoot(ref string name, ref int potionType) {
-			name = "A Sentient Stickgun";
-			potionType = ItemID.GreaterHealingPotion;
-		}
+        public override void BossLoot(ref string name, ref int potionType) {
+            name = "A Sentient Stickgun";
+            potionType = ItemID.GreaterHealingPotion;
+        }
 
         public override void NPCLoot() {
             for (int i = 0; i < 3; i++) {
@@ -352,5 +352,5 @@ namespace ABigStick.NPCs {
             }
             Item.NewItem(npc.getRect(), mod.ItemType("BigStick"));
         }
-	}
+    }
 }

@@ -21,8 +21,8 @@ namespace ABigStick.Items {
             projectile.height = 4;
             projectile.aiStyle = 1;
             projectile.friendly = true;
-			projectile.tileCollide = true;
-			projectile.ignoreWater = false;
+            projectile.tileCollide = true;
+            projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = 1;
         }
@@ -42,8 +42,8 @@ namespace ABigStick.Items {
             projectile.height = 4;
             projectile.aiStyle = -1;
             projectile.friendly = true;
-			projectile.tileCollide = true;
-			projectile.ignoreWater = false;
+            projectile.tileCollide = true;
+            projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = 1;
             projectile.extraUpdates = 3;
@@ -68,8 +68,8 @@ namespace ABigStick.Items {
             projectile.height = 4;
             projectile.aiStyle = 1;
             projectile.friendly = true;
-			projectile.tileCollide = true;
-			projectile.ignoreWater = false;
+            projectile.tileCollide = true;
+            projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = 5;
         }
@@ -89,15 +89,15 @@ namespace ABigStick.Items {
             projectile.height = 4;
             projectile.aiStyle = 1;
             projectile.friendly = true;
-			projectile.tileCollide = true;
-			projectile.ignoreWater = false;
+            projectile.tileCollide = true;
+            projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = 1;
         }
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
-		    target.AddBuff(BuffID.Ichor, 3 * 60);
-		}
+        public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
+            target.AddBuff(BuffID.Ichor, 3 * 60);
+        }
     }
 
     public class StickCo2 : ModProjectile {
@@ -114,15 +114,15 @@ namespace ABigStick.Items {
             projectile.height = 4;
             projectile.aiStyle = 1;
             projectile.friendly = true;
-			projectile.tileCollide = true;
-			projectile.ignoreWater = false;
+            projectile.tileCollide = true;
+            projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = 1;
         }
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
-		    target.AddBuff(BuffID.CursedInferno, 3 * 60);
-		}
+        public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
+            target.AddBuff(BuffID.CursedInferno, 3 * 60);
+        }
     }
 
     public class StickH2 : ModProjectile {
@@ -139,8 +139,8 @@ namespace ABigStick.Items {
             projectile.height = 4;
             projectile.aiStyle = -1;
             projectile.friendly = true;
-			projectile.tileCollide = true;
-			projectile.ignoreWater = false;
+            projectile.tileCollide = true;
+            projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = 1;
             projectile.extraUpdates = 1;
@@ -151,9 +151,9 @@ namespace ABigStick.Items {
             projectile.rotation = (float)(Math.Atan2(projectile.velocity.Y, projectile.velocity.X));
         }
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
-		    target.AddBuff(BuffID.Slow, 5 * 60);
-		}
+        public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
+            target.AddBuff(BuffID.Slow, 5 * 60);
+        }
     }
 
     public class StickBo2 : ModProjectile {
@@ -170,15 +170,15 @@ namespace ABigStick.Items {
             projectile.height = 4;
             projectile.aiStyle = 1;
             projectile.friendly = true;
-			projectile.tileCollide = true;
-			projectile.ignoreWater = false;
+            projectile.tileCollide = true;
+            projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = 1;
         }
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
-		    target.AddBuff(BuffID.Chilled, 5 * 60);
-		}
+        public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
+            target.AddBuff(BuffID.Chilled, 5 * 60);
+        }
     }
 
     public class StickL2 : ModProjectile {
@@ -195,15 +195,15 @@ namespace ABigStick.Items {
             projectile.height = 4;
             projectile.aiStyle = 1;
             projectile.friendly = true;
-			projectile.tileCollide = true;
-			projectile.ignoreWater = false;
+            projectile.tileCollide = true;
+            projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = 999;
         }
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
-		    projectile.damage = projectile.damage + 5;
-		}
+        public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
+            projectile.damage = projectile.damage + 5;
+        }
     }
     
     public class StickD2 : ModProjectile {
@@ -218,12 +218,17 @@ namespace ABigStick.Items {
         public override void SetDefaults() {
             projectile.width = 20;
             projectile.height = 4;
-            projectile.aiStyle = 1;
+            projectile.aiStyle = -1;
             projectile.friendly = true;
-			projectile.tileCollide = false;
-			projectile.ignoreWater = true;
+            projectile.tileCollide = false;
+            projectile.ignoreWater = true;
             projectile.ranged = true;
-            projectile.penetrate = 1;
+            projectile.extraUpdates = 7;
+            projectile.penetrate = 999;
+        }
+
+        public override void AI() {
+            projectile.rotation = (float)(Math.Atan2(projectile.velocity.Y, projectile.velocity.X)) + MathHelper.ToRadians(90);
         }
     }
 
@@ -241,13 +246,13 @@ namespace ABigStick.Items {
             projectile.height = 4;
             projectile.aiStyle = 1;
             projectile.friendly = true;
-			projectile.tileCollide = true;
-			projectile.ignoreWater = false;
+            projectile.tileCollide = true;
+            projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = 5;
         }
 
-    	public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
+        public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
             int value = Main.rand.Next(200, 2000);
             
             if (target.type != NPCID.TargetDummy) {
@@ -260,7 +265,7 @@ namespace ABigStick.Items {
                     Item.NewItem(target.getRect(), ItemID.CopperCoin, value);
                 }
             }
-		}
+        }
     }
 
     public class StickK2 : ModProjectile {
@@ -277,17 +282,17 @@ namespace ABigStick.Items {
             projectile.height = 4;
             projectile.aiStyle = 1;
             projectile.friendly = true;
-			projectile.tileCollide = true;
-			projectile.ignoreWater = false;
+            projectile.tileCollide = true;
+            projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = 1;
         }
 
-    	public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
+        public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
             if (Main.rand.Next(1,3) == 1) {
                 target.AddBuff(BuffID.Confused, 2 * 60);
             }
-		}
+        }
     }
 
     public class StickAten2 : ModProjectile {
@@ -304,21 +309,21 @@ namespace ABigStick.Items {
             projectile.height = 4;
             projectile.aiStyle = 1;
             projectile.friendly = true;
-			projectile.tileCollide = true;
-			projectile.ignoreWater = false;
+            projectile.tileCollide = true;
+            projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = 999;
         }
 
-    	public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
+        public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
             target.AddBuff(mod.BuffType("Mourning"), 10 * 60);
-		}
+        }
 
-    	public override void OnHitPvp(Player target, int damage, bool cri) {
+        public override void OnHitPvp(Player target, int damage, bool cri) {
             target.AddBuff(mod.BuffType("Mourning"), 10 * 60);
-		}
+        }
 
-		public override void Kill(int timeLeft) {
+        public override void Kill(int timeLeft) {
             for (int i = 0; i <= 2; i++) {
                 Dust.NewDust(projectile.position, 0, 0, 253, 0f, 0f, 0, new Color(78,94,176), 0.55f);
             }
@@ -339,12 +344,12 @@ namespace ABigStick.Items {
             projectile.height = 4;
             projectile.aiStyle = 1;
             projectile.friendly = true;
-			projectile.tileCollide = true;
-			projectile.ignoreWater = false;
+            projectile.tileCollide = true;
+            projectile.ignoreWater = false;
             projectile.ranged = true;
         }
 
-		public override void Kill(int timeLeft) {
+        public override void Kill(int timeLeft) {
             for (int i = 0; i <= 2; i++) {
                 Dust.NewDust(projectile.position, 0, 0, 1, 0f, 0f, 0, new Color(155, 155, 155), 0.75f);
             }
@@ -365,8 +370,8 @@ namespace ABigStick.Items {
             projectile.height = 4;
             projectile.aiStyle = 1;
             projectile.friendly = true;
-			projectile.tileCollide = true;
-			projectile.ignoreWater = false;
+            projectile.tileCollide = true;
+            projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = 1;
         }
@@ -386,8 +391,8 @@ namespace ABigStick.Items {
             projectile.height = 20;
             projectile.aiStyle = -1;
             projectile.friendly = true;
-			projectile.tileCollide = true;
-			projectile.ignoreWater = false;
+            projectile.tileCollide = true;
+            projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = 1;
             projectile.extraUpdates = 1;
@@ -400,22 +405,22 @@ namespace ABigStick.Items {
     }
 
     public class StickItem : ModItem {
-		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Stick");
-		}
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Stick");
+        }
 
         public override void AutoStaticDefaults() {
             Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/Stick");
         }
 
         public override void SetDefaults() {
-			item.damage = 3;
-			item.ranged = true;
-			item.width = 4;
-			item.height = 20;
-			item.consumable = true;
-			item.knockBack = 1f;
-			item.value = 2;
+            item.damage = 3;
+            item.ranged = true;
+            item.width = 4;
+            item.height = 20;
+            item.consumable = true;
+            item.knockBack = 1f;
+            item.value = 2;
             item.shoot = mod.ProjectileType("Stick");
             item.ammo = item.type;
             item.maxStack = 999;
@@ -423,37 +428,37 @@ namespace ABigStick.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Wood, 1);
+            recipe.AddIngredient(ItemID.Wood, 1);
             recipe.SetResult(this, 30);
             recipe.AddRecipe();
             ModRecipe recipe3 = new ModRecipe(mod);
-			recipe3.AddIngredient(ItemID.PalmWood, 1);
+            recipe3.AddIngredient(ItemID.PalmWood, 1);
             recipe3.SetResult(this, 30);
             recipe3.AddRecipe();
             ModRecipe recipe4 = new ModRecipe(mod);
-			recipe4.AddIngredient(ItemID.RichMahogany, 1);
+            recipe4.AddIngredient(ItemID.RichMahogany, 1);
             recipe4.SetResult(this, 30);
             recipe4.AddRecipe();
         }
     }
 
     public class HighVelocityStickItem : ModItem {
-		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("High Velocity Stick");
-		}
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("High Velocity Stick");
+        }
 
         public override void AutoStaticDefaults() {
             Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/HighVelocityStick");
         }
 
         public override void SetDefaults() {
-			item.damage = 7;
-			item.ranged = true;
-			item.width = 4;
-			item.height = 20;
-			item.consumable = true;
-			item.knockBack = 1f;
-			item.value = 7;
+            item.damage = 7;
+            item.ranged = true;
+            item.width = 4;
+            item.height = 20;
+            item.consumable = true;
+            item.knockBack = 1f;
+            item.value = 7;
             item.rare = 3;
             item.shoot = mod.ProjectileType("HighVelocityStick");
             item.ammo = mod.ItemType("StickItem");
@@ -462,7 +467,7 @@ namespace ABigStick.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddRecipeGroup("ABigStick:Sticks", 100);
+            recipe.AddRecipeGroup("ABigStick:Sticks", 100);
             recipe.AddIngredient(ItemID.Cog, 1);
             recipe.AddTile(TileID.WorkBenches);
             recipe.SetResult(this, 100);
@@ -471,22 +476,22 @@ namespace ABigStick.Items {
     }
 
     public class PenetratingStickItem : ModItem {
-		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Meteorite Stick");
-		}
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Meteorite Stick");
+        }
 
         public override void AutoStaticDefaults() {
             Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/MeteoriteStick");
         }
 
         public override void SetDefaults() {
-			item.damage = 5;
-			item.ranged = true;
-			item.width = 4;
-			item.height = 20;
-			item.consumable = true;
-			item.knockBack = 1f;
-			item.value = 6;
+            item.damage = 5;
+            item.ranged = true;
+            item.width = 4;
+            item.height = 20;
+            item.consumable = true;
+            item.knockBack = 1f;
+            item.value = 6;
             item.rare = 1;
             item.shoot = mod.ProjectileType("PenetratingStick");
             item.ammo = mod.ItemType("StickItem");
@@ -503,23 +508,23 @@ namespace ABigStick.Items {
     }
 
     public class StickH : ModItem {
-		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Pearlstick");
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Pearlstick");
             Tooltip.SetDefault("Inflicts Slow");
-		}
+        }
 
         public override void AutoStaticDefaults() {
             Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/HallowedStick");
         }
 
         public override void SetDefaults() {
-			item.damage = 5;
-			item.ranged = true;
-			item.width = 4;
-			item.height = 20;
-			item.consumable = true;
-			item.knockBack = 1f;
-			item.value = 10;
+            item.damage = 5;
+            item.ranged = true;
+            item.width = 4;
+            item.height = 20;
+            item.consumable = true;
+            item.knockBack = 1f;
+            item.value = 10;
             item.shoot = mod.ProjectileType("StickH2");
             item.ammo = mod.ItemType("StickItem");
             item.maxStack = 999;
@@ -528,30 +533,30 @@ namespace ABigStick.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Pearlwood, 1);
+            recipe.AddIngredient(ItemID.Pearlwood, 1);
             recipe.SetResult(this, 30);
             recipe.AddRecipe();
         }
     }
 
     public class StickCo : ModItem {
-		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Ebonstick");
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Ebonstick");
             Tooltip.SetDefault("Inflicts Cursed Inferno");
-		}
+        }
 
         public override void AutoStaticDefaults() {
             Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/CorruptionStick");
         }
 
         public override void SetDefaults() {
-			item.damage = 5;
-			item.ranged = true;
-			item.width = 4;
-			item.height = 20;
-			item.consumable = true;
-			item.knockBack = 1f;
-			item.value = 100;
+            item.damage = 5;
+            item.ranged = true;
+            item.width = 4;
+            item.height = 20;
+            item.consumable = true;
+            item.knockBack = 1f;
+            item.value = 100;
             item.shoot = mod.ProjectileType("StickCo2");
             item.ammo = mod.ItemType("StickItem");
             item.maxStack = 999;
@@ -560,30 +565,30 @@ namespace ABigStick.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Ebonwood, 1);
+            recipe.AddIngredient(ItemID.Ebonwood, 1);
             recipe.SetResult(this, 30);
             recipe.AddRecipe();
         }
     }
 
     public class StickCr : ModItem {
-		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Shadestick");
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Shadestick");
             Tooltip.SetDefault("Inflicts Ichor");
-		}
+        }
 
         public override void AutoStaticDefaults() {
             Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/CrimsonStick");
         }
 
         public override void SetDefaults() {
-			item.damage = 7;
-			item.ranged = true;
-			item.width = 4;
-			item.height = 20;
-			item.consumable = true;
-			item.knockBack = 1f;
-			item.value = 100;
+            item.damage = 7;
+            item.ranged = true;
+            item.width = 4;
+            item.height = 20;
+            item.consumable = true;
+            item.knockBack = 1f;
+            item.value = 100;
             item.shoot = mod.ProjectileType("StickCr2");
             item.ammo = mod.ItemType("StickItem");
             item.maxStack = 999;
@@ -592,30 +597,30 @@ namespace ABigStick.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Shadewood, 1);
+            recipe.AddIngredient(ItemID.Shadewood, 1);
             recipe.SetResult(this, 30);
             recipe.AddRecipe();
         }
     }
 
     public class StickBo : ModItem {
-		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Boreal Stick");
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Boreal Stick");
             Tooltip.SetDefault("Inflicts Chilled");
-		}
+        }
 
         public override void AutoStaticDefaults() {
             Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/BorealStick");
         }
 
         public override void SetDefaults() {
-			item.damage = 3;
-			item.ranged = true;
-			item.width = 4;
-			item.height = 20;
-			item.consumable = true;
-			item.knockBack = 1f;
-			item.value = 100;
+            item.damage = 3;
+            item.ranged = true;
+            item.width = 4;
+            item.height = 20;
+            item.consumable = true;
+            item.knockBack = 1f;
+            item.value = 100;
             item.shoot = mod.ProjectileType("StickBo2");
             item.ammo = mod.ItemType("StickItem");
             item.maxStack = 999;
@@ -623,30 +628,30 @@ namespace ABigStick.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.BorealWood, 1);
+            recipe.AddIngredient(ItemID.BorealWood, 1);
             recipe.SetResult(this, 30);
             recipe.AddRecipe();
         }
     }
 
     public class StickL : ModItem {
-		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Luminite Stick");
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Luminite Stick");
             Tooltip.SetDefault("Increases in damage the more targets it pierces through\n'This is irrational.'");
-		}
+        }
 
         public override void AutoStaticDefaults() {
             Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/LuminiteStick");
         }
 
         public override void SetDefaults() {
-			item.damage = 15;
-			item.ranged = true;
-			item.width = 4;
-			item.height = 20;
-			item.consumable = true;
-			item.knockBack = 4f;
-			item.value = 0;
+            item.damage = 15;
+            item.ranged = true;
+            item.width = 4;
+            item.height = 20;
+            item.consumable = true;
+            item.knockBack = 4f;
+            item.value = 0;
             item.rare = 9;
             item.shoot = mod.ProjectileType("StickL2");
             item.ammo = mod.ItemType("StickItem");
@@ -656,7 +661,7 @@ namespace ABigStick.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.LunarBar, 1);
+            recipe.AddIngredient(ItemID.LunarBar, 1);
             recipe.SetResult(this, 333);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.AddRecipe();
@@ -665,24 +670,24 @@ namespace ABigStick.Items {
     
 
     public class StickD : ModItem {
-		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Rainbow Stick");
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Rainbow Stick");
             Tooltip.SetDefault("'Physics? What's that?'");
             Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 7));
-		}
+        }
 
         public override void AutoStaticDefaults() {
             Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/RainbowStickItem");
         }
 
         public override void SetDefaults() {
-			item.damage = 9999;
-			item.ranged = true;
-			item.width = 4;
-			item.height = 20;
-			item.consumable = true;
-			item.knockBack = 4f;
-			item.value = 9999999;
+            item.damage = 9999;
+            item.ranged = true;
+            item.width = 4;
+            item.height = 20;
+            item.consumable = true;
+            item.knockBack = 4f;
+            item.value = 9999999;
             item.rare = 11;
             item.expert = true;
             item.shoot = mod.ProjectileType("StickD2");
@@ -693,23 +698,23 @@ namespace ABigStick.Items {
     }
 
     public class StickM : ModItem {
-		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Greedy Stick");
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Greedy Stick");
             Tooltip.SetDefault("Steals money on impact");
-		}
+        }
 
         public override void AutoStaticDefaults() {
             Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/GreedyStick");
         }
 
         public override void SetDefaults() {
-			item.damage = 7;
-			item.ranged = true;
-			item.width = 4;
-			item.height = 20;
-			item.consumable = true;
-			item.knockBack = 0f;
-			item.value = 200;
+            item.damage = 7;
+            item.ranged = true;
+            item.width = 4;
+            item.height = 20;
+            item.consumable = true;
+            item.knockBack = 0f;
+            item.value = 200;
             item.shoot = mod.ProjectileType("StickM2");
             item.ammo = mod.ItemType("StickItem");
             item.crit = 20;
@@ -719,23 +724,23 @@ namespace ABigStick.Items {
     }
 
     public class StickK : ModItem {
-		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Spooky Stick");
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Spooky Stick");
             Tooltip.SetDefault("33% chance to inflict Confused");
-		}
+        }
 
         public override void AutoStaticDefaults() {
             Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/SpookyStick");
         }
 
         public override void SetDefaults() {
-			item.damage = 4;
-			item.ranged = true;
-			item.width = 4;
-			item.height = 20;
-			item.consumable = true;
-			item.knockBack = 0f;
-			item.value = 200;
+            item.damage = 4;
+            item.ranged = true;
+            item.width = 4;
+            item.height = 20;
+            item.consumable = true;
+            item.knockBack = 0f;
+            item.value = 200;
             item.shoot = mod.ProjectileType("StickK2");
             item.ammo = mod.ItemType("StickItem");
             item.maxStack = 999;
@@ -743,30 +748,30 @@ namespace ABigStick.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.SpookyWood, 1);
+            recipe.AddIngredient(ItemID.SpookyWood, 1);
             recipe.SetResult(this, 30);
             recipe.AddRecipe();
         }
     }
 
     public class StickAten : ModItem {
-		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Stick of Tears");
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Stick of Tears");
             Tooltip.SetDefault("'Forged from their final tears'");
-		}
+        }
 
         public override void AutoStaticDefaults() {
             Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/StickofTears");
         }
 
         public override void SetDefaults() {
-			item.damage = 12;
-			item.ranged = true;
-			item.width = 4;
-			item.height = 20;
-			item.consumable = true;
-			item.knockBack = 2f;
-			item.value = 10;
+            item.damage = 12;
+            item.ranged = true;
+            item.width = 4;
+            item.height = 20;
+            item.consumable = true;
+            item.knockBack = 2f;
+            item.value = 10;
             item.shoot = mod.ProjectileType("StickAten2");
             item.ammo = mod.ItemType("StickItem");
             item.maxStack = 999;
@@ -775,7 +780,7 @@ namespace ABigStick.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("LastTears"), 25);
+            recipe.AddIngredient(mod.ItemType("LastTears"), 25);
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this, 500);
             recipe.AddRecipe();
@@ -783,23 +788,23 @@ namespace ABigStick.Items {
     }
 
     public class StickMoon : ModItem {
-		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Lunar Stick");
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Lunar Stick");
             Tooltip.SetDefault("'Raw power resonates throughout the stick'");
-		}
+        }
 
         public override void AutoStaticDefaults() {
             Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/LunarStick");
         }
 
         public override void SetDefaults() {
-			item.damage = 35;
-			item.ranged = true;
-			item.width = 4;
-			item.height = 20;
-			item.consumable = true;
-			item.knockBack = 2f;
-			item.value = 12500;
+            item.damage = 35;
+            item.ranged = true;
+            item.width = 4;
+            item.height = 20;
+            item.consumable = true;
+            item.knockBack = 2f;
+            item.value = 12500;
             item.shoot = mod.ProjectileType("StickMoon2");
             item.ammo = mod.ItemType("StickItem");
             item.maxStack = 999;
@@ -808,7 +813,7 @@ namespace ABigStick.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("MoonTears"), 10);
+            recipe.AddIngredient(mod.ItemType("MoonTears"), 10);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this, 200);
             recipe.AddRecipe();
@@ -816,23 +821,23 @@ namespace ABigStick.Items {
     }
 
     public class AetherStickItem : ModItem {
-		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Ether Stick");
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Ether Stick");
             Tooltip.SetDefault("Takes time to build up strength");
-		}
+        }
 
         public override void AutoStaticDefaults() {
             Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/EtherStick");
         }
 
         public override void SetDefaults() {
-			item.damage = 10;
-			item.ranged = true;
-			item.width = 4;
-			item.height = 12;
-			item.consumable = true;
-			item.knockBack = 2f;
-			item.value = 20;
+            item.damage = 10;
+            item.ranged = true;
+            item.width = 4;
+            item.height = 12;
+            item.consumable = true;
+            item.knockBack = 2f;
+            item.value = 20;
             item.shoot = mod.ProjectileType("AetherStick");
             item.ammo = mod.ItemType("StickItem");
             item.maxStack = 999;
@@ -841,25 +846,25 @@ namespace ABigStick.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.FragmentVortex, 1);
+            recipe.AddIngredient(ItemID.FragmentVortex, 1);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.SetResult(this, 333);
             recipe.AddRecipe();
 
             ModRecipe recipe2 = new ModRecipe(mod);
-			recipe2.AddIngredient(ItemID.FragmentNebula, 1);
+            recipe2.AddIngredient(ItemID.FragmentNebula, 1);
             recipe2.AddTile(TileID.LunarCraftingStation);
             recipe2.SetResult(this, 333);
             recipe2.AddRecipe();
 
             ModRecipe recipe3 = new ModRecipe(mod);
-			recipe3.AddIngredient(ItemID.FragmentSolar, 1);
+            recipe3.AddIngredient(ItemID.FragmentSolar, 1);
             recipe3.AddTile(TileID.LunarCraftingStation);
             recipe3.SetResult(this, 333);
             recipe3.AddRecipe();
 
             ModRecipe recipe4 = new ModRecipe(mod);
-			recipe4.AddIngredient(ItemID.FragmentStardust, 1);
+            recipe4.AddIngredient(ItemID.FragmentStardust, 1);
             recipe4.AddTile(TileID.LunarCraftingStation);
             recipe4.SetResult(this, 333);
             recipe4.AddRecipe();
@@ -867,23 +872,23 @@ namespace ABigStick.Items {
     }
 
     public class StickCosmilite : ModItem {
-		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Cosmilite Stick");
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Cosmilite Stick");
             Tooltip.SetDefault("'Not a fan of game mechanics'");
-		}
+        }
 
         public override void AutoStaticDefaults() {
             Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/CosmiliteStick");
         }
 
         public override void SetDefaults() {
-			item.damage = 85;
-			item.ranged = true;
-			item.width = 4;
-			item.height = 20;
-			item.consumable = true;
-			item.knockBack = 2f;
-			item.value = 12500;
+            item.damage = 85;
+            item.ranged = true;
+            item.width = 4;
+            item.height = 20;
+            item.consumable = true;
+            item.knockBack = 2f;
+            item.value = 12500;
             item.shoot = mod.ProjectileType("StickCosmilite2");
             item.ammo = mod.ItemType("StickItem");
             item.maxStack = 999;
@@ -902,8 +907,8 @@ namespace ABigStick.Items {
         }
     }
 
-	public class Drops : GlobalNPC {
-		public override void NPCLoot(NPC npc) {
+    public class Drops : GlobalNPC {
+        public override void NPCLoot(NPC npc) {
             int count = Main.rand.Next(5, 10);
             if (Main.rand.NextBool(Main.expertMode ? 2 : 1, 5)) {
                 count = count * 2;
@@ -923,6 +928,6 @@ namespace ABigStick.Items {
                     Item.NewItem(npc.getRect(), mod.ItemType("LastTears"), Main.rand.Next(1, 3));
                 }
             }
-		}
+        }
     }
 }

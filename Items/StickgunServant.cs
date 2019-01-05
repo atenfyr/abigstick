@@ -20,30 +20,30 @@ namespace ABigStick.Items {
             projectile.height = 4;
             projectile.aiStyle = 1;
             projectile.friendly = true;
-			projectile.tileCollide = true;
-			projectile.ignoreWater = false;
+            projectile.tileCollide = true;
+            projectile.ignoreWater = false;
             projectile.ranged = true;
             projectile.penetrate = 999;
             projectile.extraUpdates = 1;
         }
     }
 
-	public class StickgunServant : ModProjectile {
-		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("A Stickgun Servant");
-		}
+    public class StickgunServant : ModProjectile {
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("A Stickgun Servant");
+        }
 
         public override void AutoStaticDefaults() {
             Main.projectileTexture[projectile.type] = ModLoader.GetTexture("ABigStick/Items/Swords/Turret");
         }
 
-		public override void SetDefaults() {
-			projectile.width = 44;
-			projectile.height = 68;
-			projectile.friendly = true;
+        public override void SetDefaults() {
+            projectile.width = 44;
+            projectile.height = 68;
+            projectile.friendly = true;
         }
 
-		public override void AI() {
+        public override void AI() {
             // calculate target
             NPC target = NPCs.UsefulFunctions.FindNearestNPC(projectile.Center, 9999);
 
@@ -78,6 +78,6 @@ namespace ABigStick.Items {
                 }
                 projectile.Kill();
             }
-		}
-	}
+        }
+    }
 }
