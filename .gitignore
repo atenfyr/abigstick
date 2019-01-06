@@ -1,6 +1,7 @@
+.vs
+bin
+obj
 *.png
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+*.csproj
+*.csproj.user
+*.sln
