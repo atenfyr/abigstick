@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework;
 
 namespace ABigStick.Buffs {
     public class Mourning : ModBuff {
-        public override void SetDefaults() {
+        public override void SetStaticDefaults() {
             DisplayName.SetDefault("Mourning");
             Description.SetDefault("Tears are rolling down your eyes");
             Main.debuff[Type] = true;

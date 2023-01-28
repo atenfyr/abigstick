@@ -1,4 +1,5 @@
 using Terraria;
+using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -9,14 +10,12 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("'Shed during someone's final moments'");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/Tears");
-        }
+        public override string Texture { get { return "ABigStick/Items/Tears"; } }
 
         public override void SetDefaults() {
-            item.value = 2000;
-            item.maxStack = 999;
-            item.rare = 3;
+            Item.value = 2000;
+            Item.maxStack = 999;
+            Item.rare = 3;
         }
     }
 
@@ -26,14 +25,12 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("'Released during the Moon Lord's final cries of anguish'");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/MoonTears");
-        }
+        public override string Texture { get { return "ABigStick/Items/MoonTears"; } }
 
         public override void SetDefaults() {
-            item.value = 50000;
-            item.maxStack = 999;
-            item.rare = 9;
+            Item.value = 50000;
+            Item.maxStack = 999;
+            Item.rare = 9;
         }
     }
 
@@ -43,31 +40,28 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("Allows you to harvest their final tears");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/NetofTears");
-        }
+        public override string Texture { get { return "ABigStick/Items/NetofTears"; } }
 
         public override void SetDefaults() {
-            item.value = 1000;
-            item.maxStack = 1;
-            item.rare = 3;
-            item.accessory = true;
+            Item.value = 1000;
+            Item.maxStack = 1;
+            Item.rare = 3;
+            Item.accessory = true;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual) {
-            player.GetModPlayer<ABigPlayer>(mod).hasTearNet = true;
+            player.GetModPlayer<ABigPlayer>().hasTearNet = true;
             if (!hideVisual) {
-                player.AddBuff(mod.BuffType("Mourning"), 3 * 60);
+                player.AddBuff(Mod.Find<ModBuff>("Mourning").Type, 3 * 60);
             }
         }
 
         public override void AddRecipes() {
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.BugNet);
             recipe.AddIngredient(ItemID.HellstoneBar, 10);
             recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            recipe.Register();
         }
     }
 }

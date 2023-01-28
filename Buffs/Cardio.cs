@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace ABigStick.Buffs {
     public class Cardio : ModBuff {
-        public override void SetDefaults() {
+        public override void SetStaticDefaults() {
             DisplayName.SetDefault("Cardio");
             Description.SetDefault("This is some good exercise");
         }

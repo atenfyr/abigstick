@@ -1,8 +1,11 @@
 using System;
 using Terraria;
+using Terraria.Audio;
+using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace ABigStick.NPCs {
     public static class UsefulFunctions {
@@ -31,55 +34,53 @@ namespace ABigStick.NPCs {
             Tooltip.SetDefault("'Seems to have ideas of its own'");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/SentientStick");
-        }
+        public override string Texture { get { return "ABigStick/Items/SentientStick"; } }
 
         public override void SetDefaults() {
-            item.damage = 35;
-            item.ranged = true;
-            item.width = 4;
-            item.height = 20;
-            item.consumable = true;
-            item.knockBack = 2f;
-            item.value = 7500;
-            item.shoot = mod.ProjectileType("SentientStick2");
-            item.ammo = mod.ItemType("StickItem");
-            item.maxStack = 999;
-            item.rare = 11;
+            Item.damage = 35;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 4;
+            Item.height = 20;
+            Item.consumable = true;
+            Item.knockBack = 2f;
+            Item.value = 7500;
+            Item.shoot = Mod.Find<ModProjectile>("SentientStick2").Type;
+            Item.ammo = Mod.Find<ModItem>("StickItem").Type;
+            Item.maxStack = 999;
+            Item.rare = 11;
         }
     }
 
     public class SentientStick2 : ModProjectile {
         public override void SetStaticDefaults() {
             DisplayName.SetDefault("Sentient Stick");
-            ProjectileID.Sets.Homing[projectile.type] = true;
+            ProjectileID.Sets.CultistIsResistantTo[Projectile.type] = true;
         }
 
         public override void AutoStaticDefaults() {
-            Main.projectileTexture[projectile.type] = ModLoader.GetTexture("ABigStick/Items/SentientStick");
+            TextureAssets.Projectile[Projectile.type] = ModContent.Request<Texture2D>("ABigStick/Items/SentientStick");
         }
 
         public override void SetDefaults() {
-            projectile.width = 20;
-            projectile.height = 4;
-            projectile.aiStyle = -1;
-            projectile.friendly = true;
-            projectile.tileCollide = true;
-            projectile.ignoreWater = false;
-            projectile.ranged = true;
-            projectile.penetrate = 1;
+            Projectile.width = 20;
+            Projectile.height = 4;
+            Projectile.aiStyle = -1;
+            Projectile.friendly = true;
+            Projectile.tileCollide = true;
+            Projectile.ignoreWater = false;
+            Projectile.DamageType = DamageClass.Ranged;
+            Projectile.penetrate = 1;
         }
 
         public override void AI() {
-            NPC target = UsefulFunctions.FindNearestNPC(projectile.Center, 1000);
+            NPC target = UsefulFunctions.FindNearestNPC(Projectile.Center, 1000);
             if (target != null) {
-                Vector2 newVelocity = (target.Center - projectile.Center).RotatedByRandom(MathHelper.ToRadians(10));
+                Vector2 newVelocity = (target.Center - Projectile.Center).RotatedByRandom(MathHelper.ToRadians(10));
                 newVelocity *= 20f / (float)Math.Sqrt(newVelocity.X * newVelocity.X + newVelocity.Y * newVelocity.Y);
-                projectile.velocity.X -= (projectile.velocity.X-newVelocity.X)/10;
-                projectile.velocity.Y -= (projectile.velocity.Y-newVelocity.Y)/10;
+                Projectile.velocity.X -= (Projectile.velocity.X-newVelocity.X)/10;
+                Projectile.velocity.Y -= (Projectile.velocity.Y-newVelocity.Y)/10;
             }
-            projectile.rotation = projectile.velocity.ToRotation() + MathHelper.ToRadians(90);
+            Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.ToRadians(90);
         }
     }
     
@@ -89,23 +90,23 @@ namespace ABigStick.NPCs {
         }
 
         public override void AutoStaticDefaults() {
-            Main.projectileTexture[projectile.type] = ModLoader.GetTexture("ABigStick/Items/LunarStick");
+            TextureAssets.Projectile[Projectile.type] = ModContent.Request<Texture2D>("ABigStick/Items/LunarStick");
         }
 
         public override void SetDefaults() {
-            projectile.width = 20;
-            projectile.height = 4;
-            projectile.aiStyle = 1;
-            projectile.friendly = false;
-            projectile.hostile = true;
-            projectile.tileCollide = true;
-            projectile.ignoreWater = false;
-            projectile.ranged = true;
+            Projectile.width = 20;
+            Projectile.height = 4;
+            Projectile.aiStyle = 1;
+            Projectile.friendly = false;
+            Projectile.hostile = true;
+            Projectile.tileCollide = true;
+            Projectile.ignoreWater = false;
+            Projectile.DamageType = DamageClass.Ranged;
         }
 
         public override void Kill(int timeLeft) {
             for (int i = 0; i <= 2; i++) {
-                Dust.NewDust(projectile.position, 0, 0, 1, 0f, 0f, 0, new Color(155, 155, 155), 0.75f);
+                Dust.NewDust(Projectile.position, 0, 0, 1, 0f, 0f, 0, new Color(155, 155, 155), 0.75f);
             }
         }
     }
@@ -116,32 +117,32 @@ namespace ABigStick.NPCs {
         }
 
         public override void AutoStaticDefaults() {
-            Main.projectileTexture[projectile.type] = ModLoader.GetTexture("ABigStick/Items/StickofTears");
+            TextureAssets.Projectile[Projectile.type] = ModContent.Request<Texture2D>("ABigStick/Items/StickofTears");
         }
 
         public override void SetDefaults() {
-            projectile.width = 20;
-            projectile.height = 4;
-            projectile.aiStyle = 1;
-            projectile.friendly = false;
-            projectile.hostile = true;
-            projectile.tileCollide = true;
-            projectile.ignoreWater = false;
-            projectile.ranged = true;
-            projectile.penetrate = 999;
+            Projectile.width = 20;
+            Projectile.height = 4;
+            Projectile.aiStyle = 1;
+            Projectile.friendly = false;
+            Projectile.hostile = true;
+            Projectile.tileCollide = true;
+            Projectile.ignoreWater = false;
+            Projectile.DamageType = DamageClass.Ranged;
+            Projectile.penetrate = 999;
         }
 
         public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
-            target.AddBuff(mod.BuffType("Mourning"), 10 * 60);
+            target.AddBuff(Mod.Find<ModBuff>("Mourning").Type, 10 * 60);
         }
 
         public override void OnHitPvp(Player target, int damage, bool cri) {
-            target.AddBuff(mod.BuffType("Mourning"), 10 * 60);
+            target.AddBuff(Mod.Find<ModBuff>("Mourning").Type, 10 * 60);
         }
 
         public override void Kill(int timeLeft) {
             for (int i = 0; i <= 2; i++) {
-                Dust.NewDust(projectile.position, 0, 0, 253, 0f, 0f, 0, new Color(78,94,176), 0.55f);
+                Dust.NewDust(Projectile.position, 0, 0, 253, 0f, 0f, 0, new Color(78,94,176), 0.55f);
             }
         }
     }
@@ -152,23 +153,23 @@ namespace ABigStick.NPCs {
         }
 
         public override void AutoStaticDefaults() {
-            Main.projectileTexture[projectile.type] = ModLoader.GetTexture("ABigStick/Items/LuminiteStick");
+            TextureAssets.Projectile[Projectile.type] = ModContent.Request<Texture2D>("ABigStick/Items/LuminiteStick");
         }
 
         public override void SetDefaults() {
-            projectile.width = 20;
-            projectile.height = 4;
-            projectile.aiStyle = 1;
-            projectile.friendly = false;
-            projectile.hostile = true;
-            projectile.tileCollide = true;
-            projectile.ignoreWater = false;
-            projectile.ranged = true;
-            projectile.penetrate = 999;
+            Projectile.width = 20;
+            Projectile.height = 4;
+            Projectile.aiStyle = 1;
+            Projectile.friendly = false;
+            Projectile.hostile = true;
+            Projectile.tileCollide = true;
+            Projectile.ignoreWater = false;
+            Projectile.DamageType = DamageClass.Ranged;
+            Projectile.penetrate = 999;
         }
 
         public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
-            projectile.damage = projectile.damage + 5;
+            Projectile.damage = Projectile.damage + 5;
         }
     }
 
@@ -178,19 +179,19 @@ namespace ABigStick.NPCs {
         }
 
         public override void AutoStaticDefaults() {
-            Main.projectileTexture[projectile.type] = ModLoader.GetTexture("ABigStick/Items/CosmiliteStick");
+            TextureAssets.Projectile[Projectile.type] = ModContent.Request<Texture2D>("ABigStick/Items/CosmiliteStick");
         }
 
         public override void SetDefaults() {
-            projectile.width = 20;
-            projectile.height = 4;
-            projectile.aiStyle = 1;
-            projectile.friendly = false;
-            projectile.hostile = true;
-            projectile.tileCollide = true;
-            projectile.ignoreWater = false;
-            projectile.ranged = true;
-            projectile.penetrate = 1;
+            Projectile.width = 20;
+            Projectile.height = 4;
+            Projectile.aiStyle = 1;
+            Projectile.friendly = false;
+            Projectile.hostile = true;
+            Projectile.tileCollide = true;
+            Projectile.ignoreWater = false;
+            Projectile.DamageType = DamageClass.Ranged;
+            Projectile.penetrate = 1;
         }
     }
 
@@ -200,19 +201,19 @@ namespace ABigStick.NPCs {
         }
 
         public override void AutoStaticDefaults() {
-            Main.projectileTexture[projectile.type] = ModLoader.GetTexture("ABigStick/Items/RainbowStickProjectile");
+            TextureAssets.Projectile[Projectile.type] = ModContent.Request<Texture2D>("ABigStick/Items/RainbowStickProjectile");
         }
 
         public override void SetDefaults() {
-            projectile.width = 20;
-            projectile.height = 4;
-            projectile.aiStyle = 1;
-            projectile.friendly = false;
-            projectile.hostile = true;
-            projectile.tileCollide = false;
-            projectile.ignoreWater = true;
-            projectile.ranged = true;
-            projectile.penetrate = -1;
+            Projectile.width = 20;
+            Projectile.height = 4;
+            Projectile.aiStyle = 1;
+            Projectile.friendly = false;
+            Projectile.hostile = true;
+            Projectile.tileCollide = false;
+            Projectile.ignoreWater = true;
+            Projectile.DamageType = DamageClass.Ranged;
+            Projectile.penetrate = -1;
         }
 
         public override void OnHitPlayer(Player target, int damage, bool crit) {
@@ -227,81 +228,80 @@ namespace ABigStick.NPCs {
         }
 
         public override void AutoStaticDefaults() {
-            Main.npcTexture[npc.type] = ModLoader.GetTexture("ABigStick/Items/6/Crit");
+            TextureAssets.Npc[NPC.type] = ModContent.Request<Texture2D>("ABigStick/Items/6/Crit");
         }
 
         public override void SetDefaults() {
-            npc.width = 80;
-            npc.height = 33;
-            npc.scale = 2f;
-            npc.aiStyle = -1;
-            npc.damage = 75;
-            npc.defense = 20;
-            npc.lifeMax = 75000;
-            npc.HitSound = SoundID.NPCHit1;
-            npc.DeathSound = SoundID.NPCDeath1;
-            npc.knockBackResist = 0f;
-            npc.noGravity = true;
-            npc.noTileCollide = true;
-            npc.lavaImmune = true;
-            npc.timeLeft = NPC.activeTime * 30;
-            npc.boss = true;
-            npc.value = 30000f;
-            npc.buffImmune[31] = true;
+            NPC.width = 80;
+            NPC.height = 33;
+            NPC.scale = 2f;
+            NPC.aiStyle = -1;
+            NPC.damage = 75;
+            NPC.defense = 20;
+            NPC.lifeMax = 75000;
+            NPC.HitSound = SoundID.NPCHit1;
+            NPC.DeathSound = SoundID.NPCDeath1;
+            NPC.knockBackResist = 0f;
+            NPC.noGravity = true;
+            NPC.noTileCollide = true;
+            NPC.lavaImmune = true;
+            NPC.timeLeft = NPC.activeTime * 30;
+            NPC.boss = true;
+            NPC.value = 30000f;
+            NPC.buffImmune[31] = true;
         }
 
         public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
-            npc.lifeMax = (int)(npc.lifeMax * 0.75f * bossLifeScale);
-            npc.damage = (int)(npc.damage * 0.6f);
+            NPC.lifeMax = (int)(NPC.lifeMax * 0.75f * bossLifeScale);
+            NPC.damage = (int)(NPC.damage * 0.6f);
         }
 
         public override void AI() {
             // calculate target
-            npc.TargetClosest(true);
-            Player target = Main.player[npc.target];
+            NPC.TargetClosest(true);
+            Player target = Main.player[NPC.target];
 
             // fly away if everyone's dead
             if (!target.active || target.dead) {
-                npc.TargetClosest(true);
-                target = Main.player[npc.target];
+                NPC.TargetClosest(true);
+                target = Main.player[NPC.target];
                 if (!target.active || target.dead) {
-                    npc.velocity = new Vector2(0f, -10f);
-                    if (npc.timeLeft > 10) npc.timeLeft = 10;
+                    NPC.velocity = new Vector2(0f, -10f);
+                    if (NPC.timeLeft > 10) NPC.timeLeft = 10;
                     return;
                 }
             }
 
             // rotate towards target
-            Vector2 properDirection = new Vector2((float)(target.Center.X-npc.Center.X), (float)(target.Center.Y-npc.Center.Y));
-            npc.rotation = (float)(Math.Atan2(properDirection.Y, properDirection.X));
+            Vector2 properDirection = new Vector2((float)(target.Center.X-NPC.Center.X), (float)(target.Center.Y-NPC.Center.Y));
+            NPC.rotation = (float)(Math.Atan2(properDirection.Y, properDirection.X));
 
             // fire bullets where it's facing
             if (Main.netMode != 1) {
-                npc.ai[0]--;
-                if (npc.ai[0] <= 0f) {
+                NPC.ai[0]--;
+                if (NPC.ai[0] <= 0f) {
                     float fireSpeed = 3f;
                     bool revengeOn = false;
 
                     if (Main.expertMode) fireSpeed = (Main.rand.NextBool(2))?3f:2f;
                     // check if we're in revengeance mode (calamity)
-                    Mod calamityMod = ModLoader.GetMod("CalamityMod");
+                    ModLoader.TryGetMod("CalamityMod", out Mod calamityMod);
                     if (calamityMod != null) {
-                        ModWorld calamityWorld = calamityMod.GetModWorld("CalamityWorld");
-                        revengeOn = (bool)calamityWorld.GetType().GetField("revenge").GetValue(calamityWorld);
+                        revengeOn = (bool)calamityMod.Call("DifficultyActive", "revengeance");
                         if (revengeOn == true) {
                             fireSpeed = 2f;
                         }
                     }
 
-                    String projectileType = "BossLunar";
+                    String projectileType = "BossLunar";;
                     int projectileDamage = 55;
-                    if (npc.ai[1] == 2f) {
+                    if (NPC.ai[1] == 2f) {
                         projectileType = "BossTears";
                         projectileDamage = 40;
-                    } else if (npc.ai[1] == 3f) {
+                    } else if (NPC.ai[1] == 3f) {
                         projectileType = "BossLuminite";
                         projectileDamage = 35;
-                    } else if (npc.ai[1] == 4f) {
+                    } else if (NPC.ai[1] == 4f) {
                         projectileType = "BossCosmilite";
                         projectileDamage = 95;
                     }
@@ -311,32 +311,32 @@ namespace ABigStick.NPCs {
                         projectileDamage = 1;
                     }
 
-                    float lifePercentage = (float)npc.life/(float)npc.lifeMax;
+                    float lifePercentage = (float)NPC.life/(float)NPC.lifeMax;
                     if (lifePercentage <= 0.25f && revengeOn) { // 25% health
-                        npc.ai[1] = 4f;
+                        NPC.ai[1] = 4f;
                     } else if (lifePercentage <= 0.45f) { // 35% health
-                        npc.ai[1] = 1f;
+                        NPC.ai[1] = 1f;
                     } else if (lifePercentage <= 0.55f) { // 55% health
-                        npc.ai[1] = 2f;
+                        NPC.ai[1] = 2f;
                     } else {
-                        npc.ai[1] = 3f;
+                        NPC.ai[1] = 3f;
                     }
 
-                    npc.ai[0] = fireSpeed;
-                    Main.PlaySound(SoundID.Item40, (int)npc.Center.X, (int)npc.Center.Y);
+                    NPC.ai[0] = fireSpeed;
+                    SoundEngine.PlaySound(SoundID.Item40, NPC.Center);
                     Vector2 projectileVelocity = properDirection.RotatedByRandom(MathHelper.ToRadians(10));
-                    int a = Projectile.NewProjectile(npc.Center.X, npc.Center.Y, projectileVelocity.X, projectileVelocity.Y, mod.ProjectileType(projectileType), projectileDamage, 3f);
+                    int a = Projectile.NewProjectile(null, NPC.Center.X, NPC.Center.Y, projectileVelocity.X, projectileVelocity.Y, Mod.Find<ModProjectile>(projectileType).Type, projectileDamage, 3f);
                     if (revengeOn || (Main.expertMode && Main.rand.NextBool(2))) Main.projectile[a].extraUpdates = 1;
                 }
             }
 
             // chase target while twitching
-            if (target.Distance(npc.Center) > 250f) {
-                Vector2 newVelocity = (target.Center - npc.Center).RotatedByRandom(MathHelper.ToRadians(180));
+            if (target.Distance(NPC.Center) > 250f) {
+                Vector2 newVelocity = (target.Center - NPC.Center).RotatedByRandom(MathHelper.ToRadians(180));
                 newVelocity *= 10f / (float)Math.Sqrt(newVelocity.X * newVelocity.X + newVelocity.Y * newVelocity.Y);
-                npc.velocity = newVelocity;
+                NPC.velocity = newVelocity;
             } else {
-                npc.velocity = new Vector2(0f, 10f).RotatedByRandom(MathHelper.ToRadians(360));
+                NPC.velocity = new Vector2(0f, 10f).RotatedByRandom(MathHelper.ToRadians(360));
             }
         }
 
@@ -345,11 +345,11 @@ namespace ABigStick.NPCs {
             potionType = ItemID.GreaterHealingPotion;
         }
 
-        public override void NPCLoot() {
+        public override void OnKill() {
             for (int i = 0; i < 3; i++) {
-                Item.NewItem(npc.getRect(), mod.ItemType("SentientStick"), Main.rand.Next(500, 1000));
+                Item.NewItem(null, NPC.getRect(), Mod.Find<ModItem>("SentientStick").Type, Main.rand.Next(500, 1000));
             }
-            Item.NewItem(npc.getRect(), mod.ItemType("BigStick"));
+            Item.NewItem(null, NPC.getRect(), Mod.Find<ModItem>("BigStick").Type);
         }
     }
 }

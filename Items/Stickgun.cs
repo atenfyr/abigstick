@@ -1,4 +1,6 @@
 using Terraria;
+using Terraria.Audio;
+using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -10,14 +12,12 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("<right> to obtain a Clockwork Stickgun");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/1/Crit");
-        }
+        public override string Texture { get { return "ABigStick/Items/1/Crit"; } }
 
         public override void SetDefaults() {
-            item.value = 0;
-            item.rare = 10;
-            item.maxStack = 1;
+            Item.value = 0;
+            Item.rare = 10;
+            Item.maxStack = 1;
         }
 
         public override bool CanRightClick() {
@@ -25,7 +25,7 @@ namespace ABigStick.Items {
         }
 
         public override void RightClick(Player player) {
-            player.QuickSpawnItem(mod.ItemType("EmotionalStickgun"));
+            player.QuickSpawnItem(null, Mod.Find<ModItem>("EmotionalStickgun").Type);
         }
     }
 
@@ -36,37 +36,34 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("Uses sticks as ammo");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/-1/DPS");
-        }
+        public override string Texture { get { return "ABigStick/Items/-1/DPS"; } }
 
         public override void SetDefaults() {
-            item.damage = 9;
-            item.ranged = true;
-            item.width = 25;
-            item.height = 13;
-            item.maxStack = 1;
-            item.useTime = 23;
-            item.useAnimation = 23;
-            item.useStyle = 5;
-            item.knockBack = 2;
-            item.value = 100;
-            item.rare = 0;
-            item.crit = 5;
-            item.UseSound = SoundID.Item40;
-            item.noMelee = true;
-            item.shoot = mod.ProjectileType("Stick");
-            item.useAmmo = mod.ItemType("StickItem");
-            item.shootSpeed = 20f;
-            item.autoReuse = true;
+            Item.damage = 9;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 25;
+            Item.height = 13;
+            Item.maxStack = 1;
+            Item.useTime = 23;
+            Item.useAnimation = 23;
+            Item.useStyle = 5;
+            Item.knockBack = 2;
+            Item.value = 100;
+            Item.rare = 0;
+            Item.crit = 5;
+            Item.UseSound = SoundID.Item40;
+            Item.noMelee = true;
+            Item.shoot = Mod.Find<ModProjectile>("Stick").Type;
+            Item.useAmmo = Mod.Find<ModItem>("StickItem").Type;
+            Item.shootSpeed = 20f;
+            Item.autoReuse = true;
         }
 
         public override void AddRecipes() {
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Wood, 50);
             recipe.AddTile(TileID.WorkBenches);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            recipe.Register();
         }
     }
 
@@ -77,37 +74,34 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("Uses sticks as ammo");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/-1/Crit");
-        }
+        public override string Texture { get { return "ABigStick/Items/-1/Crit"; } }
 
         public override void SetDefaults() {
-            item.damage = 13;
-            item.ranged = true;
-            item.width = 35;
-            item.height = 8;
-            item.maxStack = 1;
-            item.useTime = 41;
-            item.useAnimation = 41;
-            item.useStyle = 5;
-            item.knockBack = 2;
-            item.value = 100;
-            item.rare = 0;
-            item.crit = 30;
-            item.UseSound = SoundID.Item36;
-            item.noMelee = true;
-            item.shoot = mod.ProjectileType("Stick");
-            item.useAmmo = mod.ItemType("StickItem");
-            item.shootSpeed = 20f;
-            item.autoReuse = true;
+            Item.damage = 13;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 35;
+            Item.height = 8;
+            Item.maxStack = 1;
+            Item.useTime = 41;
+            Item.useAnimation = 41;
+            Item.useStyle = 5;
+            Item.knockBack = 2;
+            Item.value = 100;
+            Item.rare = 0;
+            Item.crit = 30;
+            Item.UseSound = SoundID.Item36;
+            Item.noMelee = true;
+            Item.shoot = Mod.Find<ModProjectile>("Stick").Type;
+            Item.useAmmo = Mod.Find<ModItem>("StickItem").Type;
+            Item.shootSpeed = 20f;
+            Item.autoReuse = true;
         }
 
         public override void AddRecipes() {
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Wood, 50);
             recipe.AddTile(TileID.WorkBenches);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            recipe.Register();
         }
     }
 
@@ -118,46 +112,42 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("Uses sticks as ammo");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/0/DPS");
-        }
+        public override string Texture { get { return "ABigStick/Items/0/DPS"; } }
 
         public override void SetDefaults() {
-            item.damage = 25;
-            item.ranged = true;
-            item.width = 26;
-            item.height = 13;
-            item.maxStack = 1;
-            item.useTime = 18;
-            item.useAnimation = 18;
-            item.useStyle = 5;
-            item.knockBack = 2;
-            item.value = 100;
-            item.rare = 1;
-            item.crit = 5;
-            item.UseSound = SoundID.Item40;
-            item.noMelee = true;
-            item.shoot = mod.ProjectileType("Stick");
-            item.useAmmo = mod.ItemType("StickItem");
-            item.shootSpeed = 20f;
-            item.autoReuse = true;
+            Item.damage = 25;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 26;
+            Item.height = 13;
+            Item.maxStack = 1;
+            Item.useTime = 18;
+            Item.useAnimation = 18;
+            Item.useStyle = 5;
+            Item.knockBack = 2;
+            Item.value = 100;
+            Item.rare = 1;
+            Item.crit = 5;
+            Item.UseSound = SoundID.Item40;
+            Item.noMelee = true;
+            Item.shoot = Mod.Find<ModProjectile>("Stick").Type;
+            Item.useAmmo = Mod.Find<ModItem>("StickItem").Type;
+            Item.shootSpeed = 20f;
+            Item.autoReuse = true;
         }
 
         public override void AddRecipes() {
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.DemoniteBar, 15);
             recipe.AddIngredient(ItemID.Wood, 50);
             recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            recipe.Register();
 
             // Upgrading from previous tier
-            ModRecipe upgrade = new ModRecipe(mod);
-            upgrade.AddIngredient(mod.ItemType("WoodenStickgun"));
+            Recipe upgrade = CreateRecipe();
+            upgrade.AddIngredient(Mod.Find<ModItem>("WoodenStickgun").Type);
             upgrade.AddIngredient(ItemID.DemoniteBar, 14);
             upgrade.AddTile(TileID.Anvils);
-            upgrade.SetResult(this);
-            upgrade.AddRecipe();
+            upgrade.Register();
         }
     }
 
@@ -168,46 +158,42 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("Uses sticks as ammo");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/0/Crit");
-        }
+        public override string Texture { get { return "ABigStick/Items/0/Crit"; } }
 
         public override void SetDefaults() {
-            item.damage = 47;
-            item.ranged = true;
-            item.width = 35;
-            item.height = 8;
-            item.maxStack = 1;
-            item.useTime = 39;
-            item.useAnimation = 39;
-            item.useStyle = 5;
-            item.knockBack = 3;
-            item.value = 100;
-            item.rare = 1;
-            item.crit = 35;
-            item.UseSound = SoundID.Item36;
-            item.noMelee = true;
-            item.shoot = mod.ProjectileType("Stick");
-            item.useAmmo = mod.ItemType("StickItem");
-            item.shootSpeed = 20f;
-            item.autoReuse = true;
+            Item.damage = 47;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 35;
+            Item.height = 8;
+            Item.maxStack = 1;
+            Item.useTime = 39;
+            Item.useAnimation = 39;
+            Item.useStyle = 5;
+            Item.knockBack = 3;
+            Item.value = 100;
+            Item.rare = 1;
+            Item.crit = 35;
+            Item.UseSound = SoundID.Item36;
+            Item.noMelee = true;
+            Item.shoot = Mod.Find<ModProjectile>("Stick").Type;
+            Item.useAmmo = Mod.Find<ModItem>("StickItem").Type;
+            Item.shootSpeed = 20f;
+            Item.autoReuse = true;
         }
 
         public override void AddRecipes() {
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.DemoniteBar, 15);
             recipe.AddIngredient(ItemID.Wood, 50);
             recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            recipe.Register();
 
             // Upgrading from previous tier
-            ModRecipe upgrade = new ModRecipe(mod);
-            upgrade.AddIngredient(mod.ItemType("WoodenStickSniper"));
+            Recipe upgrade = CreateRecipe();
+            upgrade.AddIngredient(Mod.Find<ModItem>("WoodenStickSniper").Type);
             upgrade.AddIngredient(ItemID.DemoniteBar, 14);
             upgrade.AddTile(TileID.Anvils);
-            upgrade.SetResult(this);
-            upgrade.AddRecipe();
+            upgrade.Register();
         }
     }
 
@@ -218,46 +204,42 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("Uses sticks as ammo");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/0/DPS_C");
-        }
+        public override string Texture { get { return "ABigStick/Items/0/DPS_C"; } }
 
         public override void SetDefaults() {
-            item.damage = 27;
-            item.ranged = true;
-            item.width = 26;
-            item.height = 13;
-            item.maxStack = 1;
-            item.useTime = 18;
-            item.useAnimation = 18;
-            item.useStyle = 5;
-            item.knockBack = 2;
-            item.value = 100;
-            item.rare = 1;
-            item.crit = 5;
-            item.UseSound = SoundID.Item40;
-            item.noMelee = true;
-            item.shoot = mod.ProjectileType("Stick");
-            item.useAmmo = mod.ItemType("StickItem");
-            item.shootSpeed = 20f;
-            item.autoReuse = true;
+            Item.damage = 27;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 26;
+            Item.height = 13;
+            Item.maxStack = 1;
+            Item.useTime = 18;
+            Item.useAnimation = 18;
+            Item.useStyle = 5;
+            Item.knockBack = 2;
+            Item.value = 100;
+            Item.rare = 1;
+            Item.crit = 5;
+            Item.UseSound = SoundID.Item40;
+            Item.noMelee = true;
+            Item.shoot = Mod.Find<ModProjectile>("Stick").Type;
+            Item.useAmmo = Mod.Find<ModItem>("StickItem").Type;
+            Item.shootSpeed = 20f;
+            Item.autoReuse = true;
         }
 
         public override void AddRecipes() {
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.CrimtaneBar, 15);
             recipe.AddIngredient(ItemID.Wood, 50);
             recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            recipe.Register();
 
             // Upgrading from previous tier
-            ModRecipe upgrade = new ModRecipe(mod);
-            upgrade.AddIngredient(mod.ItemType("WoodenStickgun"));
+            Recipe upgrade = CreateRecipe();
+            upgrade.AddIngredient(Mod.Find<ModItem>("WoodenStickgun").Type);
             upgrade.AddIngredient(ItemID.CrimtaneBar, 14);
             upgrade.AddTile(TileID.Anvils);
-            upgrade.SetResult(this);
-            upgrade.AddRecipe();
+            upgrade.Register();
         }
     }
 
@@ -268,46 +250,42 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("Uses sticks as ammo");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/0/Crit_C");
-        }
+        public override string Texture { get { return "ABigStick/Items/0/Crit_C"; } }
 
         public override void SetDefaults() {
-            item.damage = 47;
-            item.ranged = true;
-            item.width = 35;
-            item.height = 8;
-            item.maxStack = 1;
-            item.useTime = 39;
-            item.useAnimation = 39;
-            item.useStyle = 5;
-            item.knockBack = 3;
-            item.value = 100;
-            item.rare = 1;
-            item.crit = 35;
-            item.UseSound = SoundID.Item36;
-            item.noMelee = true;
-            item.shoot = mod.ProjectileType("Stick");
-            item.useAmmo = mod.ItemType("StickItem");
-            item.shootSpeed = 20f;
-            item.autoReuse = true;
+            Item.damage = 47;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 35;
+            Item.height = 8;
+            Item.maxStack = 1;
+            Item.useTime = 39;
+            Item.useAnimation = 39;
+            Item.useStyle = 5;
+            Item.knockBack = 3;
+            Item.value = 100;
+            Item.rare = 1;
+            Item.crit = 35;
+            Item.UseSound = SoundID.Item36;
+            Item.noMelee = true;
+            Item.shoot = Mod.Find<ModProjectile>("Stick").Type;
+            Item.useAmmo = Mod.Find<ModItem>("StickItem").Type;
+            Item.shootSpeed = 20f;
+            Item.autoReuse = true;
         }
 
         public override void AddRecipes() {
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.CrimtaneBar, 15);
             recipe.AddIngredient(ItemID.Wood, 50);
             recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            recipe.Register();
 
             // Upgrading from previous tier
-            ModRecipe upgrade = new ModRecipe(mod);
-            upgrade.AddIngredient(mod.ItemType("WoodenStickSniper"));
+            Recipe upgrade = CreateRecipe();
+            upgrade.AddIngredient(Mod.Find<ModItem>("WoodenStickSniper").Type);
             upgrade.AddIngredient(ItemID.CrimtaneBar, 14);
             upgrade.AddTile(TileID.Anvils);
-            upgrade.SetResult(this);
-            upgrade.AddRecipe();
+            upgrade.Register();
         }
     }
     
@@ -318,54 +296,49 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("Uses sticks as ammo");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/1/DPS");
-        }
+        public override string Texture { get { return "ABigStick/Items/1/DPS"; } }
 
         public override void SetDefaults() {
-            item.damage = 32;
-            item.ranged = true;
-            item.width = 26;
-            item.height = 13;
-            item.maxStack = 1;
-            item.useTime = 16;
-            item.useAnimation = 16;
-            item.useStyle = 5;
-            item.knockBack = 2;
-            item.value = 3000;
-            item.rare = 3;
-            item.crit = 5;
-            item.UseSound = SoundID.Item40;
-            item.noMelee = true;
-            item.shoot = mod.ProjectileType("Stick");
-            item.useAmmo = mod.ItemType("StickItem");
-            item.shootSpeed = 20f;
-            item.autoReuse = true;
+            Item.damage = 32;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 26;
+            Item.height = 13;
+            Item.maxStack = 1;
+            Item.useTime = 16;
+            Item.useAnimation = 16;
+            Item.useStyle = 5;
+            Item.knockBack = 2;
+            Item.value = 3000;
+            Item.rare = 3;
+            Item.crit = 5;
+            Item.UseSound = SoundID.Item40;
+            Item.noMelee = true;
+            Item.shoot = Mod.Find<ModProjectile>("Stick").Type;
+            Item.useAmmo = Mod.Find<ModItem>("StickItem").Type;
+            Item.shootSpeed = 20f;
+            Item.autoReuse = true;
         }
 
         public override void AddRecipes() {
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.HellstoneBar, 15);
             recipe.AddIngredient(ItemID.Wood, 50);
             recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            recipe.Register();
 
             // Upgrading from previous tier
-            ModRecipe upgrade = new ModRecipe(mod);
-            upgrade.AddIngredient(mod.ItemType("Lvl0Stickgun"));
+            Recipe upgrade = CreateRecipe();
+            upgrade.AddIngredient(Mod.Find<ModItem>("Lvl0Stickgun").Type);
             upgrade.AddIngredient(ItemID.HellstoneBar, 14);
             upgrade.AddTile(TileID.Anvils);
-            upgrade.SetResult(this);
-            upgrade.AddRecipe();
+            upgrade.Register();
 
             // Upgrading from previous tier
-            ModRecipe upgrade2 = new ModRecipe(mod);
-            upgrade2.AddIngredient(mod.ItemType("Lvl0StickgunC"));
+            Recipe upgrade2 = CreateRecipe();
+            upgrade2.AddIngredient(Mod.Find<ModItem>("Lvl0StickgunC").Type);
             upgrade2.AddIngredient(ItemID.HellstoneBar, 14);
             upgrade2.AddTile(TileID.Anvils);
-            upgrade2.SetResult(this);
-            upgrade2.AddRecipe();
+            upgrade2.Register();
         }
     }
 
@@ -376,55 +349,50 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("Uses sticks as ammo");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/1/Crit");
-        }
+        public override string Texture { get { return "ABigStick/Items/1/Crit"; } }
 
         public override void SetDefaults() {
-            item.damage = 55;
-            item.ranged = true;
-            item.width = 35;
-            item.height = 8;
-            item.maxStack = 1;
-            item.useTime = 36;
-            item.useAnimation = 36;
-            item.useStyle = 5;
-            item.knockBack = 4;
-            item.value = 3000;
-            item.rare = 3;
-            item.crit = 30;
-            item.UseSound = SoundID.Item36;
-            item.noMelee = true;
-            item.shoot = mod.ProjectileType("Stick");
-            item.useAmmo = mod.ItemType("StickItem");
-            item.shootSpeed = 20f;
-            item.autoReuse = true;
+            Item.damage = 55;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 35;
+            Item.height = 8;
+            Item.maxStack = 1;
+            Item.useTime = 36;
+            Item.useAnimation = 36;
+            Item.useStyle = 5;
+            Item.knockBack = 4;
+            Item.value = 3000;
+            Item.rare = 3;
+            Item.crit = 30;
+            Item.UseSound = SoundID.Item36;
+            Item.noMelee = true;
+            Item.shoot = Mod.Find<ModProjectile>("Stick").Type;
+            Item.useAmmo = Mod.Find<ModItem>("StickItem").Type;
+            Item.shootSpeed = 20f;
+            Item.autoReuse = true;
         }
 
         public override void AddRecipes() {
             // Making a brand new stickgun
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.HellstoneBar, 15);
             recipe.AddIngredient(ItemID.Wood, 50);
             recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            recipe.Register();
 
             // Upgrading from previous tier
-            ModRecipe upgrade = new ModRecipe(mod);
-            upgrade.AddIngredient(mod.ItemType("Lvl0StickSniper"));
+            Recipe upgrade = CreateRecipe();
+            upgrade.AddIngredient(Mod.Find<ModItem>("Lvl0StickSniper").Type);
             upgrade.AddIngredient(ItemID.HellstoneBar, 14);
             upgrade.AddTile(TileID.Anvils);
-            upgrade.SetResult(this);
-            upgrade.AddRecipe();
+            upgrade.Register();
 
             // Upgrading from previous tier
-            ModRecipe upgrade2 = new ModRecipe(mod);
-            upgrade2.AddIngredient(mod.ItemType("Lvl0StickSniperC"));
+            Recipe upgrade2 = CreateRecipe();
+            upgrade2.AddIngredient(Mod.Find<ModItem>("Lvl0StickSniperC").Type);
             upgrade2.AddIngredient(ItemID.HellstoneBar, 14);
             upgrade2.AddTile(TileID.Anvils);
-            upgrade2.SetResult(this);
-            upgrade2.AddRecipe();
+            upgrade2.Register();
         }
     }
 
@@ -435,50 +403,46 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("Uses sticks as ammo\n25% chance to not consume ammo");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/2/DPS_A");
-        }
+        public override string Texture { get { return "ABigStick/Items/2/DPS_A"; } }
 
         public override void SetDefaults() {
-            item.damage = 45;
-            item.ranged = true;
-            item.width = 30;
-            item.height = 15;
-            item.maxStack = 1;
-            item.useTime = 14;
-            item.useAnimation = 14;
-            item.useStyle = 5;
-            item.knockBack = 2;
-            item.value = 7000;
-            item.rare = 4;
-            item.crit = 5;
-            item.UseSound = SoundID.Item40;
-            item.noMelee = true;
-            item.shoot = mod.ProjectileType("Stick");
-            item.useAmmo = mod.ItemType("StickItem");
-            item.shootSpeed = 20f;
-            item.autoReuse = true;
+            Item.damage = 45;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 30;
+            Item.height = 15;
+            Item.maxStack = 1;
+            Item.useTime = 14;
+            Item.useAnimation = 14;
+            Item.useStyle = 5;
+            Item.knockBack = 2;
+            Item.value = 7000;
+            Item.rare = 4;
+            Item.crit = 5;
+            Item.UseSound = SoundID.Item40;
+            Item.noMelee = true;
+            Item.shoot = Mod.Find<ModProjectile>("Stick").Type;
+            Item.useAmmo = Mod.Find<ModItem>("StickItem").Type;
+            Item.shootSpeed = 20f;
+            Item.autoReuse = true;
         }
 
         public override void AddRecipes() {
             // Making a brand new stickgun
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.AdamantiteBar, 12);
             recipe.AddIngredient(ItemID.Wood, 50);
             recipe.AddTile(TileID.MythrilAnvil);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            recipe.Register();
 
             // Upgrading from previous tier
-            ModRecipe upgrade = new ModRecipe(mod);
-            upgrade.AddIngredient(mod.ItemType("Lvl1Stickgun"));
+            Recipe upgrade = CreateRecipe();
+            upgrade.AddIngredient(Mod.Find<ModItem>("Lvl1Stickgun").Type);
             upgrade.AddIngredient(ItemID.AdamantiteBar, 11);
             upgrade.AddTile(TileID.MythrilAnvil);
-            upgrade.SetResult(this);
-            upgrade.AddRecipe();
+            upgrade.Register();
         }
 
-        public override bool ConsumeAmmo(Player player) {
+        public override bool CanConsumeAmmo(Item ammo, Player player) {
             return Main.rand.NextFloat() >= .25f;
         }
     }
@@ -490,50 +454,46 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("Uses sticks as ammo\n25% chance to not consume ammo");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/2/DPS_T");
-        }
+        public override string Texture { get { return "ABigStick/Items/2/DPS_T"; } }
 
         public override void SetDefaults() {
-            item.damage = 47;
-            item.ranged = true;
-            item.width = 30;
-            item.height = 15;
-            item.maxStack = 1;
-            item.useTime = 14;
-            item.useAnimation = 14;
-            item.useStyle = 5;
-            item.knockBack = 2;
-            item.value = 7000;
-            item.rare = 4;
-            item.crit = 5;
-            item.UseSound = SoundID.Item40;
-            item.noMelee = true;
-            item.shoot = mod.ProjectileType("Stick");
-            item.useAmmo = mod.ItemType("StickItem");
-            item.shootSpeed = 20f;
-            item.autoReuse = true;
+            Item.damage = 47;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 30;
+            Item.height = 15;
+            Item.maxStack = 1;
+            Item.useTime = 14;
+            Item.useAnimation = 14;
+            Item.useStyle = 5;
+            Item.knockBack = 2;
+            Item.value = 7000;
+            Item.rare = 4;
+            Item.crit = 5;
+            Item.UseSound = SoundID.Item40;
+            Item.noMelee = true;
+            Item.shoot = Mod.Find<ModProjectile>("Stick").Type;
+            Item.useAmmo = Mod.Find<ModItem>("StickItem").Type;
+            Item.shootSpeed = 20f;
+            Item.autoReuse = true;
         }
 
         public override void AddRecipes() {
             // Making a brand new stickgun
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.TitaniumBar, 12);
             recipe.AddIngredient(ItemID.Wood, 50);
             recipe.AddTile(TileID.MythrilAnvil);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            recipe.Register();
 
             // Upgrading from previous tier
-            ModRecipe upgrade = new ModRecipe(mod);
-            upgrade.AddIngredient(mod.ItemType("Lvl1Stickgun"));
+            Recipe upgrade = CreateRecipe();
+            upgrade.AddIngredient(Mod.Find<ModItem>("Lvl1Stickgun").Type);
             upgrade.AddIngredient(ItemID.TitaniumBar, 11);
             upgrade.AddTile(TileID.MythrilAnvil);
-            upgrade.SetResult(this);
-            upgrade.AddRecipe();
+            upgrade.Register();
         }
 
-        public override bool ConsumeAmmo(Player player) {
+        public override bool CanConsumeAmmo(Item ammo, Player player) {
             return Main.rand.NextFloat() >= .25f;
         }
     }
@@ -545,47 +505,43 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("Uses sticks as ammo");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/2/Crit_A");
-        }
+        public override string Texture { get { return "ABigStick/Items/2/Crit_A"; } }
 
         public override void SetDefaults() {
-            item.damage = 72;
-            item.ranged = true;
-            item.width = 39;
-            item.height = 8;
-            item.maxStack = 1;
-            item.useTime = 34;
-            item.useAnimation = 34;
-            item.useStyle = 5;
-            item.knockBack = 5;
-            item.value = 7000;
-            item.rare = 3;
-            item.crit = 35;
-            item.UseSound = SoundID.Item36;
-            item.noMelee = true;
-            item.shoot = mod.ProjectileType("Stick");
-            item.useAmmo = mod.ItemType("StickItem");
-            item.shootSpeed = 20f;
-            item.autoReuse = true;
+            Item.damage = 72;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 39;
+            Item.height = 8;
+            Item.maxStack = 1;
+            Item.useTime = 34;
+            Item.useAnimation = 34;
+            Item.useStyle = 5;
+            Item.knockBack = 5;
+            Item.value = 7000;
+            Item.rare = 3;
+            Item.crit = 35;
+            Item.UseSound = SoundID.Item36;
+            Item.noMelee = true;
+            Item.shoot = Mod.Find<ModProjectile>("Stick").Type;
+            Item.useAmmo = Mod.Find<ModItem>("StickItem").Type;
+            Item.shootSpeed = 20f;
+            Item.autoReuse = true;
         }
 
         public override void AddRecipes() {
             // Making a brand new stickgun
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.AdamantiteBar, 12);
             recipe.AddIngredient(ItemID.Wood, 50);
             recipe.AddTile(TileID.MythrilAnvil);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            recipe.Register();
 
             // Upgrading from previous tier
-            ModRecipe upgrade = new ModRecipe(mod);
-            upgrade.AddIngredient(mod.ItemType("StickSniper"));
+            Recipe upgrade = CreateRecipe();
+            upgrade.AddIngredient(Mod.Find<ModItem>("StickSniper").Type);
             upgrade.AddIngredient(ItemID.AdamantiteBar, 11);
             upgrade.AddTile(TileID.MythrilAnvil);
-            upgrade.SetResult(this);
-            upgrade.AddRecipe();
+            upgrade.Register();
         }
     }
 
@@ -596,47 +552,43 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("Uses sticks as ammo");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/2/Crit_T");
-        }
+        public override string Texture { get { return "ABigStick/Items/2/Crit_T"; } }
 
         public override void SetDefaults() {
-            item.damage = 75;
-            item.ranged = true;
-            item.width = 39;
-            item.height = 8;
-            item.maxStack = 1;
-            item.useTime = 34;
-            item.useAnimation = 34;
-            item.useStyle = 5;
-            item.knockBack = 5;
-            item.value = 7000;
-            item.rare = 3;
-            item.crit = 35;
-            item.UseSound = SoundID.Item36;
-            item.noMelee = true;
-            item.shoot = mod.ProjectileType("Stick");
-            item.useAmmo = mod.ItemType("StickItem");
-            item.shootSpeed = 20f;
-            item.autoReuse = true;
+            Item.damage = 75;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 39;
+            Item.height = 8;
+            Item.maxStack = 1;
+            Item.useTime = 34;
+            Item.useAnimation = 34;
+            Item.useStyle = 5;
+            Item.knockBack = 5;
+            Item.value = 7000;
+            Item.rare = 3;
+            Item.crit = 35;
+            Item.UseSound = SoundID.Item36;
+            Item.noMelee = true;
+            Item.shoot = Mod.Find<ModProjectile>("Stick").Type;
+            Item.useAmmo = Mod.Find<ModItem>("StickItem").Type;
+            Item.shootSpeed = 20f;
+            Item.autoReuse = true;
         }
 
         public override void AddRecipes() {
             // Making a brand new stickgun
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.TitaniumBar, 12);
             recipe.AddIngredient(ItemID.Wood, 50);
             recipe.AddTile(TileID.MythrilAnvil);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            recipe.Register();
 
             // Upgrading from previous tier
-            ModRecipe upgrade = new ModRecipe(mod);
-            upgrade.AddIngredient(mod.ItemType("StickSniper"));
+            Recipe upgrade = CreateRecipe();
+            upgrade.AddIngredient(Mod.Find<ModItem>("StickSniper").Type);
             upgrade.AddIngredient(ItemID.TitaniumBar, 11);
             upgrade.AddTile(TileID.MythrilAnvil);
-            upgrade.SetResult(this);
-            upgrade.AddRecipe();
+            upgrade.Register();
         }
     }
 
@@ -647,57 +599,52 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("Uses sticks as ammo\n35% chance to not consume ammo");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/3/DPS");
-        }
+        public override string Texture { get { return "ABigStick/Items/3/DPS"; } }
 
         public override void SetDefaults() {
-            item.damage = 55;
-            item.ranged = true;
-            item.width = 33;
-            item.height = 15;
-            item.maxStack = 1;
-            item.useTime = 13;
-            item.useAnimation = 13;
-            item.useStyle = 5;
-            item.knockBack = 2;
-            item.value = 13000;
-            item.rare = 7;
-            item.crit = 5;
-            item.UseSound = SoundID.Item40;
-            item.noMelee = true;
-            item.shoot = mod.ProjectileType("Stick");
-            item.useAmmo = mod.ItemType("StickItem");
-            item.shootSpeed = 20f;
-            item.autoReuse = true;
+            Item.damage = 55;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 33;
+            Item.height = 15;
+            Item.maxStack = 1;
+            Item.useTime = 13;
+            Item.useAnimation = 13;
+            Item.useStyle = 5;
+            Item.knockBack = 2;
+            Item.value = 13000;
+            Item.rare = 7;
+            Item.crit = 5;
+            Item.UseSound = SoundID.Item40;
+            Item.noMelee = true;
+            Item.shoot = Mod.Find<ModProjectile>("Stick").Type;
+            Item.useAmmo = Mod.Find<ModItem>("StickItem").Type;
+            Item.shootSpeed = 20f;
+            Item.autoReuse = true;
         }
 
         public override void AddRecipes() {
             // Making a brand new stickgun
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.ChlorophyteBar, 12);
             recipe.AddIngredient(ItemID.Wood, 50);
             recipe.AddTile(TileID.MythrilAnvil);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            recipe.Register();
 
             // Upgrading from previous tier
-            ModRecipe upgradeA = new ModRecipe(mod);
-            upgradeA.AddIngredient(mod.ItemType("Lvl2StickgunA"));
+            Recipe upgradeA = CreateRecipe();
+            upgradeA.AddIngredient(Mod.Find<ModItem>("Lvl2StickgunA").Type);
             upgradeA.AddIngredient(ItemID.ChlorophyteBar, 11);
             upgradeA.AddTile(TileID.MythrilAnvil);
-            upgradeA.SetResult(this);
-            upgradeA.AddRecipe();
+            upgradeA.Register();
 
-            ModRecipe upgradeT = new ModRecipe(mod);
-            upgradeT.AddIngredient(mod.ItemType("Lvl2StickgunT"));
+            Recipe upgradeT = CreateRecipe();
+            upgradeT.AddIngredient(Mod.Find<ModItem>("Lvl2StickgunT").Type);
             upgradeT.AddIngredient(ItemID.ChlorophyteBar, 11);
             upgradeT.AddTile(TileID.MythrilAnvil);
-            upgradeT.SetResult(this);
-            upgradeT.AddRecipe();
+            upgradeT.Register();
         }
 
-        public override bool ConsumeAmmo(Player player) {
+        public override bool CanConsumeAmmo(Item ammo, Player player) {
             return Main.rand.NextFloat() >= .35f;
         }
     }
@@ -709,54 +656,49 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("Uses sticks as ammo");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/3/Crit");
-        }
+        public override string Texture { get { return "ABigStick/Items/3/Crit"; } }
 
         public override void SetDefaults() {
-            item.damage = 95;
-            item.ranged = true;
-            item.width = 42;
-            item.height = 9;
-            item.maxStack = 1;
-            item.useTime = 31;
-            item.useAnimation = 31;
-            item.useStyle = 5;
-            item.knockBack = 6;
-            item.value = 13000;
-            item.rare = 7;
-            item.crit = 50;
-            item.UseSound = SoundID.Item36;
-            item.noMelee = true;
-            item.shoot = mod.ProjectileType("Stick");
-            item.useAmmo = mod.ItemType("StickItem");
-            item.shootSpeed = 20f;
-            item.autoReuse = true;
+            Item.damage = 95;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 42;
+            Item.height = 9;
+            Item.maxStack = 1;
+            Item.useTime = 31;
+            Item.useAnimation = 31;
+            Item.useStyle = 5;
+            Item.knockBack = 6;
+            Item.value = 13000;
+            Item.rare = 7;
+            Item.crit = 50;
+            Item.UseSound = SoundID.Item36;
+            Item.noMelee = true;
+            Item.shoot = Mod.Find<ModProjectile>("Stick").Type;
+            Item.useAmmo = Mod.Find<ModItem>("StickItem").Type;
+            Item.shootSpeed = 20f;
+            Item.autoReuse = true;
         }
 
         public override void AddRecipes() {
             // Making a brand new stickgun
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.ChlorophyteBar, 12);
             recipe.AddIngredient(ItemID.Wood, 50);
             recipe.AddTile(TileID.MythrilAnvil);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            recipe.Register();
 
             // Upgrading from previous tier
-            ModRecipe upgradeA = new ModRecipe(mod);
-            upgradeA.AddIngredient(mod.ItemType("Lvl2StickSniperA"));
+            Recipe upgradeA = CreateRecipe();
+            upgradeA.AddIngredient(Mod.Find<ModItem>("Lvl2StickSniperA").Type);
             upgradeA.AddIngredient(ItemID.ChlorophyteBar, 11);
             upgradeA.AddTile(TileID.MythrilAnvil);
-            upgradeA.SetResult(this);
-            upgradeA.AddRecipe();
+            upgradeA.Register();
 
-            ModRecipe upgradeT = new ModRecipe(mod);
-            upgradeT.AddIngredient(mod.ItemType("Lvl2StickSniperT"));
+            Recipe upgradeT = CreateRecipe();
+            upgradeT.AddIngredient(Mod.Find<ModItem>("Lvl2StickSniperT").Type);
             upgradeT.AddIngredient(ItemID.ChlorophyteBar, 11);
             upgradeT.AddTile(TileID.MythrilAnvil);
-            upgradeT.SetResult(this);
-            upgradeT.AddRecipe();
+            upgradeT.Register();
         }
     }
 
@@ -767,50 +709,46 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("Uses sticks as ammo\n45% chance to not consume ammo");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/4/DPS");
-        }
+        public override string Texture { get { return "ABigStick/Items/4/DPS"; } }
 
         public override void SetDefaults() {
-            item.damage = 70;
-            item.ranged = true;
-            item.width = 40;
-            item.height = 20;
-            item.maxStack = 1;
-            item.useTime = 9;
-            item.useAnimation = 9;
-            item.useStyle = 5;
-            item.knockBack = 2;
-            item.value = 17000;
-            item.rare = 8;
-            item.crit = 5;
-            item.UseSound = SoundID.Item40;
-            item.noMelee = true;
-            item.shoot = mod.ProjectileType("Stick");
-            item.useAmmo = mod.ItemType("StickItem");
-            item.shootSpeed = 20f;
-            item.autoReuse = true;
+            Item.damage = 70;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 40;
+            Item.height = 20;
+            Item.maxStack = 1;
+            Item.useTime = 9;
+            Item.useAnimation = 9;
+            Item.useStyle = 5;
+            Item.knockBack = 2;
+            Item.value = 17000;
+            Item.rare = 8;
+            Item.crit = 5;
+            Item.UseSound = SoundID.Item40;
+            Item.noMelee = true;
+            Item.shoot = Mod.Find<ModProjectile>("Stick").Type;
+            Item.useAmmo = Mod.Find<ModItem>("StickItem").Type;
+            Item.shootSpeed = 20f;
+            Item.autoReuse = true;
         }
 
         public override void AddRecipes() {
             // Making a brand new stickgun
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.SpectreBar, 12);
             recipe.AddIngredient(ItemID.Wood, 50);
             recipe.AddTile(TileID.MythrilAnvil);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            recipe.Register();
 
             // Upgrading from previous tier
-            ModRecipe upgrade = new ModRecipe(mod);
-            upgrade.AddIngredient(mod.ItemType("Lvl3Stickgun"));
+            Recipe upgrade = CreateRecipe();
+            upgrade.AddIngredient(Mod.Find<ModItem>("Lvl3Stickgun").Type);
             upgrade.AddIngredient(ItemID.SpectreBar, 11);
             upgrade.AddTile(TileID.MythrilAnvil);
-            upgrade.SetResult(this);
-            upgrade.AddRecipe();
+            upgrade.Register();
         }
 
-        public override bool ConsumeAmmo(Player player) {
+        public override bool CanConsumeAmmo(Item ammo, Player player) {
             return Main.rand.NextFloat() >= .45f;
         }
     }
@@ -822,47 +760,43 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("Uses sticks as ammo");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/4/Crit");
-        }
+        public override string Texture { get { return "ABigStick/Items/4/Crit"; } }
 
         public override void SetDefaults() {
-            item.damage = 135;
-            item.ranged = true;
-            item.width = 48;
-            item.height = 12;
-            item.maxStack = 1;
-            item.useTime = 28;
-            item.useAnimation = 28;
-            item.useStyle = 5;
-            item.knockBack = 7;
-            item.value = 17000;
-            item.rare = 8;
-            item.crit = 50;
-            item.UseSound = SoundID.Item36;
-            item.noMelee = true;
-            item.shoot = mod.ProjectileType("Stick");
-            item.useAmmo = mod.ItemType("StickItem");
-            item.shootSpeed = 20f;
-            item.autoReuse = true;
+            Item.damage = 135;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 48;
+            Item.height = 12;
+            Item.maxStack = 1;
+            Item.useTime = 28;
+            Item.useAnimation = 28;
+            Item.useStyle = 5;
+            Item.knockBack = 7;
+            Item.value = 17000;
+            Item.rare = 8;
+            Item.crit = 50;
+            Item.UseSound = SoundID.Item36;
+            Item.noMelee = true;
+            Item.shoot = Mod.Find<ModProjectile>("Stick").Type;
+            Item.useAmmo = Mod.Find<ModItem>("StickItem").Type;
+            Item.shootSpeed = 20f;
+            Item.autoReuse = true;
         }
 
         public override void AddRecipes() {
             // Making a brand new stickgun
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.SpectreBar, 12);
             recipe.AddIngredient(ItemID.Wood, 50);
             recipe.AddTile(TileID.MythrilAnvil);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            recipe.Register();
 
             // Upgrading from previous tier
-            ModRecipe upgrade = new ModRecipe(mod);
-            upgrade.AddIngredient(mod.ItemType("Lvl3StickSniper"));
+            Recipe upgrade = CreateRecipe();
+            upgrade.AddIngredient(Mod.Find<ModItem>("Lvl3StickSniper").Type);
             upgrade.AddIngredient(ItemID.SpectreBar, 11);
             upgrade.AddTile(TileID.MythrilAnvil);
-            upgrade.SetResult(this);
-            upgrade.AddRecipe();
+            upgrade.Register();
         }
     }
 
@@ -873,50 +807,46 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("Uses sticks as ammo\n55% chance to not consume ammo");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/5/DPS");
-        }
+        public override string Texture { get { return "ABigStick/Items/5/DPS"; } }
 
         public override void SetDefaults() {
-            item.damage = 75;
-            item.ranged = true;
-            item.width = 47;
-            item.height = 21;
-            item.maxStack = 1;
-            item.useTime = 6;
-            item.useAnimation = 6;
-            item.useStyle = 5;
-            item.knockBack = 2;
-            item.value = 2500;
-            item.rare = 10;
-            item.crit = 5;
-            item.UseSound = SoundID.Item40;
-            item.noMelee = true;
-            item.shoot = mod.ProjectileType("Stick");
-            item.useAmmo = mod.ItemType("StickItem");
-            item.shootSpeed = 20f;
-            item.autoReuse = true;
+            Item.damage = 75;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 47;
+            Item.height = 21;
+            Item.maxStack = 1;
+            Item.useTime = 6;
+            Item.useAnimation = 6;
+            Item.useStyle = 5;
+            Item.knockBack = 2;
+            Item.value = 2500;
+            Item.rare = 10;
+            Item.crit = 5;
+            Item.UseSound = SoundID.Item40;
+            Item.noMelee = true;
+            Item.shoot = Mod.Find<ModProjectile>("Stick").Type;
+            Item.useAmmo = Mod.Find<ModItem>("StickItem").Type;
+            Item.shootSpeed = 20f;
+            Item.autoReuse = true;
         }
 
         public override void AddRecipes() {
             // Making a brand new stickgun
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.FragmentVortex, 28);
             recipe.AddIngredient(ItemID.Wood, 50);
             recipe.AddTile(TileID.LunarCraftingStation);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            recipe.Register();
 
             // Upgrading from previous tier
-            ModRecipe upgrade = new ModRecipe(mod);
-            upgrade.AddIngredient(mod.ItemType("Lvl4Stickgun"));
+            Recipe upgrade = CreateRecipe();
+            upgrade.AddIngredient(Mod.Find<ModItem>("Lvl4Stickgun").Type);
             upgrade.AddIngredient(ItemID.FragmentVortex, 27);
             upgrade.AddTile(TileID.LunarCraftingStation);
-            upgrade.SetResult(this);
-            upgrade.AddRecipe();
+            upgrade.Register();
         }
 
-        public override bool ConsumeAmmo(Player player) {
+        public override bool CanConsumeAmmo(Item ammo, Player player) {
             return Main.rand.NextFloat() >= .55f;
         }
     }
@@ -928,47 +858,43 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("Uses sticks as ammo");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/5/Crit");
-        }
+        public override string Texture { get { return "ABigStick/Items/5/Crit"; } }
 
         public override void SetDefaults() {
-            item.damage = 185;
-            item.ranged = true;
-            item.width = 48;
-            item.height = 13;
-            item.maxStack = 1;
-            item.useTime = 23;
-            item.useAnimation = 23;
-            item.useStyle = 5;
-            item.knockBack = 8;
-            item.value = 17000;
-            item.rare = 10;
-            item.crit = 50;
-            item.UseSound = SoundID.Item36;
-            item.noMelee = true;
-            item.shoot = mod.ProjectileType("Stick");
-            item.useAmmo = mod.ItemType("StickItem");
-            item.shootSpeed = 20f;
-            item.autoReuse = true;
+            Item.damage = 185;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 48;
+            Item.height = 13;
+            Item.maxStack = 1;
+            Item.useTime = 23;
+            Item.useAnimation = 23;
+            Item.useStyle = 5;
+            Item.knockBack = 8;
+            Item.value = 17000;
+            Item.rare = 10;
+            Item.crit = 50;
+            Item.UseSound = SoundID.Item36;
+            Item.noMelee = true;
+            Item.shoot = Mod.Find<ModProjectile>("Stick").Type;
+            Item.useAmmo = Mod.Find<ModItem>("StickItem").Type;
+            Item.shootSpeed = 20f;
+            Item.autoReuse = true;
         }
 
         public override void AddRecipes() {
             // Making a brand new stickgun
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.FragmentVortex, 28);
             recipe.AddIngredient(ItemID.Wood, 50);
             recipe.AddTile(TileID.LunarCraftingStation);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            recipe.Register();
 
             // Upgrading from previous tier
-            ModRecipe upgrade = new ModRecipe(mod);
-            upgrade.AddIngredient(mod.ItemType("Lvl4StickSniper"));
+            Recipe upgrade = CreateRecipe();
+            upgrade.AddIngredient(Mod.Find<ModItem>("Lvl4StickSniper").Type);
             upgrade.AddIngredient(ItemID.FragmentVortex, 27);
             upgrade.AddTile(TileID.LunarCraftingStation);
-            upgrade.SetResult(this);
-            upgrade.AddRecipe();
+            upgrade.Register();
         }
     }
 
@@ -979,57 +905,52 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("Uses sticks as ammo\n70% chance to not consume ammo");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/6/DPS");
-        }
+        public override string Texture { get { return "ABigStick/Items/6/DPS"; } }
 
         public override void SetDefaults() {
-            item.damage = 95;
-            item.ranged = true;
-            item.width = 53;
-            item.height = 22;
-            item.maxStack = 1;
-            item.useTime = 5;
-            item.useAnimation = 5;
-            item.useStyle = 5;
-            item.knockBack = 4;
-            item.value = 500000;
-            item.rare = 11;
-            item.crit = 15;
-            item.UseSound = SoundID.Item40;
-            item.noMelee = true;
-            item.shoot = mod.ProjectileType("Stick");
-            item.useAmmo = mod.ItemType("StickItem");
-            item.shootSpeed = 40f;
-            item.autoReuse = true;
+            Item.damage = 95;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 53;
+            Item.height = 22;
+            Item.maxStack = 1;
+            Item.useTime = 5;
+            Item.useAnimation = 5;
+            Item.useStyle = 5;
+            Item.knockBack = 4;
+            Item.value = 500000;
+            Item.rare = 11;
+            Item.crit = 15;
+            Item.UseSound = SoundID.Item40;
+            Item.noMelee = true;
+            Item.shoot = Mod.Find<ModProjectile>("Stick").Type;
+            Item.useAmmo = Mod.Find<ModItem>("StickItem").Type;
+            Item.shootSpeed = 40f;
+            Item.autoReuse = true;
         }
 
-        public override bool ConsumeAmmo(Player player) {
+        public override bool CanConsumeAmmo(Item ammo, Player player) {
             return Main.rand.NextFloat() >= .70f;
         }
 
         public override void AddRecipes() {
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Phantasm, 1);
             recipe.AddIngredient(ItemID.LunarBar, 5);
             recipe.AddIngredient(ItemID.Wood, 50);
             recipe.AddTile(TileID.LunarCraftingStation);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
-            ModRecipe recipe2 = new ModRecipe(mod);
+            recipe.Register();
+            Recipe recipe2 = CreateRecipe();
             recipe2.AddIngredient(ItemID.VortexBeater, 1);
             recipe2.AddIngredient(ItemID.LunarBar, 5);
             recipe2.AddIngredient(ItemID.Wood, 50);
             recipe2.AddTile(TileID.LunarCraftingStation);
-            recipe2.SetResult(this);
-            recipe2.AddRecipe();
+            recipe2.Register();
 
-            ModRecipe upgrade = new ModRecipe(mod);
-            upgrade.AddIngredient(mod.ItemType("Lvl5Stickgun"));
+            Recipe upgrade = CreateRecipe();
+            upgrade.AddIngredient(Mod.Find<ModItem>("Lvl5Stickgun").Type);
             upgrade.AddIngredient(ItemID.LunarBar, 5);
             upgrade.AddTile(TileID.LunarCraftingStation);
-            upgrade.SetResult(this);
-            upgrade.AddRecipe();
+            upgrade.Register();
         }
     }
 
@@ -1040,53 +961,48 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("Uses sticks as ammo");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/6/Crit");
-        }
+        public override string Texture { get { return "ABigStick/Items/6/Crit"; } }
 
         public override void SetDefaults() {
-            item.damage = 255;
-            item.ranged = true;
-            item.width = 52;
-            item.height = 15;
-            item.maxStack = 1;
-            item.useTime = 20;
-            item.useAnimation = 20;
-            item.useStyle = 5;
-            item.knockBack = 9;
-            item.value = 500000;
-            item.rare = 11;
-            item.crit = 50;
-            item.UseSound = SoundID.Item36;
-            item.noMelee = true;
-            item.shoot = mod.ProjectileType("Stick");
-            item.useAmmo = mod.ItemType("StickItem");
-            item.shootSpeed = 40f;
-            item.autoReuse = true;
+            Item.damage = 255;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 52;
+            Item.height = 15;
+            Item.maxStack = 1;
+            Item.useTime = 20;
+            Item.useAnimation = 20;
+            Item.useStyle = 5;
+            Item.knockBack = 9;
+            Item.value = 500000;
+            Item.rare = 11;
+            Item.crit = 50;
+            Item.UseSound = SoundID.Item36;
+            Item.noMelee = true;
+            Item.shoot = Mod.Find<ModProjectile>("Stick").Type;
+            Item.useAmmo = Mod.Find<ModItem>("StickItem").Type;
+            Item.shootSpeed = 40f;
+            Item.autoReuse = true;
         }
         
         public override void AddRecipes() {
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Phantasm, 1);
             recipe.AddIngredient(ItemID.LunarBar, 5);
             recipe.AddIngredient(ItemID.Wood, 50);
             recipe.AddTile(TileID.LunarCraftingStation);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
-            ModRecipe recipe2 = new ModRecipe(mod);
+            recipe.Register();
+            Recipe recipe2 = CreateRecipe();
             recipe2.AddIngredient(ItemID.VortexBeater, 1);
             recipe2.AddIngredient(ItemID.LunarBar, 5);
             recipe2.AddIngredient(ItemID.Wood, 50);
             recipe2.AddTile(TileID.LunarCraftingStation);
-            recipe2.SetResult(this);
-            recipe2.AddRecipe();
+            recipe2.Register();
 
-            ModRecipe upgrade = new ModRecipe(mod);
-            upgrade.AddIngredient(mod.ItemType("Lvl5StickSniper"));
+            Recipe upgrade = CreateRecipe();
+            upgrade.AddIngredient(Mod.Find<ModItem>("Lvl5StickSniper").Type);
             upgrade.AddIngredient(ItemID.LunarBar, 5);
             upgrade.AddTile(TileID.LunarCraftingStation);
-            upgrade.SetResult(this);
-            upgrade.AddRecipe();
+            upgrade.Register();
         }
     }
 
@@ -1096,38 +1012,35 @@ namespace ABigStick.Items {
             Tooltip.SetDefault("'Imbued with the spark of life'");
         }
 
-        public override void AutoStaticDefaults() {
-            Main.itemTexture[item.type] = ModLoader.GetTexture("ABigStick/Items/6/Crit");
-        }
+        public override string Texture { get { return "ABigStick/Items/6/Crit"; } }
 
         public override void SetDefaults() {
-            item.width = 80;
-            item.height = 14;
-            item.maxStack = 1;
-            item.useAnimation = 45;
-            item.useTime = 45;
-            item.useStyle = 4;
-            item.consumable = true;
-            item.rare = 11;
+            Item.width = 80;
+            Item.height = 14;
+            Item.maxStack = 1;
+            Item.useAnimation = 45;
+            Item.useTime = 45;
+            Item.useStyle = 4;
+            Item.consumable = true;
+            Item.rare = 11;
         }
 
         public override bool CanUseItem(Player player) {
-            return !NPC.AnyNPCs(mod.NPCType("SentientStickgun"));
+            return !NPC.AnyNPCs(Mod.Find<ModNPC>("SentientStickgun").Type);
         }
 
-        public override bool UseItem(Player player) {
-            NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("SentientStickgun"));
-            Main.PlaySound(SoundID.Roar, player.position, 0);
+        public override bool? UseItem(Player player)/* tModPorter Suggestion: Return null instead of false */ {
+            NPC.SpawnOnPlayer(player.whoAmI, Mod.Find<ModNPC>("SentientStickgun").Type);
+            SoundEngine.PlaySound(SoundID.Roar, player.position);
             return true;
         }
 
         public override void AddRecipes() {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(mod.ItemType("EmotionalStickgun"));
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(Mod.Find<ModItem>("EmotionalStickgun").Type);
             recipe.AddIngredient(ItemID.Nanites, 99);
             recipe.AddTile(TileID.DemonAltar);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
+            recipe.Register();
         }
     }
 }
