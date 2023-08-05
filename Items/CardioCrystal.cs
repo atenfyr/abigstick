@@ -10,8 +10,8 @@ namespace ABigStick.Items {
         public override string Name { get { return "CardioCrystal"; } }
 
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Cardio Crystal");
-            Tooltip.SetDefault("Increases max life by 50%\n30 second duration\n'Dancing to the beat of your heart'");
+            // DisplayName.SetDefault("Cardio Crystal");
+            // Tooltip.SetDefault("Increases max life by 50%\n30 second duration\n'Dancing to the beat of your heart'");
         }
 
         public override void SetDefaults() {

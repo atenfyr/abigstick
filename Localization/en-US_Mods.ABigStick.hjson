@@ -1,0 +1,289 @@
+Items: {
+	StickCr: {
+		Tooltip: Inflicts Ichor
+		DisplayName: Shadestick
+	}
+
+	StickCosmilite: {
+		Tooltip: ""
+		DisplayName: Cosmilite Stick
+	}
+
+	StickCo: {
+		Tooltip: Inflicts Cursed Inferno
+		DisplayName: Ebonstick
+	}
+
+	StickBo: {
+		Tooltip: Inflicts Chilled
+		DisplayName: Boreal Stick
+	}
+
+	StickAten: {
+		Tooltip: "'Forged from their final tears'"
+		DisplayName: Stick of Tears
+	}
+
+	PenetratingStickItem: {
+		Tooltip: ""
+		DisplayName: Meteorite Stick
+	}
+
+	MoonTears: {
+		Tooltip: "'Released during the Moon Lord's final cries of anguish'"
+		DisplayName: Lunar Tears
+	}
+
+	Lvl5StickSniper: {
+		Tooltip: Uses sticks as ammo
+		DisplayName: Lunar Stickrifle
+	}
+
+	Lvl5Stickgun: {
+		Tooltip:
+			'''
+			Uses sticks as ammo
+			55% chance to not consume ammo
+			'''
+		DisplayName: Lunar Stickgun
+	}
+
+	Lvl4StickSniper: {
+		Tooltip: Uses sticks as ammo
+		DisplayName: Spectre Stickrifle
+	}
+
+	Lvl4Stickgun: {
+		Tooltip:
+			'''
+			Uses sticks as ammo
+			45% chance to not consume ammo
+			'''
+		DisplayName: Spectre Stickgun
+	}
+
+	Lvl3StickSniper: {
+		Tooltip: Uses sticks as ammo
+		DisplayName: Autotrophic Stickrifle
+	}
+
+	Lvl3Stickgun: {
+		Tooltip:
+			'''
+			Uses sticks as ammo
+			35% chance to not consume ammo
+			'''
+		DisplayName: Autotrophic Stickgun
+	}
+
+	Lvl2StickSniperT: {
+		Tooltip: Uses sticks as ammo
+		DisplayName: Titanium Stickrifle
+	}
+
+	Lvl2StickSniperA: {
+		Tooltip: Uses sticks as ammo
+		DisplayName: Adamantite Stickrifle
+	}
+
+	Lvl2StickgunT: {
+		Tooltip:
+			'''
+			Uses sticks as ammo
+			25% chance to not consume ammo
+			'''
+		DisplayName: Titanium Stickgun
+	}
+
+	Lvl2StickgunA: {
+		Tooltip:
+			'''
+			Uses sticks as ammo
+			25% chance to not consume ammo
+			'''
+		DisplayName: Adamantite Stickgun
+	}
+
+	Lvl1Stickgun: {
+		Tooltip: Uses sticks as ammo
+		DisplayName: Hellstone Stickgun
+	}
+
+	Lvl0StickSniperC: {
+		Tooltip: Uses sticks as ammo
+		DisplayName: Crimtane Stickrifle
+	}
+
+	Lvl0StickSniper: {
+		Tooltip: Uses sticks as ammo
+		DisplayName: Demonite Stickrifle
+	}
+
+	Lvl0StickgunC: {
+		Tooltip: Uses sticks as ammo
+		DisplayName: Crimtane Stickgun
+	}
+
+	Lvl0Stickgun: {
+		Tooltip: Uses sticks as ammo
+		DisplayName: Demonite Stickgun
+	}
+
+	LastTears: {
+		Tooltip: "'Shed during someone's final moments'"
+		DisplayName: Last Tears
+	}
+
+	HighVelocityStickItem: {
+		Tooltip: ""
+		DisplayName: High Velocity Stick
+	}
+
+	EmotionalStickRifle: {
+		Tooltip: Uses sticks as ammo
+		DisplayName: Clockwork Stickrifle
+	}
+
+	EmotionalStickgun: {
+		Tooltip:
+			'''
+			Uses sticks as ammo
+			70% chance to not consume ammo
+			'''
+		DisplayName: Clockwork Stickgun
+	}
+
+	CardioCrystal: {
+		Tooltip:
+			'''
+			Increases max life by 50%
+			30 second duration
+			'Dancing to the beat of your heart
+			'''
+		DisplayName: Cardio Crystal
+	}
+
+	BigStick: {
+		Tooltip: "'Larger than it should be'"
+		DisplayName: A Big Stick
+	}
+
+	AetherStickItem: {
+		Tooltip: Takes time to build up strength
+		DisplayName: Ether Stick
+	}
+
+	StickD: {
+		DisplayName: Rainbow Stick
+		Tooltip: "'Physics? What's that?'"
+	}
+
+	Stickgun: {
+		DisplayName: IOU a Clockwork Stickgun
+		Tooltip: <right> to obtain a Clockwork Stickgun
+	}
+
+	StickgunBossSpawner: {
+		DisplayName: Twitching Stickgun
+		Tooltip: "'Imbued with the spark of life'"
+	}
+
+	StickH: {
+		DisplayName: Pearlstick
+		Tooltip: Inflicts Slow
+	}
+
+	StickItem: {
+		DisplayName: Stick
+		Tooltip: ""
+	}
+
+	StickK: {
+		DisplayName: Spooky Stick
+		Tooltip: 33% chance to inflict Confused
+	}
+
+	StickL: {
+		DisplayName: Luminite Stick
+		Tooltip:
+			'''
+			Increases in damage the more targets it pierces through
+			'This is irrational.'
+			'''
+	}
+
+	StickM: {
+		DisplayName: Greedy Stick
+		Tooltip: Steals money on impact
+	}
+
+	StickMoon: {
+		DisplayName: Lunar Stick
+		Tooltip: ""
+	}
+
+	StickSniper: {
+		DisplayName: Hellstone Stickrifle
+		Tooltip: Uses sticks as ammo
+	}
+
+	TearNet: {
+		DisplayName: Net of Tears
+		Tooltip: Allows you to harvest their final tears
+	}
+
+	WoodenStickgun: {
+		DisplayName: Wooden Stickgun
+		Tooltip: Uses sticks as ammo
+	}
+
+	WoodenStickSniper: {
+		DisplayName: Wooden Stickrifle
+		Tooltip: Uses sticks as ammo
+	}
+
+	SentientStick: {
+		DisplayName: Sentient Stick
+		Tooltip: ""
+	}
+}
+
+Buffs: {
+	Mourning: {
+		Description: Tears are rolling down your eyes
+		DisplayName: Mourning
+	}
+
+	Cardio: {
+		Description: This is some good exercise
+		DisplayName: Cardio
+	}
+}
+
+NPCs.SentientStickgun.DisplayName: Sentient Stickgun
+
+Projectiles: {
+	AetherStick.DisplayName: Ether Stick
+	HighVelocityStick.DisplayName: High Velocity Stick
+	PenetratingStick.DisplayName: Meteorite Stick
+	ServantStick.DisplayName: Servant Stick
+	Stick.DisplayName: Stick
+	StickAten2.DisplayName: Stick of Tears
+	StickBo2.DisplayName: Boreal Stick
+	StickCo2.DisplayName: Ebonstick
+	StickCosmilite2.DisplayName: Cosmilite Stick
+	StickCr2.DisplayName: Shadestick
+	StickD2.DisplayName: Rainbow Stick
+	StickgunServant.DisplayName: Stickgun Servant
+	StickH2.DisplayName: Pearlstick
+	StickK2.DisplayName: Spooky Stick
+	StickL2.DisplayName: Luminite Stick
+	StickM2.DisplayName: Greedy Stick
+	StickMoon2.DisplayName: Lunar Stick
+	BossCosmilite.DisplayName: Cosmilite Stick
+	BossLuminite.DisplayName: Luminite Stick
+	BossLunar.DisplayName: Lunar Stick
+	BossRainbow.DisplayName: Rainbow Stick
+	BossTears.DisplayName: Boss Tears
+	SentientStick2.DisplayName: Sentient Stick
+}

@@ -8,8 +8,8 @@ namespace ABigStick.Items {
     // Backwards compatibility stickgun
     public class Stickgun : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("IOU a Clockwork Stickgun");
-            Tooltip.SetDefault("<right> to obtain a Clockwork Stickgun");
+            // DisplayName.SetDefault("IOU a Clockwork Stickgun");
+            // Tooltip.SetDefault("<right> to obtain a Clockwork Stickgun");
         }
 
         public override string Texture { get { return "ABigStick/Items/1/Crit"; } }
@@ -32,8 +32,8 @@ namespace ABigStick.Items {
     // Level -1 Stickgun (DPS-based)
     public class WoodenStickgun : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Wooden Stickgun");
-            Tooltip.SetDefault("Uses sticks as ammo");
+            // DisplayName.SetDefault("Wooden Stickgun");
+            // Tooltip.SetDefault("Uses sticks as ammo");
         }
 
         public override string Texture { get { return "ABigStick/Items/-1/DPS"; } }
@@ -70,8 +70,8 @@ namespace ABigStick.Items {
     // Level -1 Stickgun (Crit-based)
     public class WoodenStickSniper : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Wooden Stickrifle");
-            Tooltip.SetDefault("Uses sticks as ammo");
+            // DisplayName.SetDefault("Wooden Stickrifle");
+            // Tooltip.SetDefault("Uses sticks as ammo");
         }
 
         public override string Texture { get { return "ABigStick/Items/-1/Crit"; } }
@@ -108,8 +108,8 @@ namespace ABigStick.Items {
     // Level 0 Stickgun (DPS-based)
     public class Lvl0Stickgun : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Demonite Stickgun");
-            Tooltip.SetDefault("Uses sticks as ammo");
+            // DisplayName.SetDefault("Demonite Stickgun");
+            // Tooltip.SetDefault("Uses sticks as ammo");
         }
 
         public override string Texture { get { return "ABigStick/Items/0/DPS"; } }
@@ -154,8 +154,8 @@ namespace ABigStick.Items {
     // Level 0 Stickgun (Crit-based)
     public class Lvl0StickSniper : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Demonite Stickrifle");
-            Tooltip.SetDefault("Uses sticks as ammo");
+            // DisplayName.SetDefault("Demonite Stickrifle");
+            // Tooltip.SetDefault("Uses sticks as ammo");
         }
 
         public override string Texture { get { return "ABigStick/Items/0/Crit"; } }
@@ -200,8 +200,8 @@ namespace ABigStick.Items {
     // Level 0 Stickgun (DPS-based)
     public class Lvl0StickgunC : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Crimtane Stickgun");
-            Tooltip.SetDefault("Uses sticks as ammo");
+            // DisplayName.SetDefault("Crimtane Stickgun");
+            // Tooltip.SetDefault("Uses sticks as ammo");
         }
 
         public override string Texture { get { return "ABigStick/Items/0/DPS_C"; } }
@@ -246,8 +246,8 @@ namespace ABigStick.Items {
     // Level 0 Stickgun (Crit-based)
     public class Lvl0StickSniperC : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Crimtane Stickrifle");
-            Tooltip.SetDefault("Uses sticks as ammo");
+            // DisplayName.SetDefault("Crimtane Stickrifle");
+            // Tooltip.SetDefault("Uses sticks as ammo");
         }
 
         public override string Texture { get { return "ABigStick/Items/0/Crit_C"; } }
@@ -292,8 +292,8 @@ namespace ABigStick.Items {
     // Level 1 Stickgun (DPS-based)
     public class Lvl1Stickgun : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Hellstone Stickgun");
-            Tooltip.SetDefault("Uses sticks as ammo");
+            // DisplayName.SetDefault("Hellstone Stickgun");
+            // Tooltip.SetDefault("Uses sticks as ammo");
         }
 
         public override string Texture { get { return "ABigStick/Items/1/DPS"; } }
@@ -345,8 +345,8 @@ namespace ABigStick.Items {
     // Level 1 Stickgun (Crit-based)
     public class StickSniper : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Hellstone Stickrifle");
-            Tooltip.SetDefault("Uses sticks as ammo");
+            // DisplayName.SetDefault("Hellstone Stickrifle");
+            // Tooltip.SetDefault("Uses sticks as ammo");
         }
 
         public override string Texture { get { return "ABigStick/Items/1/Crit"; } }
@@ -399,8 +399,8 @@ namespace ABigStick.Items {
     // Level 2 Stickgun (Adamantite, DPS-based)
     public class Lvl2StickgunA : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Adamantite Stickgun");
-            Tooltip.SetDefault("Uses sticks as ammo\n25% chance to not consume ammo");
+            // DisplayName.SetDefault("Adamantite Stickgun");
+            // Tooltip.SetDefault("Uses sticks as ammo\n25% chance to not consume ammo");
         }
 
         public override string Texture { get { return "ABigStick/Items/2/DPS_A"; } }
@@ -450,8 +450,8 @@ namespace ABigStick.Items {
     // Level 2 Stickgun (Titanium, DPS-based)
     public class Lvl2StickgunT : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Titanium Stickgun");
-            Tooltip.SetDefault("Uses sticks as ammo\n25% chance to not consume ammo");
+            // DisplayName.SetDefault("Titanium Stickgun");
+            // Tooltip.SetDefault("Uses sticks as ammo\n25% chance to not consume ammo");
         }
 
         public override string Texture { get { return "ABigStick/Items/2/DPS_T"; } }
@@ -501,8 +501,8 @@ namespace ABigStick.Items {
     // Level 2 Stickgun (Adamantite, crit-based)
     public class Lvl2StickSniperA : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Adamantite Stickrifle");
-            Tooltip.SetDefault("Uses sticks as ammo");
+            // DisplayName.SetDefault("Adamantite Stickrifle");
+            // Tooltip.SetDefault("Uses sticks as ammo");
         }
 
         public override string Texture { get { return "ABigStick/Items/2/Crit_A"; } }
@@ -548,8 +548,8 @@ namespace ABigStick.Items {
     // Level 2 Stickgun (Titanium, crit-based)
     public class Lvl2StickSniperT : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Titanium Stickrifle");
-            Tooltip.SetDefault("Uses sticks as ammo");
+            // DisplayName.SetDefault("Titanium Stickrifle");
+            // Tooltip.SetDefault("Uses sticks as ammo");
         }
 
         public override string Texture { get { return "ABigStick/Items/2/Crit_T"; } }
@@ -595,8 +595,8 @@ namespace ABigStick.Items {
     // Level 3 Stickgun (DPS-based)
     public class Lvl3Stickgun : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Autotrophic Stickgun");
-            Tooltip.SetDefault("Uses sticks as ammo\n35% chance to not consume ammo");
+            // DisplayName.SetDefault("Autotrophic Stickgun");
+            // Tooltip.SetDefault("Uses sticks as ammo\n35% chance to not consume ammo");
         }
 
         public override string Texture { get { return "ABigStick/Items/3/DPS"; } }
@@ -652,8 +652,8 @@ namespace ABigStick.Items {
     // Level 3 Stickgun (Crit-based)
     public class Lvl3StickSniper : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Autotrophic Stickrifle");
-            Tooltip.SetDefault("Uses sticks as ammo");
+            // DisplayName.SetDefault("Autotrophic Stickrifle");
+            // Tooltip.SetDefault("Uses sticks as ammo");
         }
 
         public override string Texture { get { return "ABigStick/Items/3/Crit"; } }
@@ -705,8 +705,8 @@ namespace ABigStick.Items {
     // Level 4 Stickgun (DPS-based)
     public class Lvl4Stickgun : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Spectre Stickgun");
-            Tooltip.SetDefault("Uses sticks as ammo\n45% chance to not consume ammo");
+            // DisplayName.SetDefault("Spectre Stickgun");
+            // Tooltip.SetDefault("Uses sticks as ammo\n45% chance to not consume ammo");
         }
 
         public override string Texture { get { return "ABigStick/Items/4/DPS"; } }
@@ -756,8 +756,8 @@ namespace ABigStick.Items {
     // Level 4 Stickgun (Crit-based)
     public class Lvl4StickSniper : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Spectre Stickrifle");
-            Tooltip.SetDefault("Uses sticks as ammo");
+            // DisplayName.SetDefault("Spectre Stickrifle");
+            // Tooltip.SetDefault("Uses sticks as ammo");
         }
 
         public override string Texture { get { return "ABigStick/Items/4/Crit"; } }
@@ -803,8 +803,8 @@ namespace ABigStick.Items {
     // Level 5 Stickgun (DPS-based)
     public class Lvl5Stickgun : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Lunar Stickgun");
-            Tooltip.SetDefault("Uses sticks as ammo\n55% chance to not consume ammo");
+            // DisplayName.SetDefault("Lunar Stickgun");
+            // Tooltip.SetDefault("Uses sticks as ammo\n55% chance to not consume ammo");
         }
 
         public override string Texture { get { return "ABigStick/Items/5/DPS"; } }
@@ -854,8 +854,8 @@ namespace ABigStick.Items {
     // Level 5 Stickgun (Crit-based)
     public class Lvl5StickSniper : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Lunar Stickrifle");
-            Tooltip.SetDefault("Uses sticks as ammo");
+            // DisplayName.SetDefault("Lunar Stickrifle");
+            // Tooltip.SetDefault("Uses sticks as ammo");
         }
 
         public override string Texture { get { return "ABigStick/Items/5/Crit"; } }
@@ -901,8 +901,8 @@ namespace ABigStick.Items {
     // Level 6 Stickgun (DPS-based)
     public class EmotionalStickgun : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Clockwork Stickgun");
-            Tooltip.SetDefault("Uses sticks as ammo\n70% chance to not consume ammo");
+            // DisplayName.SetDefault("Clockwork Stickgun");
+            // Tooltip.SetDefault("Uses sticks as ammo\n70% chance to not consume ammo");
         }
 
         public override string Texture { get { return "ABigStick/Items/6/DPS"; } }
@@ -957,8 +957,8 @@ namespace ABigStick.Items {
     // Level 6 Stickgun (Crit-based)
     public class EmotionalStickRifle : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Clockwork Stickrifle");
-            Tooltip.SetDefault("Uses sticks as ammo");
+            // DisplayName.SetDefault("Clockwork Stickrifle");
+            // Tooltip.SetDefault("Uses sticks as ammo");
         }
 
         public override string Texture { get { return "ABigStick/Items/6/Crit"; } }
@@ -1008,8 +1008,8 @@ namespace ABigStick.Items {
 
     public class StickgunBossSpawner : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Twitching Stickgun");
-            Tooltip.SetDefault("'Imbued with the spark of life'");
+            // DisplayName.SetDefault("Twitching Stickgun");
+            // Tooltip.SetDefault("'Imbued with the spark of life'");
         }
 
         public override string Texture { get { return "ABigStick/Items/6/Crit"; } }

@@ -9,4 +9,3 @@ This mod currently includes:
 
 The source code for this mod is available on Github - https://github.com/atenfyr/abigstick
 Here's a summary of everything that is available in this mod - https://bit.ly/2JJ8A2E
-You're welcome to join our discord server if you have a suggestion or just want to say hi - https://discord.gg/mDdKJRZ

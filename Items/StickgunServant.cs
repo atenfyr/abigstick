@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 namespace ABigStick.Items {
     public class ServantStick : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Sentient Stick");
+            // DisplayName.SetDefault("Sentient Stick");
         }
 
         public override void AutoStaticDefaults() {
@@ -32,7 +32,7 @@ namespace ABigStick.Items {
 
     public class StickgunServant : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("A Stickgun Servant");
+            // DisplayName.SetDefault("A Stickgun Servant");
         }
 
         public override void AutoStaticDefaults() {

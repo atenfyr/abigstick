@@ -12,8 +12,8 @@ namespace ABigStick.Items {
         public override string Texture { get { return "ABigStick/Items/Swords/ABigStick"; } }
 
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("A Big Stick");
-            Tooltip.SetDefault("'Larger than it should be'");
+            // DisplayName.SetDefault("A Big Stick");
+            // Tooltip.SetDefault("'Larger than it should be'");
         }
 
         public override void SetDefaults() {

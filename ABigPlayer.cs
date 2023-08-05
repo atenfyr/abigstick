@@ -8,7 +8,7 @@ namespace ABigStick {
             hasTearNet = false;
         }
 
-        public override void clientClone(ModPlayer clientClone) {
+        public override void CopyClientState(ModPlayer clientClone)/* tModPorter Suggestion: Replace Item.Clone usages with Item.CopyNetStateTo */ {
             ABigPlayer clone = clientClone as ABigPlayer;
             clone.hasTearNet = hasTearNet;
         }

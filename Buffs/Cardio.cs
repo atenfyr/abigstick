@@ -5,8 +5,8 @@ using Terraria.ModLoader;
 namespace ABigStick.Buffs {
     public class Cardio : ModBuff {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Cardio");
-            Description.SetDefault("This is some good exercise");
+            // DisplayName.SetDefault("Cardio");
+            // Description.SetDefault("This is some good exercise");
         }
 
         public override void Update(Player player, ref int buffIndex) {

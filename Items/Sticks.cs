@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 namespace ABigStick.Items {
     public class Stick : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Stick");
+            // DisplayName.SetDefault("Stick");
         }
 
         public override void AutoStaticDefaults() {
@@ -31,7 +31,7 @@ namespace ABigStick.Items {
 
     public class HighVelocityStick : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("High Velocity Stick");
+            // DisplayName.SetDefault("High Velocity Stick");
         }
 
         public override void AutoStaticDefaults() {
@@ -57,7 +57,7 @@ namespace ABigStick.Items {
 
     public class PenetratingStick : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Meteorite Stick");
+            // DisplayName.SetDefault("Meteorite Stick");
         }
 
         public override void AutoStaticDefaults() {
@@ -78,7 +78,7 @@ namespace ABigStick.Items {
 
     public class StickCr2 : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Shadestick");
+            // DisplayName.SetDefault("Shadestick");
         }
 
         public override void AutoStaticDefaults() {
@@ -96,14 +96,14 @@ namespace ABigStick.Items {
             Projectile.penetrate = 1;
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone) {
             target.AddBuff(BuffID.Ichor, 3 * 60);
         }
     }
 
     public class StickCo2 : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Ebonstick");
+            // DisplayName.SetDefault("Ebonstick");
         }
 
         public override void AutoStaticDefaults() {
@@ -121,14 +121,14 @@ namespace ABigStick.Items {
             Projectile.penetrate = 1;
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone) {
             target.AddBuff(BuffID.CursedInferno, 3 * 60);
         }
     }
 
     public class StickH2 : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Pearlstick");
+            // DisplayName.SetDefault("Pearlstick");
         }
 
         public override void AutoStaticDefaults() {
@@ -152,14 +152,14 @@ namespace ABigStick.Items {
             Projectile.rotation = (float)(Math.Atan2(Projectile.velocity.Y, Projectile.velocity.X));
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone) {
             target.AddBuff(BuffID.Slow, 5 * 60);
         }
     }
 
     public class StickBo2 : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Boreal Stick");
+            // DisplayName.SetDefault("Boreal Stick");
         }
 
         public override void AutoStaticDefaults() {
@@ -177,14 +177,14 @@ namespace ABigStick.Items {
             Projectile.penetrate = 1;
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone) {
             target.AddBuff(BuffID.Chilled, 5 * 60);
         }
     }
 
     public class StickL2 : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Luminite Stick");
+            // DisplayName.SetDefault("Luminite Stick");
         }
 
         public override void AutoStaticDefaults() {
@@ -202,14 +202,14 @@ namespace ABigStick.Items {
             Projectile.penetrate = 999;
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone) {
             Projectile.damage = Projectile.damage + 5;
         }
     }
     
     public class StickD2 : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Rainbow Stick");
+            // DisplayName.SetDefault("Rainbow Stick");
         }
 
         public override void AutoStaticDefaults() {
@@ -235,7 +235,7 @@ namespace ABigStick.Items {
 
     public class StickM2 : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Greedy Stick");
+            // DisplayName.SetDefault("Greedy Stick");
         }
 
         public override void AutoStaticDefaults() {
@@ -253,7 +253,7 @@ namespace ABigStick.Items {
             Projectile.penetrate = 5;
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone) {
             int value = Main.rand.Next(200, 2000);
             
             if (target.type != NPCID.TargetDummy) {
@@ -271,7 +271,7 @@ namespace ABigStick.Items {
 
     public class StickK2 : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Spooky Stick");
+            // DisplayName.SetDefault("Spooky Stick");
         }
 
         public override void AutoStaticDefaults() {
@@ -289,7 +289,7 @@ namespace ABigStick.Items {
             Projectile.penetrate = 1;
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone) {
             if (Main.rand.Next(1,3) == 1) {
                 target.AddBuff(BuffID.Confused, 2 * 60);
             }
@@ -298,7 +298,7 @@ namespace ABigStick.Items {
 
     public class StickAten2 : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Stick of Tears");
+            // DisplayName.SetDefault("Stick of Tears");
         }
 
         public override void AutoStaticDefaults() {
@@ -316,11 +316,12 @@ namespace ABigStick.Items {
             Projectile.penetrate = 999;
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone) {
             target.AddBuff(Mod.Find<ModBuff>("Mourning").Type, 10 * 60);
         }
 
-        public override void OnHitPvp(Player target, int damage, bool cri) {
+        public override void OnHitPlayer(Player target, Player.HurtInfo info)
+        {
             target.AddBuff(Mod.Find<ModBuff>("Mourning").Type, 10 * 60);
         }
 
@@ -333,7 +334,7 @@ namespace ABigStick.Items {
 
     public class StickMoon2 : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Lunar Stick");
+            // DisplayName.SetDefault("Lunar Stick");
         }
 
         public override void AutoStaticDefaults() {
@@ -359,7 +360,7 @@ namespace ABigStick.Items {
 
     public class StickCosmilite2 : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Cosmilite Stick");
+            // DisplayName.SetDefault("Cosmilite Stick");
         }
 
         public override void AutoStaticDefaults() {
@@ -380,7 +381,7 @@ namespace ABigStick.Items {
 
     public class AetherStick : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Ether Stick");
+            // DisplayName.SetDefault("Ether Stick");
         }
 
         public override void AutoStaticDefaults() {
@@ -407,7 +408,7 @@ namespace ABigStick.Items {
 
     public class StickItem : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Stick");
+            // DisplayName.SetDefault("Stick");
         }
 
         public override string Texture { get { return "ABigStick/Items/Stick"; } }
@@ -419,7 +420,7 @@ namespace ABigStick.Items {
             Item.height = 20;
             Item.consumable = true;
             Item.knockBack = 1f;
-            Item.value = 2;
+            Item.value = Item.buyPrice(copper: 7);
             Item.shoot = Mod.Find<ModProjectile>("Stick").Type;
             Item.ammo = Item.type;
             Item.maxStack = 999;
@@ -440,7 +441,7 @@ namespace ABigStick.Items {
 
     public class HighVelocityStickItem : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("High Velocity Stick");
+            // DisplayName.SetDefault("High Velocity Stick");
         }
 
         public override string Texture { get { return "ABigStick/Items/HighVelocityStick"; } }
@@ -470,7 +471,7 @@ namespace ABigStick.Items {
 
     public class PenetratingStickItem : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Meteorite Stick");
+            // DisplayName.SetDefault("Meteorite Stick");
         }
 
         public override string Texture { get { return "ABigStick/Items/MeteoriteStick"; } }
@@ -482,7 +483,7 @@ namespace ABigStick.Items {
             Item.height = 20;
             Item.consumable = true;
             Item.knockBack = 1f;
-            Item.value = 6;
+            Item.value = Item.buyPrice(copper: 15);
             Item.rare = 1;
             Item.shoot = Mod.Find<ModProjectile>("PenetratingStick").Type;
             Item.ammo = Mod.Find<ModItem>("StickItem").Type;
@@ -499,8 +500,8 @@ namespace ABigStick.Items {
 
     public class StickH : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Pearlstick");
-            Tooltip.SetDefault("Inflicts Slow");
+            // DisplayName.SetDefault("Pearlstick");
+            // Tooltip.SetDefault("Inflicts Slow");
         }
 
         public override string Texture { get { return "ABigStick/Items/HallowedStick"; } }
@@ -528,8 +529,8 @@ namespace ABigStick.Items {
 
     public class StickCo : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Ebonstick");
-            Tooltip.SetDefault("Inflicts Cursed Inferno");
+            // DisplayName.SetDefault("Ebonstick");
+            // Tooltip.SetDefault("Inflicts Cursed Inferno");
         }
 
         public override string Texture { get { return "ABigStick/Items/CorruptionStick"; } }
@@ -557,8 +558,8 @@ namespace ABigStick.Items {
 
     public class StickCr : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Shadestick");
-            Tooltip.SetDefault("Inflicts Ichor");
+            // DisplayName.SetDefault("Shadestick");
+            // Tooltip.SetDefault("Inflicts Ichor");
         }
 
         public override string Texture { get { return "ABigStick/Items/CrimsonStick"; } }
@@ -586,8 +587,8 @@ namespace ABigStick.Items {
 
     public class StickBo : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Boreal Stick");
-            Tooltip.SetDefault("Inflicts Chilled");
+            // DisplayName.SetDefault("Boreal Stick");
+            // Tooltip.SetDefault("Inflicts Chilled");
         }
 
         public override string Texture { get { return "ABigStick/Items/BorealStick"; } }
@@ -614,8 +615,8 @@ namespace ABigStick.Items {
 
     public class StickL : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Luminite Stick");
-            Tooltip.SetDefault("Increases in damage the more targets it pierces through\n'This is irrational.'");
+            // DisplayName.SetDefault("Luminite Stick");
+            // Tooltip.SetDefault("Increases in damage the more targets it pierces through\n'This is irrational.'");
         }
 
         public override string Texture { get { return "ABigStick/Items/LuminiteStick"; } }
@@ -646,8 +647,8 @@ namespace ABigStick.Items {
 
     public class StickD : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Rainbow Stick");
-            Tooltip.SetDefault("'Physics? What's that?'");
+            // DisplayName.SetDefault("Rainbow Stick");
+            // Tooltip.SetDefault("'Physics? What's that?'");
             Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 7));
         }
 
@@ -672,8 +673,8 @@ namespace ABigStick.Items {
 
     public class StickM : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Greedy Stick");
-            Tooltip.SetDefault("Steals money on impact");
+            // DisplayName.SetDefault("Greedy Stick");
+            // Tooltip.SetDefault("Steals money on impact");
         }
 
         public override string Texture { get { return "ABigStick/Items/GreedyStick"; } }
@@ -696,8 +697,8 @@ namespace ABigStick.Items {
 
     public class StickK : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Spooky Stick");
-            Tooltip.SetDefault("33% chance to inflict Confused");
+            // DisplayName.SetDefault("Spooky Stick");
+            // Tooltip.SetDefault("33% chance to inflict Confused");
         }
 
         public override string Texture { get { return "ABigStick/Items/SpookyStick"; } }
@@ -724,8 +725,8 @@ namespace ABigStick.Items {
 
     public class StickAten : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Stick of Tears");
-            Tooltip.SetDefault("'Forged from their final tears'");
+            // DisplayName.SetDefault("Stick of Tears");
+            // Tooltip.SetDefault("'Forged from their final tears'");
         }
 
         public override string Texture { get { return "ABigStick/Items/StickofTears"; } }
@@ -754,8 +755,8 @@ namespace ABigStick.Items {
 
     public class StickMoon : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Lunar Stick");
-            Tooltip.SetDefault("'Raw power resonates throughout the stick'");
+            // DisplayName.SetDefault("Lunar Stick");
+            // Tooltip.SetDefault("'Raw power resonates throughout the stick'");
         }
 
         public override string Texture { get { return "ABigStick/Items/LunarStick"; } }
@@ -784,8 +785,8 @@ namespace ABigStick.Items {
 
     public class AetherStickItem : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Ether Stick");
-            Tooltip.SetDefault("Takes time to build up strength");
+            // DisplayName.SetDefault("Ether Stick");
+            // Tooltip.SetDefault("Takes time to build up strength");
         }
 
         public override string Texture { get { return "ABigStick/Items/EtherStick"; } }
@@ -829,8 +830,8 @@ namespace ABigStick.Items {
 
     public class StickCosmilite : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Cosmilite Stick");
-            Tooltip.SetDefault("'Not a fan of game mechanics'");
+            // DisplayName.SetDefault("Cosmilite Stick");
+            // Tooltip.SetDefault("'Not a fan of game mechanics'");
         }
 
         public override string Texture { get { return "ABigStick/Items/CosmiliteStick"; } }

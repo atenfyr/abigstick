@@ -30,8 +30,8 @@ namespace ABigStick.NPCs {
 
     public class SentientStick : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Sentient Stick");
-            Tooltip.SetDefault("'Seems to have ideas of its own'");
+            // DisplayName.SetDefault("Sentient Stick");
+            // Tooltip.SetDefault("'Seems to have ideas of its own'");
         }
 
         public override string Texture { get { return "ABigStick/Items/SentientStick"; } }
@@ -53,7 +53,7 @@ namespace ABigStick.NPCs {
 
     public class SentientStick2 : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Sentient Stick");
+            // DisplayName.SetDefault("Sentient Stick");
             ProjectileID.Sets.CultistIsResistantTo[Projectile.type] = true;
         }
 
@@ -86,7 +86,7 @@ namespace ABigStick.NPCs {
     
     public class BossLunar : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Lunar Stick");
+            // DisplayName.SetDefault("Lunar Stick");
         }
 
         public override void AutoStaticDefaults() {
@@ -113,7 +113,7 @@ namespace ABigStick.NPCs {
 
     public class BossTears : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Stick of Tears");
+            // DisplayName.SetDefault("Stick of Tears");
         }
 
         public override void AutoStaticDefaults() {
@@ -132,11 +132,12 @@ namespace ABigStick.NPCs {
             Projectile.penetrate = 999;
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone) {
             target.AddBuff(Mod.Find<ModBuff>("Mourning").Type, 10 * 60);
         }
 
-        public override void OnHitPvp(Player target, int damage, bool cri) {
+        public override void OnHitPlayer(Player target, Player.HurtInfo info)
+        {
             target.AddBuff(Mod.Find<ModBuff>("Mourning").Type, 10 * 60);
         }
 
@@ -149,7 +150,7 @@ namespace ABigStick.NPCs {
 
     public class BossLuminite : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Luminite Stick");
+            // DisplayName.SetDefault("Luminite Stick");
         }
 
         public override void AutoStaticDefaults() {
@@ -168,14 +169,14 @@ namespace ABigStick.NPCs {
             Projectile.penetrate = 999;
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool cri) {
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone) {
             Projectile.damage = Projectile.damage + 5;
         }
     }
 
     public class BossCosmilite : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Cosmilite Stick");
+            // DisplayName.SetDefault("Cosmilite Stick");
         }
 
         public override void AutoStaticDefaults() {
@@ -197,7 +198,7 @@ namespace ABigStick.NPCs {
 
     public class BossRainbow : ModProjectile {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Rainbow Stick");
+            // DisplayName.SetDefault("Rainbow Stick");
         }
 
         public override void AutoStaticDefaults() {
@@ -216,7 +217,7 @@ namespace ABigStick.NPCs {
             Projectile.penetrate = -1;
         }
 
-        public override void OnHitPlayer(Player target, int damage, bool crit) {
+        public override void OnHitPlayer(Player target, Player.HurtInfo info) {
             target.statLife = 1;
         }
     }
@@ -224,7 +225,7 @@ namespace ABigStick.NPCs {
     [AutoloadBossHead]
     public class SentientStickgun : ModNPC {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("A Sentient Stickgun");
+            // DisplayName.SetDefault("A Sentient Stickgun");
         }
 
         public override void AutoStaticDefaults() {
@@ -251,8 +252,8 @@ namespace ABigStick.NPCs {
             NPC.buffImmune[31] = true;
         }
 
-        public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
-            NPC.lifeMax = (int)(NPC.lifeMax * 0.75f * bossLifeScale);
+        public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */ {
+            NPC.lifeMax = (int)(NPC.lifeMax * 0.75f * balance);
             NPC.damage = (int)(NPC.damage * 0.6f);
         }
 

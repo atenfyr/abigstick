@@ -6,8 +6,8 @@ using Terraria.ModLoader;
 namespace ABigStick.Items {
     public class LastTears : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Last Tears");
-            Tooltip.SetDefault("'Shed during someone's final moments'");
+            // DisplayName.SetDefault("Last Tears");
+            // Tooltip.SetDefault("'Shed during someone's final moments'");
         }
 
         public override string Texture { get { return "ABigStick/Items/Tears"; } }
@@ -21,8 +21,8 @@ namespace ABigStick.Items {
 
     public class MoonTears : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Lunar Tears");
-            Tooltip.SetDefault("'Released during the Moon Lord's final cries of anguish'");
+            // DisplayName.SetDefault("Lunar Tears");
+            // Tooltip.SetDefault("'Released during the Moon Lord's final cries of anguish'");
         }
 
         public override string Texture { get { return "ABigStick/Items/MoonTears"; } }
@@ -36,8 +36,8 @@ namespace ABigStick.Items {
 
     public class TearNet : ModItem {
         public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Net of Tears");
-            Tooltip.SetDefault("Allows you to harvest their final tears");
+            // DisplayName.SetDefault("Net of Tears");
+            // Tooltip.SetDefault("Allows you to harvest their final tears");
         }
 
         public override string Texture { get { return "ABigStick/Items/NetofTears"; } }
