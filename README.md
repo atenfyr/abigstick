@@ -49,4 +49,4 @@ A Terraria mod that contains numerous stick-themed items.
 - Lunar Tears - Dropped by the Moon Lord
 # Credits
 - Atenfyr - Programming and Sprites
-- Geocide - Sprites
+- Northcoast - Sprites
